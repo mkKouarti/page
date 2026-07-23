@@ -1,7 +1,7 @@
 {
   "name": "Mechidan",
   "short_name": "Mechidan",
-  "description": "Te monto la web, te muevo el servidor o te hago la herramienta que te falta. Entre uno y siete días. Si no te sirve, no lo pagas.",
+  "description": "Te monto la web, te muevo el servidor o te hago la herramienta que te falta. Lo tienes en una semana. Si no te sirve, no lo pagas.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#F2F0E9",
