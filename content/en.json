@@ -3,181 +3,167 @@
   "htmlLang": "en",
   "dir": "ltr",
   "altLocaleLabel": "ES",
-  "altLocaleName": "Español",
-
   "meta": {
-    "title": "Websites and servers for small businesses | {brand}",
-    "description": "I build your website, move your server or audit your infrastructure. Published prices, delivery in 1 to 7 days. If you don't like the result, you don't pay.",
-    "ogAlt": "{brand}: websites and servers for small businesses, published prices, money-back guarantee.",
-    "keywords": "small business web design, server migration, infrastructure security audit, website maintenance, self-hosted alternative, fixed price website"
+    "title": "Websites, servers and tools for small businesses | {brand}",
+    "description": "I build your website, move your server or make the tool you are missing. One to seven days. If it doesn't work for you, you don't pay.",
+    "keywords": "small business website, booking website, server move, server security review, custom internal tool, website maintenance Madrid",
+    "ogAlt": "{brand}: websites, servers and tools for small businesses."
   },
-
   "nav": {
     "services": "Services",
     "process": "How I work",
     "faq": "Questions",
     "contact": "Contact",
-    "skipToContent": "Skip to content",
+    "langSwitch": "View this page in Spanish",
     "menuOpen": "Open menu",
     "menuClose": "Close menu",
-    "langSwitch": "View this page in Spanish"
+    "skipToContent": "Skip to content"
   },
-
+  "footer": {
+    "tagline": "Websites, servers and tools for businesses of 1 to 100 people.",
+    "legalNotice": "Legal notice",
+    "privacy": "Privacy policy",
+    "scope": "Scope sheet (PDF)",
+    "rights": "All rights reserved.",
+    "builtNote": "This page uses no tracking cookies and no analytics."
+  },
   "hero": {
-    "eyebrow": "Based in Madrid. Working remotely across Spain and the EU.",
-    "h1Lead": "Websites and servers for small businesses.",
-    "h1Accent": "If you don't like it, you don't pay.",
-    "sub": "I build your website, move your server or review your infrastructure. You see the price before I start. I deliver in 1 to 7 days.",
-    "ctaPrimary": "Message me on WhatsApp",
-    "ctaSecondary": "Tell me your case",
+    "eyebrow": "Madrid. Working with businesses across Spain.",
+    "h1Lead": "Websites and servers for businesses with no IT person.",
+    "h1Accent": "If it doesn't work for you, you don't pay.",
+    "sub": "I build your website, move your server or make the tool you are missing. You get it in one to seven days, and you talk to the same person throughout.",
     "trust": [
-      "Published prices, no surprise quote",
-      "Delivered in 1 to 7 days",
-      "You pay after you approve the work"
-    ]
+      "You start without paying anything",
+      "The domain and the code sit in your name",
+      "I answer the same day"
+    ],
+    "ctaPrimary": "Message me on WhatsApp",
+    "ctaSecondary": "Tell me your case"
   },
-
-  "quote": {
-    "docLabel": "Quote",
-    "docRef": "REF",
-    "title": "Work out your price",
-    "intro": "Pick the job and the extras. The total updates as you choose.",
-    "serviceLabel": "Job",
-    "addonsLabel": "Extras",
-    "noAddons": "This job has no extras.",
-    "lineBase": "Base",
-    "subtotalLabel": "Subtotal",
-    "totalLabel": "Total",
-    "maintenanceLabel": "Optional maintenance",
-    "perMonth": "/month",
+  "panel": {
+    "label": "Typical job",
+    "ref": "New website",
+    "title": "What {price} gets you",
+    "intro": "A business starting from nothing gets this, built and running.",
+    "items": [
+      "As many pages as the job needs, with the copy written",
+      "Reads well on a five-year-old phone",
+      "You show up when someone searches your trade and your area",
+      "The form reaches your inbox and your phone",
+      "Legal notice and privacy policy done"
+    ],
+    "totalLabel": "Fixed at",
+    "note": "If your case needs less, I take it out and the number drops. You get it in writing before I start.",
+    "vatNote": "VAT on top. No deposit.",
     "deliveryLabel": "Delivery",
     "deliveryValue": "{min} to {max} days",
-    "guaranteeStamp": "Don't like it, don't pay",
-    "vatNote": "Prices exclude VAT.",
-    "variableNote": "Priced per case. Tell me the situation and I give you the number before I touch anything.",
-    "cta": "Send me this quote",
-    "ctaWhatsapp": "Send it on WhatsApp",
-    "messageIntro": "Hi Kamil, here is what I want:",
-    "messageService": "Job",
-    "messageAddons": "Extras",
-    "messageTotal": "Estimated total"
+    "stamp": "Doesn't work, doesn't get paid",
+    "cta": "Tell me your case",
+    "ctaWhatsapp": "Message me on WhatsApp",
+    "waMessage": "Hi Kamil, I run a business and I want to tell you about my case."
   },
-
   "services": {
     "eyebrow": "Services",
-    "title": "Four jobs, prices in the open",
-    "sub": "Every price below is what you pay. If your case falls outside this, I give you the number before I start.",
+    "title": "What I can build you",
+    "sub": "Each number covers the whole job, with no extras added later.",
     "priceFrom": "from",
     "priceCustom": "Per case",
-    "maintenanceFrom": "Maintenance",
-    "includesLabel": "Includes",
     "addonsHeading": "You can add",
+    "maintenanceFrom": "Maintenance",
     "items": {
       "web": {
         "name": "New website",
-        "pitch": "A site that loads fast, reads well on a phone and doesn't break on its own.",
+        "pitch": "Someone searches for what you sell, finds you and calls. That is the only goal.",
         "includes": [
-          "Several pages, designed around your business",
-          "Works on phone, tablet and desktop",
-          "Copy and structure aimed at getting you called",
-          "Legal notice and privacy policy ready to publish"
+          "As many pages as the job needs, with the copy written",
+          "Reads well on a five-year-old phone",
+          "You show up when people search your trade and your area",
+          "The form reaches your inbox and your phone",
+          "Legal notice and privacy policy done"
         ],
-        "addons": {
-          "growth": {
-            "name": "Getting found",
-            "detail": "User journey, SEO, SEM, visibility inside AI search, and a results report."
-          },
-          "commerce": {
-            "name": "Payments and shipping",
-            "detail": "Card and PayPal, shipping zones by country, and order statistics."
-          },
-          "server": {
-            "name": "Your own server",
-            "detail": "I set up Nginx or Apache, virtual hosts and certificates on your machine."
-          }
-        }
+        "addons": {}
+      },
+      "panel": {
+        "name": "Website with bookings or orders",
+        "pitch": "Your customer books at eleven at night and you see it in the morning from your phone.",
+        "includes": [
+          "Calendar, bookings or orders, depending on what you sell",
+          "A panel where you change hours, prices and slots without calling me",
+          "Card and Bizum payments when the job needs them",
+          "Runs on a server I look after, or on yours if you prefer"
+        ],
+        "addons": {}
+      },
+      "tool": {
+        "name": "A tool built for you",
+        "pitch": "Tell me the task that eats your morning and I put it on one screen.",
+        "includes": [
+          "Turn 200 orders in a spreadsheet into labels with one click",
+          "Your technicians clock in from their phones and you see the hours at month end",
+          "Swap a monthly fee for something of your own, and I charge what three months of it would cost",
+          "The data stays on your server, not mine"
+        ],
+        "addons": {}
       },
       "migration": {
-        "name": "Migration",
-        "pitch": "I move your site or your application to another server without your customers noticing.",
+        "name": "Server move",
+        "pitch": "Your site changes address on a Tuesday at three in the morning and your customers never notice.",
         "includes": [
-          "Full backup before anything gets touched",
-          "DNS cutover and certificates handled",
-          "Cutover window scheduled outside your working hours",
-          "Rollback ready in case something fails"
+          "Full copy before anything gets touched",
+          "DNS, certificates and the mail hanging off the domain",
+          "The cutover happens outside your working hours",
+          "If something fails, I roll back in minutes",
+          "You see the hosting bill before and after"
         ],
-        "addons": {
-          "cloud_exit": {
-            "name": "Cloud exit",
-            "detail": "You leave a cloud provider for your own VPS. I show you the monthly bill before and after."
-          }
-        }
+        "addons": {}
       },
       "audit": {
-        "name": "Audit",
-        "pitch": "I look at your server from outside and inside, then tell you where people get in.",
+        "name": "Security review",
+        "pitch": "I tell you which doors sit open, and I close the ones that close the same afternoon.",
         "includes": [
-          "What your server exposes to the internet right now",
-          "Findings ranked by severity, not a dump of 300 warnings",
-          "A script that fixes what can be fixed automatically",
-          "Report in plain language, no jargon"
+          "What a passer-by sees of your server right now",
+          "The serious findings first, not a dump of 300 warnings",
+          "A script that fixes what fixes itself",
+          "Written so you understand it without calling me"
         ],
-        "addons": {
-          "recheck": {
-            "name": "Follow-up check",
-            "detail": "I audit again later at the returning client rate."
-          }
-        }
-      },
-      "subkill": {
-        "name": "Kill a subscription",
-        "pitch": "Tell me which SaaS you pay every month. If a self-hosted alternative exists, I set it up and you keep it.",
-        "includes": [
-          "First we check whether your case fits. If it doesn't, I say so and charge nothing",
-          "I charge what you pay in 3 months of that subscription",
-          "Your data moves to your server, not mine",
-          "I stay away from invoicing and anything with a legal obligation attached"
-        ],
-        "priceModel": "3 months of what you pay now",
         "addons": {}
       }
-    }
+    },
+    "perMonth": "month"
   },
-
   "process": {
     "eyebrow": "How I work",
-    "title": "Four steps, no hour-long meetings",
-    "sub": "The order matters: I don't start until we both know the price and the date.",
+    "title": "Four steps and no hour-long meetings",
+    "sub": "I don't start until we both know what I deliver and on what day.",
     "steps": [
       {
-        "name": "You tell me the problem",
-        "detail": "Fill in the form or message me on WhatsApp. I need two things: what bothers you, and when you need it."
+        "name": "You tell me what is breaking",
+        "detail": "A WhatsApp message or the form. I need two things: what bothers you, and when you want it."
       },
       {
-        "name": "I send scope and price",
-        "detail": "You get a one-page PDF with what I do, what I don't do, the date and the number. If something looks wrong, we fix it there."
+        "name": "I send the scope sheet",
+        "detail": "One page with what I do, what I don't do, the date and the number. If something looks wrong, we fix it there."
       },
       {
         "name": "I build it",
-        "detail": "Between 1 and 7 days depending on the job. I show you progress through whichever channel you pick."
+        "detail": "One to seven days depending on the job. I show you progress through whichever channel you pick."
       },
       {
-        "name": "You review it and pay",
-        "detail": "Take your time looking. If it works for you, pay by bank transfer or Bizum. If it doesn't, you pay nothing and no invoice exists."
+        "name": "You look at it and decide",
+        "detail": "If it works for you, pay by bank transfer or Bizum. If it doesn't, I close it and no invoice exists."
       }
     ],
-    "scopeCta": "Download the scope template (PDF)",
-    "scopeNote": "This is the document you get at step 2. Read it before you write to me."
+    "scopeCta": "Download the scope sheet (PDF)",
+    "scopeNote": "This is the document from step 2. Read it before you write to me."
   },
-
   "guarantee": {
     "eyebrow": "Guarantee",
-    "title": "If you don't like the result, you don't pay",
-    "body": "No small print and no argument. You review the delivered work, and if it doesn't serve you, tell me and we close it there. No deposit, no payment up front, no penalty for walking away.",
+    "title": "If it doesn't work for you, you don't pay",
+    "body": "You review what I delivered and you tell me. I close it there, with no invoice and no argument. I ask for no deposit and nothing up front.",
     "points": [
       {
-        "name": "Nothing up front",
-        "detail": "I ask for no deposit to start."
+        "name": "You start without paying",
+        "detail": "I ask for no deposit to get to work."
       },
       {
         "name": "The code is yours",
@@ -185,68 +171,57 @@
       },
       {
         "name": "No lock-in",
-        "detail": "Cancel maintenance whenever you want, no notice period."
+        "detail": "Cancel maintenance whenever you want, with no notice period."
       }
     ]
   },
-
-  "launch": {
-    "badge": "Launch slots",
-    "title": "The first {slots} clients pay nothing",
-    "body": "I am starting on my own and I need real work to show. I do the whole job and charge you nothing. In exchange I ask for two things: unfiltered feedback on what went wrong, and permission to name you as a reference if the result convinces you.",
-    "note": "Applies to the services above with the same scope and the same guarantee."
-  },
-
   "about": {
-    "eyebrow": "Who does the work",
-    "title": "Kamil El Kouarti",
-    "lead": "I administer production Linux systems Monday to Friday. I build this at the weekend.",
+    "eyebrow": "Who we are",
+    "title": "There are two of us",
+    "lead": "My father listens to you and explains it in plain words. I build what sits underneath.",
     "body": [
-      "I work as a systems technician on an Amazon production line with CEVA Logistics, where I keep around {workstationsManaged} Linux stations running. When a station dies, that section of the floor stops, so the job is to fix fast and document it so it doesn't happen twice.",
-      "Before that I built the VPN infrastructure for {vpnClientNetworks} small business networks: custom panel, WireGuard and OpenVPN dual stack, and automated client onboarding on Linux and Windows.",
-      "I have no client portfolio yet. That is why I publish prices, take no money up front and give the first jobs away. I would rather you judged the work than the story."
+      "He talks to you, works out what your business actually needs and tells you without the jargon. If someone calls you to check how the job is going, it is him.",
+      "I keep around 200 Linux stations running on an Amazon production line Monday to Friday. When one dies, that part of the floor stops, so I fix fast and write it down so it doesn't happen twice. I build this at the weekend.",
+      "Before this we set up the network and the VPNs for three small companies. This page is built the way I build yours: no templates, no trackers and nothing loading from outside."
     ],
-    "credsTitle": "Certifications you can verify",
-    "credsNote": "Each one links to its official credential.",
-    "certNames": {
-      "aws_cloud_foundations": "AWS Cloud Foundations",
-      "linux_essentials": "Linux Essentials",
-      "ccst_os_support": "CCST Operating Systems Support",
-      "network_technician": "Network Technician"
-    },
-    "statsTitle": "Real numbers",
-    "stats": [
-      { "value": "{workstationsManaged}", "label": "Linux stations I keep running in production" },
-      { "value": "{workstationsBuilt}", "label": "stations built from nothing" },
-      { "value": "{provisioningBefore}\u2192{provisioningAfter}", "label": "minutes per station after automating the rollout" }
-    ],
-    "linkedin": "LinkedIn profile",
+    "linkedin": "LinkedIn",
     "github": "Code on GitHub"
   },
-
   "faq": {
     "eyebrow": "Questions",
-    "title": "What people ask before hiring me",
+    "title": "What people ask before hiring us",
     "items": [
       {
         "q": "What happens if I don't like the result?",
-        "a": "You don't pay. You review the delivered work and if it doesn't serve you, you tell me. I issue no invoice, claim nothing, and you keep whatever already sits in your name."
+        "a": "You don't pay. You review it, you tell me it doesn't serve you and I close it there. I issue no invoice, claim nothing, and you keep whatever already sits in your name."
+      },
+      {
+        "q": "What if I need less than what is listed?",
+        "a": "I take out what you won't use and the number drops. You get it in writing in the scope sheet, before I touch anything."
       },
       {
         "q": "How long does it take?",
-        "a": "Between 1 and 7 days. A simple site lands in 1 or 2. A migration with mail and certificates runs to 5 or 7. The exact date goes in the scope document before I start."
+        "a": "One to seven days. A simple site lands in two. A move with mail and certificates runs to five or seven. The exact date goes in writing before I start."
+      },
+      {
+        "q": "Can I ask for something that isn't on the list?",
+        "a": "Yes. Tell me the task that eats your morning and I tell you whether it can be done, what it costs and when you get it."
+      },
+      {
+        "q": "I pay a monthly fee for a tool. Can you get rid of it?",
+        "a": "Sometimes. I check whether an equivalent exists that you can host yourself. If it does, I set it up and charge what three months of that fee would cost. If it doesn't, I say so and charge nothing. I stay away from invoicing and anything with a legal obligation attached."
       },
       {
         "q": "How do I pay?",
-        "a": "Outside this website. Bank transfer or Bizum once the work is delivered and you have approved it. This page takes no payments and stores no banking data."
+        "a": "Outside this website. Bank transfer or Bizum once the work sits in front of you and you have approved it. This page takes no payments and stores no banking data."
       },
       {
         "q": "Do you ask for a deposit?",
-        "a": "No. I start with nothing up front. I carry the risk that you won't like it."
+        "a": "No. I start with nothing up front and carry the risk that you won't like it."
       },
       {
         "q": "Is the website really mine?",
-        "a": "Yes. The domain registers in your name, the code gets handed to you and the hosting sits in your account. If you want a different supplier tomorrow, you take everything without asking me."
+        "a": "Yes. The domain registers in your name, the code gets handed to you and the hosting sits in your account. Tomorrow you can take everything without asking me."
       },
       {
         "q": "What do you need from me to start?",
@@ -254,15 +229,15 @@
       },
       {
         "q": "Do you work on site?",
-        "a": "I work remotely across Spain. In Madrid I can come in person when the job needs it, for example touching a server that isn't exposed to the internet."
+        "a": "Remotely across Spain. In Madrid I come in person when the job needs it, for example to touch a server that never reaches the internet."
       },
       {
         "q": "I already have a website and I don't want to change it",
-        "a": "Then migration or an audit is what you want. I can move your current site to a cheaper server or review where it sits exposed, without redoing the design."
+        "a": "Then look at the move or the review. I can shift what you have to a cheaper server, or tell you where it sits exposed, without touching the design."
       },
       {
         "q": "Do you issue invoices?",
-        "a": "Yes, with full tax details, and always after you approve the work."
+        "a": "Yes, with full tax details, always after you approve the work."
       },
       {
         "q": "What do you do with my data?",
@@ -270,26 +245,37 @@
       }
     ]
   },
-
   "contact": {
     "eyebrow": "Contact",
     "title": "Tell me what is breaking",
     "sub": "Three fields. I reply within {hours} hours, Monday to Sunday.",
-    "fields": {
-      "name": { "label": "Your name", "placeholder": "Name and business" },
-      "need": { "label": "What you need", "placeholder": "Example: my site takes 9 seconds to load and I am losing calls." },
-      "contact": { "label": "How I reach you", "placeholder": "Email or phone" }
+    "whatsappCta": "Message on WhatsApp",
+    "emailCta": "Write an email",
+    "phoneCta": "Call",
+    "channels": {
+      "whatsapp": "WhatsApp",
+      "email": "Email",
+      "phone": "Phone"
     },
     "channelLabel": "Reply to me by",
-    "channels": { "email": "Email", "phone": "Phone", "whatsapp": "WhatsApp" },
     "consent": "I have read the privacy policy and agree to you using my details to reply.",
     "consentLink": "privacy policy",
     "submit": "Send",
     "submitting": "Sending",
-    "orLabel": "or",
-    "whatsappCta": "Open WhatsApp",
-    "emailCta": "Write an email",
-    "phoneCta": "Call",
+    "fields": {
+      "name": {
+        "label": "Your name",
+        "placeholder": "Name and business"
+      },
+      "need": {
+        "label": "What you need",
+        "placeholder": "Example: my site takes nine seconds to open and I am losing calls."
+      },
+      "contact": {
+        "label": "How I reach you",
+        "placeholder": "Email or phone"
+      }
+    },
     "success": {
       "title": "Message received",
       "body": "I reply within {hours} hours to the contact you left. If you are in a hurry, message me on WhatsApp and we sort it now."
@@ -304,16 +290,6 @@
       "tooFast": "Wait a second and send again."
     }
   },
-
-  "footer": {
-    "tagline": "Websites, servers and automation for businesses of 1 to 100 people.",
-    "legalNotice": "Legal notice",
-    "privacy": "Privacy policy",
-    "scope": "Scope template (PDF)",
-    "rights": "All rights reserved.",
-    "builtNote": "This page uses no tracking cookies, no analytics and no external fonts."
-  },
-
   "legalNotice": {
     "title": "Legal notice",
     "updated": "Last updated",
@@ -321,43 +297,66 @@
     "sections": [
       {
         "h": "Site owner",
-        "p": ["Owner: {legalName}", "Tax ID: {taxId}", "Address: {registeredAddress}", "Contact email: {email}", "Website: {baseUrl}"]
+        "p": [
+          "Owner: {legalName}",
+          "Tax ID: {taxId}",
+          "Address: {registeredAddress}",
+          "Contact email: {email}",
+          "Website: {baseUrl}"
+        ]
       },
       {
         "h": "Purpose",
-        "p": ["This site describes the web development, server migration, infrastructure audit and automation services the owner provides. Browsing the site makes you a user and means you accept these terms."]
+        "p": [
+          "This site describes the web development, server migration, infrastructure review and custom tooling services the owner provides. Browsing the site makes you a user and means you accept these terms."
+        ]
       },
       {
         "h": "Terms of use",
-        "p": ["You may read and download the content of this site for your own use. You may not reproduce it commercially without the owner's written permission.", "The owner accepts no liability for damage arising from use of the site other than as intended."]
+        "p": [
+          "You may read and download the content of this site for your own use. You may not reproduce it commercially without the owner's written permission.",
+          "The owner accepts no liability for damage arising from use of the site other than as intended."
+        ]
       },
       {
         "h": "Prices and contracting",
-        "p": ["Published prices exclude VAT and serve as a reference. The firm price, the scope and the delivery date get fixed in the scope document you receive before work starts.", "This site processes no payments. Payment happens off the website by bank transfer or Bizum, once the work is delivered and approved."]
+        "p": [
+          "Published prices exclude VAT and cover the scope described for each service. The firm price, the scope and the delivery date get fixed in the scope sheet you receive before work starts.",
+          "If the job needs less work than described, the number drops and the scope sheet records it.",
+          "This site processes no payments. Payment happens off the website by bank transfer or Bizum, once the work is delivered and approved."
+        ]
       },
       {
         "h": "Satisfaction guarantee",
-        "p": ["If the delivered work does not satisfy you, you do not pay and no invoice gets issued. This guarantee covers the scope agreed in writing. It does not cover work already approved and invoiced, nor third-party costs you contracted in your own name, such as domains or hosting."]
+        "p": [
+          "If the delivered work does not satisfy you, you do not pay and no invoice gets issued. This guarantee covers the scope agreed in writing. It does not cover work already approved and invoiced, nor third-party costs you contracted in your own name, such as domains or hosting."
+        ]
       },
       {
         "h": "Intellectual property",
-        "p": ["The code, text and designs delivered to you become yours once the work is paid for. Third-party components keep their original licence.", "Trademarks and logos on this site belong to their respective owners."]
+        "p": [
+          "The code, text and designs delivered to you become yours once the work is paid for. Third-party components keep their original licence.",
+          "Trademarks and logos on this site belong to their respective owners."
+        ]
       },
       {
         "h": "Hosting",
-        "p": ["This site is hosted by {hostingProvider}."]
+        "p": [
+          "This site is hosted by {hostingProvider}."
+        ]
       },
       {
         "h": "Governing law",
-        "p": ["These terms fall under Spanish law. For any dispute, the parties submit to the courts of the consumer's domicile where the consumer qualifies as such."]
+        "p": [
+          "These terms fall under Spanish law. For any dispute, the parties submit to the courts of the consumer's domicile where the consumer qualifies as such."
+        ]
       }
     ]
   },
-
   "privacy": {
     "title": "Privacy policy",
     "updated": "Last updated",
-    "intro": "This page explains what data I collect, what I use it for and how you get it deleted. Written to be understood, not to cover my back.",
+    "intro": "This page explains what data I collect, what I use it for and how you get it deleted. Written to be understood.",
     "summaryTitle": "The short version",
     "summary": [
       "I only collect what you type into the contact form.",
@@ -368,97 +367,119 @@
     "sections": [
       {
         "h": "Who handles your data",
-        "p": ["Controller: {legalName}", "Tax ID: {taxId}", "Contact: {email}"]
+        "p": [
+          "Controller: {legalName}",
+          "Tax ID: {taxId}",
+          "Contact: {email}"
+        ]
       },
       {
         "h": "What data I collect",
-        "p": ["From the contact form: the name you type, the description of what you need, the email or phone you leave, and the channel you prefer for a reply.", "I collect no browsing data. This site installs no analytics or advertising cookies, loads no third-party fonts or scripts, and uses no tracking pixels.", "The server hosting the page may record your IP address in its technical logs, which happens on any web server and serves the security of the service."]
+        "p": [
+          "From the contact form: the name you type, the description of what you need, the email or phone you leave, and the channel you prefer for a reply.",
+          "I collect no browsing data. This site installs no analytics or advertising cookies, loads no third-party fonts or scripts, and uses no tracking pixels.",
+          "The server hosting the page records your IP address in its technical logs, which happens on any web server and serves the security of the service."
+        ]
       },
       {
         "h": "What I use it for and on what legal basis",
-        "p": ["I use your data to answer your enquiry and, if you hire me, to run the job and issue the invoice.", "The legal basis is your consent when you tick the box on the form, and performance of a contract once we start working together. Invoicing records get kept because the law requires it."]
+        "p": [
+          "I use your data to answer your enquiry and, if you hire me, to run the job and issue the invoice.",
+          "The legal basis is your consent when you tick the box on the form, and performance of a contract once we start working together. Invoicing records get kept because the law requires it."
+        ]
       },
       {
         "h": "How long I keep it",
-        "p": ["If we never end up working together, I delete your enquiry after {retention} months.", "If you hire me, I keep the invoicing data for the periods Spanish tax law requires."]
+        "p": [
+          "If we never end up working together, I delete your enquiry after {retention} months.",
+          "If you hire me, I keep the invoicing data for the periods Spanish tax law requires."
+        ]
       },
       {
         "h": "Who else sees it",
-        "p": ["The form gets processed by {processorName}, with servers in {processorCountry}. That provider receives the form content in order to pass it to me by email. You can read their policy on their own site.", "Hosting is handled by {hostingProvider}.", "I sell your data to nobody and share it with nobody else. There are no advertisers."]
+        "p": [
+          "The form gets processed by {processorName}, with servers in the United States. That provider receives the form content in order to pass it to me by email. You can read their policy on their own site.",
+          "Hosting is handled by {hostingProvider}.",
+          "I sell your data to nobody and share it with nobody else. There are no advertisers."
+        ]
       },
       {
         "h": "If you would rather skip the form",
-        "p": ["Write to {email} or message me on WhatsApp. That way your data never passes through the form provider."]
+        "p": [
+          "Write to {email} or message me on WhatsApp. That way your data never passes through the form provider."
+        ]
       },
       {
         "h": "Your rights",
-        "p": ["You can ask me for access to your data, rectification, erasure, restriction of processing, portability, and you can object to processing. Write to {email} and I answer within one month.", "If you believe I have not complied, you can complain to the {authority}."]
+        "p": [
+          "You can ask me for access to your data, rectification, erasure, restriction of processing, portability, and you can object to processing. Write to {email} and I answer within one month.",
+          "If you believe I have not complied, you can complain to the {authority}."
+        ]
       },
       {
         "h": "Cookies",
-        "p": ["This site sets no cookies. It stores one technical value in your browser: the language you pick, so it stops asking. That value never leaves your device, identifies nobody, and you clear it by clearing site data in your browser.", "That is why you see no cookie banner: there is nothing to consent to."]
+        "p": [
+          "This site sets no cookies. It stores one technical value in your browser: the language you pick, so it stops asking. That value never leaves your device, identifies nobody, and you clear it by clearing site data in your browser.",
+          "That is why you see no cookie banner: there is nothing to consent to."
+        ]
       }
     ]
   },
-
-  "scopeDoc": {
-    "docTitle": "Scope document",
-    "subtitle": "Template of the document you receive before work starts",
-    "preparedFor": "Client",
-    "preparedBy": "Supplier",
-    "date": "Date",
-    "ref": "Reference",
-    "placeholderClient": "[client name]",
-    "intro": "This is the document I send at step 2. One page, no jargon, no annexes. We sign it by email and I start.",
-    "sections": [
-      {
-        "h": "1. What I will do",
-        "p": ["A closed list of deliverables, one per line. If something is not on this list, it is not included."]
-      },
-      {
-        "h": "2. What I will not do",
-        "p": ["An explicit list of what falls outside. It prevents arguments at the end and protects your budget."]
-      },
-      {
-        "h": "3. What I need from you",
-        "p": ["Text, images, logo and access credentials, with a deadline. The delivery clock starts when I receive all of it."]
-      },
-      {
-        "h": "4. Delivery date",
-        "p": ["A specific date, between 1 and 7 calendar days from the moment I receive your material."]
-      },
-      {
-        "h": "5. Price",
-        "p": ["A fixed number, excluding VAT. Any change of scope gets quoted separately and in writing before it gets built."]
-      },
-      {
-        "h": "6. Revisions",
-        "p": ["Two rounds of corrections included on the agreed scope, within 14 days of delivery."]
-      },
-      {
-        "h": "7. Guarantee",
-        "p": ["If the delivered work does not satisfy you, you do not pay and I issue no invoice. Third-party costs contracted in your name, such as the domain or the hosting, fall outside this guarantee because that money never passes through me."]
-      },
-      {
-        "h": "8. Payment",
-        "p": ["Bank transfer or Bizum, within 7 days of you approving the work. No deposit beforehand."]
-      },
-      {
-        "h": "9. Ownership",
-        "p": ["The code, the text and the configuration belong to you. The domain and the hosting register in your name from day one."]
-      },
-      {
-        "h": "10. Data",
-        "p": ["I process only the data the job requires, following the privacy policy published at {baseUrl}."]
-      }
-    ],
-    "signature": "Agreed",
-    "footerNote": "Template for information. The final document will carry your details, the specific scope and the date."
-  },
-
   "notFound": {
     "title": "This page does not exist",
-    "body": "The link you followed leads nowhere. Go back to the start or write to me and I tell you where to find what you wanted.",
+    "body": "The link you followed leads nowhere. Go back to the start, or write to me and I tell you where to find what you were after.",
     "cta": "Back to the start"
+  },
+  "scopeDoc": {
+    "docTitle": "Scope sheet",
+    "subtitle": "What I deliver, what I don't, when and for how much.",
+    "preparedBy": "Signed by",
+    "preparedFor": "For",
+    "date": "Date",
+    "placeholderClient": "[client name]",
+    "intro": "This document records the work agreed before anything starts. If something looks wrong, we correct it here and sign again.",
+    "sections": [
+      {
+        "h": "What I deliver",
+        "p": [
+          "A closed list of the work, detailed enough for you to check every point.",
+          "Each point counts as delivered once you see it running."
+        ]
+      },
+      {
+        "h": "What I don't deliver",
+        "p": [
+          "Anything missing from the list above sits outside the job. Ask for it later and it gets quoted separately."
+        ]
+      },
+      {
+        "h": "Date",
+        "p": [
+          "Between 1 and 7 calendar days from the moment I have the materials. The exact date goes here."
+        ]
+      },
+      {
+        "h": "Price and payment",
+        "p": [
+          "The agreed number, excluding VAT. If the scope drops, the number drops with it.",
+          "No deposit. You pay by bank transfer or Bizum after approving the work."
+        ]
+      },
+      {
+        "h": "Guarantee",
+        "p": [
+          "If the delivered work does not serve you, you do not pay and no invoice gets issued.",
+          "The guarantee covers this scope. It does not cover work already approved and invoiced, nor third-party costs contracted in your name."
+        ]
+      },
+      {
+        "h": "Ownership",
+        "p": [
+          "The code, the configuration and the domain sit in your name from day one. You can take them to another supplier without asking."
+        ]
+      }
+    ],
+    "signature": "Signature:",
+    "footerNote": "Mechidan. This document does not replace the invoice."
   }
 }

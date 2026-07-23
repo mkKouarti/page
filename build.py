@@ -19,6 +19,7 @@ import os
 import re
 import sys
 from datetime import date, datetime, timezone
+from urllib.parse import quote
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 PLACEHOLDER = "FILL_ME"
@@ -148,7 +149,7 @@ def head(cfg, c, page, ctx):
         '<meta property="og:image:height" content="630">',
         f'<meta property="og:image:alt" content="{e(fill(c["meta"]["ogAlt"], {"brand": brand}))}">',
         '<meta name="twitter:card" content="summary_large_image">',
-        f'<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">',
+        '<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">',
         '<link rel="apple-touch-icon" href="/assets/img/icon-180.png">',
         '<link rel="manifest" href="/site.webmanifest">',
     ]
@@ -254,8 +255,9 @@ def page_shell(cfg, c, ctx, page, body, payload=None):
 # --------------------------------------------------------------------------
 def sec_hero(cfg, c, ctx):
     h = c["hero"]
-    q = c["quote"]
+    p = c["panel"]
     com = cfg["commercial"]
+    anchor = ctx["services"][0]
 
     trust = "".join(
         f'<li>{icon("check")}<span>{e(item)}</span></li>' for item in h["trust"]
@@ -264,28 +266,22 @@ def sec_hero(cfg, c, ctx):
     cta = []
     if ctx["whatsapp"]:
         cta.append(
-            f'<a class="btn btn--brass" href="{e(ctx["whatsapp"])}" target="_blank" rel="noopener">'
-            f'{icon("whatsapp")}{e(h["ctaPrimary"])}</a>'
+            f'<a class="btn btn--brass" href="{e(ctx["wa_link"](p["waMessage"]))}" '
+            f'target="_blank" rel="noopener">{icon("whatsapp")}{e(h["ctaPrimary"])}</a>'
         )
     # without a phone number the form link carries the primary weight instead
     second_style = "btn--line" if ctx["whatsapp"] else "btn--brass"
     cta.append(f'<a class="btn {second_style}" href="#contact">{e(h["ctaSecondary"])}{icon("arrow")}</a>')
 
-    services = ctx["services"]
-    picker = "".join(
-        f'<label class="picker__opt"><input type="radio" name="docket-service" '
-        f'value="{e(s["id"])}"{" checked" if i == 0 else ""}>'
-        f'<span>{e(s["name"])}</span></label>'
-        for i, s in enumerate(services)
-    )
-
-    delivery = fill(q["deliveryValue"], {"min": com["deliveryDaysMin"], "max": com["deliveryDaysMax"]})
+    items = "".join(f'<li>{icon("check")}<span>{e(item)}</span></li>' for item in p["items"])
+    price = ctx["money"](anchor["basePrice"])
+    delivery = fill(p["deliveryValue"], {"min": com["deliveryDaysMin"], "max": com["deliveryDaysMax"]})
 
     wa_btn = ""
     if ctx["whatsapp"]:
         wa_btn = (
-            f'<button class="btn btn--line btn--block" id="docket-wa" type="button">'
-            f'{icon("whatsapp")}{e(q["ctaWhatsapp"])}</button>'
+            f'<a class="btn btn--line btn--block" href="{e(ctx["wa_link"](p["waMessage"]))}" '
+            f'target="_blank" rel="noopener">{icon("whatsapp")}{e(p["ctaWhatsapp"])}</a>'
         )
 
     return f"""<section class="hero">
@@ -298,42 +294,34 @@ def sec_hero(cfg, c, ctx):
       <ul class="trustrow">{trust}</ul>
     </div>
 
-    <aside class="docket" id="docket" aria-labelledby="docket-title">
+    <aside class="docket" aria-labelledby="docket-title">
       <div class="docket__head">
-        <span class="docket__label">{e(q["docLabel"])}</span>
-        <span class="docket__ref" id="docket-ref">{e(q["docRef"])}</span>
+        <span class="docket__label">{e(p["label"])}</span>
+        <span class="docket__ref">{e(p["ref"])}</span>
       </div>
       <div class="docket__body">
-        <h2 class="docket__title" id="docket-title">{e(q["title"])}</h2>
-        <p class="docket__intro">{e(q["intro"])}</p>
+        <h2 class="docket__title" id="docket-title">{e(fill(p["title"], {"price": price}))}</h2>
+        <p class="docket__intro">{e(p["intro"])}</p>
 
-        <fieldset style="border:0;padding:0;margin:0">
-          <legend class="fieldlabel">{e(q["serviceLabel"])}</legend>
-          <div class="picker">{picker}</div>
-        </fieldset>
-
-        <p class="fieldlabel">{e(q["addonsLabel"])}</p>
-        <div class="addons" id="docket-addons"></div>
+        <ul class="svc__list">{items}</ul>
 
         <dl class="ledger">
-          <div id="docket-lines"></div>
           <div class="ledger__total">
-            <dt>{e(q["totalLabel"])}</dt>
-            <dd id="docket-total">&mdash;</dd>
+            <dt>{e(p["totalLabel"])}</dt>
+            <dd>{e(price)}</dd>
           </div>
         </dl>
-        <p class="ledger__note" id="docket-note"></p>
-        <p class="ledger__note" id="docket-maint" hidden></p>
+        <p class="ledger__note">{e(p["note"])}</p>
+        <p class="ledger__note">{e(p["vatNote"])}</p>
 
         <div class="docket__meta">
-          <span>{e(q["deliveryLabel"])}: {e(delivery)}</span>
-          <span class="stamp">{icon("shield")}{e(q["guaranteeStamp"])}</span>
+          <span>{e(p["deliveryLabel"])}: {e(delivery)}</span>
+          <span class="stamp">{icon("shield")}{e(p["stamp"])}</span>
         </div>
 
         <div class="docket__actions">
-          <button class="btn btn--ink btn--block" id="docket-send" type="button">
-            {e(q["cta"])}{icon("arrow")}</button>
           {wa_btn}
+          <a class="btn btn--ink btn--block" href="#contact">{e(p["cta"])}{icon("arrow")}</a>
         </div>
       </div>
     </aside>
@@ -351,26 +339,16 @@ def sec_services(cfg, c, ctx):
                 f'{e(ctx["money"](svc["basePrice"]))}</div>'
             )
         else:
-            price = f'<div class="svc__price is-text">{e(svc.get("priceModel", s["priceCustom"]))}</div>'
+            price = f'<div class="svc__price is-text">{e(svc.get("priceModel") or s["priceCustom"])}</div>'
 
         includes = "".join(
             f'<li>{icon("check")}<span>{e(item)}</span></li>' for item in svc["includes"]
         )
-        addons = ""
-        if svc["addons"]:
-            rows = "".join(
-                f'<div class="svc__addon"><b>{e(a["name"])}</b>'
-                f'<span>+{e(ctx["money"](a["price"]))}</span></div>'
-                for a in svc["addons"]
-            )
-            addons = (
-                f'<div class="svc__addons"><p class="svc__addonsH">{e(s["addonsHeading"])}</p>{rows}</div>'
-            )
         maint = ""
         if svc["maintenance"] > 0:
             maint = (
                 f'<p class="svc__maint">{e(s["maintenanceFrom"])} '
-                f'{e(ctx["money"](svc["maintenance"]))}{e(c["quote"]["perMonth"])}</p>'
+                f'{e(ctx["money"](svc["maintenance"]))}/{e(s.get("perMonth", "mes"))}</p>'
             )
 
         cards.append(
@@ -378,7 +356,6 @@ def sec_services(cfg, c, ctx):
       <div class="svc__top"><h3 class="svc__name">{e(svc["name"])}</h3>{price}</div>
       <p class="svc__pitch">{e(svc["pitch"])}</p>
       <ul class="svc__list">{includes}</ul>
-      {addons}
       {maint}
     </article>"""
         )
@@ -435,47 +412,9 @@ def sec_guarantee(cfg, c, ctx):
 </section>"""
 
 
-def sec_launch(cfg, c, ctx):
-    offer = cfg["commercial"]["launchOffer"]
-    if not offer.get("enabled"):
-        return ""
-    l = c["launch"]
-    title = fill(l["title"], {"slots": f'<span class="launch__slots">{offer["slots"]}</span>'})
-    return f"""<section class="launch band--tight">
-  <div class="shell launch__in">
-    <div>
-      <span class="launch__badge">{e(l["badge"])}</span>
-      <h2>{title}</h2>
-    </div>
-    <div>
-      <p>{e(l["body"])}</p>
-      <p class="launch__note">{e(l["note"])}</p>
-    </div>
-  </div>
-</section>"""
-
-
 def sec_about(cfg, c, ctx):
     a = c["about"]
-    proof = cfg["proof"]
-    values = {
-        "workstationsManaged": proof["workstationsManaged"],
-        "workstationsBuilt": proof["workstationsBuilt"],
-        "provisioningBefore": proof["provisioningBefore"],
-        "provisioningAfter": proof["provisioningAfter"],
-        "vpnClientNetworks": proof["vpnClientNetworks"],
-    }
-    body = "".join(f"<p>{e(fill(par, values))}</p>" for par in a["body"])
-    stats = "".join(
-        f'<li class="stat"><b>{e(fill(st["value"], values))}</b><span>{e(st["label"])}</span></li>'
-        for st in a["stats"]
-    )
-    creds = "".join(
-        f'<a class="cred" href="{e(cert["url"])}" target="_blank" rel="noopener nofollow">'
-        f'<span>{e(a["certNames"].get(cert["id"], cert["id"]))}</span>'
-        f'<em>{e(cert["issuer"])} {cert["year"]}</em>{icon("external")}</a>'
-        for cert in proof["certifications"]
-    )
+    body = "".join(f"<p>{e(par)}</p>" for par in a["body"])
     return f"""<section class="band" id="about">
   <div class="shell about__grid">
     <div>
@@ -483,18 +422,10 @@ def sec_about(cfg, c, ctx):
       <h2 class="h-sec">{e(a["title"])}</h2>
       <p class="about__lead">{e(a["lead"])}</p>
       <div class="about__body">{body}</div>
-      <div class="creds">
-        <p class="creds__h">{e(a["credsTitle"])}</p>
-        <div class="cred-list">{creds}</div>
-      </div>
       <div class="about__links">
         <a href="{e(cfg["social"]["linkedin"])}" target="_blank" rel="noopener">{icon("linkedin")}{e(a["linkedin"])}</a>
         <a href="{e(cfg["social"]["github"])}" target="_blank" rel="noopener">{icon("github")}{e(a["github"])}</a>
       </div>
-    </div>
-    <div>
-      <p class="creds__h">{e(a["statsTitle"])}</p>
-      <ul class="stats">{stats}</ul>
     </div>
   </div>
 </section>"""
@@ -526,7 +457,8 @@ def sec_contact(cfg, c, ctx):
     channels = []
     if ctx["whatsapp"]:
         channels.append(
-            f'<a class="channel" href="{e(ctx["whatsapp"])}" target="_blank" rel="noopener">'
+            f'<a class="channel" href="{e(ctx["wa_link"](c["panel"]["waMessage"]))}" '
+            f'target="_blank" rel="noopener">'
             f'{icon("whatsapp")}<span><b>{e(ct["whatsappCta"])}</b>'
             f'<span>{e(cfg["contact"]["phoneDisplay"])}</span></span></a>'
         )
@@ -542,11 +474,12 @@ def sec_contact(cfg, c, ctx):
             f'<span>{e(cfg["contact"]["phoneDisplay"])}</span></span></a>'
         )
 
+    usable = [(k, v) for k, v in ct["channels"].items()
+              if k != "whatsapp" or ctx["whatsapp"]]
     chips = "".join(
         f'<label class="chip"><input type="radio" name="channel" value="{e(key)}"'
         f'{" checked" if i == 0 else ""}><span>{e(label)}</span></label>'
-        for i, (key, label) in enumerate(ct["channels"].items())
-        if key != "whatsapp" or ctx["whatsapp"]
+        for i, (key, label) in enumerate(usable)
     )
 
     action = filled(cfg["form"]["endpoint"]) or ""
@@ -615,6 +548,7 @@ def sec_contact(cfg, c, ctx):
           <input type="text" id="{e(hp)}" name="{e(hp)}" tabindex="-1" autocomplete="off">
         </div>
         <input type="hidden" name="_subject" value="{e(cfg["identity"]["brand"])} - {e(ct["eyebrow"])}">
+        <input type="hidden" name="_replyto" id="f-replyto" value="">
         <input type="hidden" name="locale" value="{e(c["locale"])}">
 
         <button class="btn btn--brass btn--block" id="form-submit" type="submit">{e(ct["submit"])}</button>
@@ -671,7 +605,7 @@ def jsonld_home(cfg, c, ctx):
         "makesOffer": offers,
         "knowsAbout": [
             "Linux server administration", "Website development", "Server migration",
-            "Infrastructure security audit", "Self-hosted software", "WireGuard", "Nginx",
+            "Infrastructure security audit", "Self-hosted software", "Booking systems", "Nginx",
         ],
     }
     phone = filled(contact["phoneE164"])
@@ -742,7 +676,6 @@ def build_home(cfg, c, ctx):
         sec_services(cfg, c, ctx),
         sec_process(cfg, c, ctx),
         sec_guarantee(cfg, c, ctx),
-        sec_launch(cfg, c, ctx),
         sec_about(cfg, c, ctx),
         sec_faq(cfg, c, ctx),
         sec_contact(cfg, c, ctx),
@@ -757,36 +690,19 @@ def build_home(cfg, c, ctx):
         "jsonld": jsonld_home(cfg, c, ctx),
     }
 
-    q = c["quote"]
     ct = c["contact"]
     payload = {
         "locale": c["locale"],
-        "htmlLang": c["htmlLang"],
         "defaultLocale": cfg["site"]["defaultLocale"],
         "localeDetection": cfg["site"]["localeDetection"],
         "isEntryPoint": c["locale"] == cfg["site"]["defaultLocale"],
         "altLocale": ctx["altLocale"],
         "altLocaleUrl": ctx["altHome"],
-        "currencySymbol": cfg["commercial"]["currencySymbol"],
-        "services": ctx["services"],
-        "whatsappBase": ctx["whatsappBase"],
         "formEndpoint": filled(cfg["form"]["endpoint"]) or "",
         "mailtoFallback": f'mailto:{cfg["contact"]["email"]}?subject={cfg["identity"]["brand"]}&body=',
         "honeypotField": cfg["form"]["honeypotField"],
         "minFillSeconds": cfg["form"]["minFillSeconds"],
         "t": {
-            "docRef": q["docRef"],
-            "noAddons": q["noAddons"],
-            "lineBase": q["lineBase"],
-            "maintenanceLabel": q["maintenanceLabel"],
-            "perMonth": q["perMonth"],
-            "vatNote": q["vatNote"],
-            "variableNote": q["variableNote"],
-            "priceCustom": c["services"]["priceCustom"],
-            "messageIntro": q["messageIntro"],
-            "messageService": q["messageService"],
-            "messageAddons": q["messageAddons"],
-            "messageTotal": q["messageTotal"],
             "menuOpen": c["nav"]["menuOpen"],
             "menuClose": c["nav"]["menuClose"],
             "submit": ct["submit"],
@@ -945,9 +861,10 @@ def build_llms(cfg, es, en, ctx_es):
     lines = [
         f'# {ident["brand"]}',
         "",
-        f'> {es["meta"]["description"]}',
+        f'> {en["meta"]["description"]}',
         "",
-        f'Operator: {ident["displayName"]}. Based in Madrid, Spain. '
+        f'Two people: {ident["displayName"]} builds and runs the technical side, '
+        f'his father handles the conversation with the client. Based in Madrid, Spain. '
         f'Serves businesses of 1 to 100 people, remotely across Spain, in Spanish and English.',
         f'Contact: {cfg["contact"]["email"]}',
         "",
@@ -955,10 +872,8 @@ def build_llms(cfg, es, en, ctx_es):
         "",
     ]
     for svc in ctx_es["services"]:
-        price = f'{sym}{svc["basePrice"]}' if svc["basePrice"] > 0 else svc.get("priceModel", "per case")
+        price = f'{sym}{svc["basePrice"]}' if svc["basePrice"] > 0 else "per case"
         lines.append(f'- **{svc["name"]}** ({price}, VAT excluded). {svc["pitch"]}')
-        for addon in svc["addons"]:
-            lines.append(f'  - Add-on: {addon["name"]}, +{sym}{addon["price"]}. {addon["detail"]}')
         if svc["maintenance"] > 0:
             lines.append(f'  - Optional maintenance: {sym}{svc["maintenance"]} per month, cancel anytime.')
     lines += [
@@ -966,12 +881,12 @@ def build_llms(cfg, es, en, ctx_es):
         "## Terms",
         "",
         f'- Delivery: {com["deliveryDaysMin"]} to {com["deliveryDaysMax"]} days.',
+        "- Each price covers the whole job. Nothing gets added on top later.",
+        "- If the job needs less than the description, the price drops and the scope sheet records it.",
         "- Guarantee: if the client does not like the delivered result, they do not pay and no invoice is issued.",
         "- No deposit and no payment up front.",
         "- Payment happens off the website by bank transfer or Bizum, after the client approves the work.",
         "- The client owns the code, the configuration and the domain from day one. No lock-in.",
-        f'- Launch offer: the first {com["launchOffer"]["slots"]} clients pay nothing, in exchange for feedback and permission to be named as a reference.'
-        if com["launchOffer"]["enabled"] else "",
         "",
         "## Questions and answers",
         "",
@@ -987,7 +902,7 @@ def build_llms(cfg, es, en, ctx_es):
         f'- [Home, English]({base}/en/): same content in English.',
         f'- [Legal notice]({base}/aviso-legal.html)',
         f'- [Privacy policy]({base}/privacidad.html)',
-        f'- [Scope of work template, PDF]({base}/assets/docs/alcance-mechidan-es.pdf)',
+        f'- [Scope sheet template, PDF]({base}/assets/docs/alcance-mechidan-es.pdf)',
         "",
         f'Last updated: {date.today().isoformat()}',
         "",
@@ -1032,25 +947,17 @@ def make_context(cfg, c, locale):
 
     phone = filled(cfg["contact"]["phoneE164"])
     wa_base = ""
-    whatsapp = ""
     if phone and cfg["contact"]["whatsappEnabled"]:
         digits = re.sub(r"\D", "", phone)
         wa_base = f"https://wa.me/{digits}?text="
-        whatsapp = wa_base
+
+    def wa_link(message):
+        return wa_base + quote(message) if wa_base else ""
 
     # merge price config with translated copy
     services = []
     for svc_cfg in cfg["services"]:
         copy = c["services"]["items"][svc_cfg["id"]]
-        addons = []
-        for addon_cfg in svc_cfg["addons"]:
-            addon_copy = copy["addons"][addon_cfg["id"]]
-            addons.append({
-                "id": addon_cfg["id"],
-                "price": addon_cfg["price"],
-                "name": addon_copy["name"],
-                "detail": addon_copy["detail"],
-            })
         services.append({
             "id": svc_cfg["id"],
             "basePrice": svc_cfg["basePrice"],
@@ -1059,7 +966,6 @@ def make_context(cfg, c, locale):
             "pitch": copy["pitch"],
             "includes": copy["includes"],
             "priceModel": copy.get("priceModel"),
-            "addons": addons,
         })
 
     return {
@@ -1070,8 +976,8 @@ def make_context(cfg, c, locale):
         "legalUrl": legal_url,
         "privacyUrl": privacy_url,
         "scopeUrl": scope_url,
-        "whatsapp": whatsapp,
-        "whatsappBase": wa_base,
+        "whatsapp": bool(wa_base),
+        "wa_link": wa_link,
         "money": money,
         "services": services,
         "altPaths": {

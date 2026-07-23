@@ -1,111 +1,53 @@
 {
-  "_comment": "Single source of truth. Edit here, run 'python3 build.py', commit. Values marked FILL_ME are placeholders: the build prints a warning and the site hides the related element until you replace them.",
-
+  "site": {
+    "baseUrl": "https://mechidan.com",
+    "domain": "mechidan.com",
+    "defaultLocale": "es",
+    "localeDetection": "browser",
+    "githubRepo": "mkkouarti/mechidan"
+  },
   "identity": {
     "brand": "Mechidan",
     "displayName": "Kamil El Kouarti",
-    "legalName": "FILL_ME_LEGAL_NAME",
-    "taxId": "FILL_ME_NIF",
-    "registeredAddress": "FILL_ME_ADDRESS",
+    "legalName": "FILL_ME legal name",
+    "taxId": "FILL_ME tax id",
+    "registeredAddress": "FILL_ME address",
     "autonomoRegistered": false
   },
-
   "contact": {
     "email": "kamil@mechidan.com",
-    "phoneE164": "FILL_ME_PHONE",
-    "phoneDisplay": "FILL_ME_PHONE",
+    "phoneE164": "FILL_ME +34600000000",
+    "phoneDisplay": "FILL_ME +34 600 00 00 00",
     "whatsappEnabled": true,
-    "responseWindowHours": 24,
-    "timezone": "Europe/Madrid"
+    "responseWindowHours": 24
   },
-
-  "site": {
-    "domain": "mechidan.com",
-    "baseUrl": "https://mechidan.com",
-    "defaultLocale": "es",
-    "locales": ["es", "en"],
-    "localeDetection": "browser",
-    "githubRepo": "mkkouarti/page"
+  "commercial": {
+    "currency": "EUR",
+    "currencySymbol": "€",
+    "deliveryDaysMin": 1,
+    "deliveryDaysMax": 7
   },
-
+  "services": [
+    { "id": "web",       "basePrice": 299, "maintenance": 29, "addons": [] },
+    { "id": "panel",     "basePrice": 449, "maintenance": 29, "addons": [] },
+    { "id": "tool",      "basePrice": 199, "maintenance": 29, "addons": [] },
+    { "id": "migration", "basePrice": 199, "maintenance": 29, "addons": [] },
+    { "id": "audit",     "basePrice": 150, "maintenance": 0,  "addons": [] }
+  ],
   "form": {
-    "provider": "formspree",
-    "endpoint": "FILL_ME_FORM_ENDPOINT",
+    "endpoint": "https://formspree.io/f/xgognona",
     "honeypotField": "company_website",
     "minFillSeconds": 3
   },
-
   "legal": {
-    "dataRetentionMonths": 24,
-    "processorName": "Formspree Inc.",
-    "processorCountry": "United States",
-    "processorPrivacyUrl": "https://formspree.io/legal/privacy-policy/",
     "hostingProvider": "GitHub, Inc. (GitHub Pages)",
-    "supervisoryAuthority": "Agencia Espanola de Proteccion de Datos (AEPD)",
+    "processorName": "Formspree Inc.",
+    "processorCountry": "Estados Unidos",
+    "processorPrivacyUrl": "https://formspree.io/legal/privacy-policy/",
+    "dataRetentionMonths": 24,
+    "supervisoryAuthority": "Agencia Española de Protección de Datos (AEPD)",
     "supervisoryAuthorityUrl": "https://www.aepd.es"
   },
-
-  "commercial": {
-    "currency": "EUR",
-    "currencySymbol": "\u20ac",
-    "vatNote": "vat_excluded",
-    "deliveryDaysMin": 1,
-    "deliveryDaysMax": 7,
-    "launchOffer": {
-      "enabled": true,
-      "slots": 10
-    }
-  },
-
-  "services": [
-    {
-      "id": "web",
-      "basePrice": 99,
-      "maintenance": 29,
-      "addons": [
-        { "id": "growth", "price": 99 },
-        { "id": "commerce", "price": 99 },
-        { "id": "server", "price": 99 }
-      ]
-    },
-    {
-      "id": "migration",
-      "basePrice": 199,
-      "maintenance": 29,
-      "addons": [
-        { "id": "cloud_exit", "price": 51 }
-      ]
-    },
-    {
-      "id": "audit",
-      "basePrice": 150,
-      "maintenance": 0,
-      "addons": [
-        { "id": "recheck", "price": 50 }
-      ]
-    },
-    {
-      "id": "subkill",
-      "basePrice": 0,
-      "maintenance": 39,
-      "addons": []
-    }
-  ],
-
-  "proof": {
-    "workstationsManaged": 200,
-    "workstationsBuilt": 80,
-    "provisioningBefore": 40,
-    "provisioningAfter": 10,
-    "vpnClientNetworks": 3,
-    "certifications": [
-      { "id": "aws_cloud_foundations", "issuer": "Amazon Web Services", "year": 2025, "url": "https://www.credly.com/badges/c526c760-b685-4ce8-b9aa-d0a5f85b7eb8/linked_in_profile" },
-      { "id": "linux_essentials", "issuer": "Cisco", "year": 2025, "url": "https://www.credly.com/badges/87336296-3fcb-48a1-99bb-15133cddb80b/linked_in_profile" },
-      { "id": "ccst_os_support", "issuer": "Cisco", "year": 2025, "url": "https://www.credly.com/badges/e56a6777-4ee3-431e-8308-f22abb29547f/linked_in_profile" },
-      { "id": "network_technician", "issuer": "Cisco", "year": 2025, "url": "https://www.credly.com/badges/607ccb93-c705-4ab3-98b4-d77037e4f134/linked_in_profile" }
-    ]
-  },
-
   "social": {
     "linkedin": "https://www.linkedin.com/in/elkouarti/",
     "github": "https://github.com/mkkouarti"
