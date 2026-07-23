@@ -1,7 +1,7 @@
 {
   "name": "Mechidan",
   "short_name": "Mechidan",
-  "description": "Levanto tu web, muevo tu servidor o audito tu infraestructura. Precio publicado, entrega en 1 a 7 días. Si no te gusta el resultado, no lo pagas.",
+  "description": "Te monto la web, te muevo el servidor o te hago la herramienta que te falta. Entre uno y siete días. Si no te sirve, no lo pagas.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#F2F0E9",

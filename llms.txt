@@ -1,62 +1,69 @@
 # Mechidan
 
-> Levanto tu web, muevo tu servidor o audito tu infraestructura. Precio publicado, entrega en 1 a 7 días. Si no te gusta el resultado, no lo pagas.
+> I build your website, move your server or make the tool you are missing. One to seven days. If it doesn't work for you, you don't pay.
 
-Operator: Kamil El Kouarti. Based in Madrid, Spain. Serves businesses of 1 to 100 people, remotely across Spain, in Spanish and English.
+Two people: Kamil El Kouarti builds and runs the technical side, his father handles the conversation with the client. Based in Madrid, Spain. Serves businesses of 1 to 100 people, remotely across Spain, in Spanish and English.
 Contact: kamil@mechidan.com
 
 ## Services and prices
 
-- **Web nueva** (€99, VAT excluded). Una web que carga rápido, se ve bien en el móvil y no se rompe sola.
-  - Add-on: Captacion, +€99. Recorrido del usuario, SEO, SEM, visibilidad en buscadores con IA y un informe de resultados.
-  - Add-on: Cobros y envíos, +€99. Tarjeta y PayPal, zonas de envío por pais y estadisticas de pedidos.
-  - Add-on: Servidor propio, +€99. Monto Nginx o Apache, virtualhosts y certificados en tu maquína.
+- **Web nueva** (€299, VAT excluded). Alguien busca lo que vendes, te encuentra y te llama. Ese es el único objetivo.
   - Optional maintenance: €29 per month, cancel anytime.
-- **Migración** (€199, VAT excluded). Muevo tu web o tu aplicación a otro servidor sin que tus clientes noten nada.
-  - Add-on: Salida de nube, +€51. Sales de un proveedor cloud a un VPS tuyo. Te paso la factura mensual comparada antes y después.
+- **Web con reservas o pedidos** (€449, VAT excluded). Tu cliente reserva a las once de la noche y tú lo ves por la mañana desde el móvil.
   - Optional maintenance: €29 per month, cancel anytime.
-- **Auditoría** (€150, VAT excluded). Miro tu servidor por fuera y por dentro, y te digo por donde entran.
-  - Add-on: Revision posterior, +€50. Vuelvo a auditar más adelante al precio de cliente.
-- **Matar una suscripcion** (3 meses de lo que pagas ahora, VAT excluded). Me dices qué SaaS pagas cada mes. Si existe alternativa que puedas alojar tu, la monto y te la quedas.
-  - Optional maintenance: €39 per month, cancel anytime.
+- **Herramienta a medida** (€199, VAT excluded). Me cuentas la tarea que te come la mañana y te la dejo en una pantalla.
+  - Optional maintenance: €29 per month, cancel anytime.
+- **Mudanza de servidor** (€199, VAT excluded). Tu web cambia de sitio un martes a las tres de la mañana y tus clientes no se enteran.
+  - Optional maintenance: €29 per month, cancel anytime.
+- **Revisión de seguridad** (€150, VAT excluded). Te digo qué puertas tienes abiertas y cierro las que se cierran esa misma tarde.
 
 ## Terms
 
 - Delivery: 1 to 7 days.
+- Each price covers the whole job. Nothing gets added on top later.
+- If the job needs less than the description, the price drops and the scope sheet records it.
 - Guarantee: if the client does not like the delivered result, they do not pay and no invoice is issued.
 - No deposit and no payment up front.
 - Payment happens off the website by bank transfer or Bizum, after the client approves the work.
 - The client owns the code, the configuration and the domain from day one. No lock-in.
-- Launch offer: the first 10 clients pay nothing, in exchange for feedback and permission to be named as a reference.
 
 ## Questions and answers
 
 ### What happens if I don't like the result?
-You don't pay. You review the delivered work and if it doesn't serve you, you tell me. I issue no invoice, claim nothing, and you keep whatever already sits in your name.
+You don't pay. You review it, you tell me it doesn't serve you and I close it there. I issue no invoice, claim nothing, and you keep whatever already sits in your name.
+
+### What if I need less than what is listed?
+I take out what you won't use and the number drops. You get it in writing in the scope sheet, before I touch anything.
 
 ### How long does it take?
-Between 1 and 7 days. A simple site lands in 1 or 2. A migration with mail and certificates runs to 5 or 7. The exact date goes in the scope document before I start.
+One to seven days. A simple site lands in two. A move with mail and certificates runs to five or seven. The exact date goes in writing before I start.
+
+### Can I ask for something that isn't on the list?
+Yes. Tell me the task that eats your morning and I tell you whether it can be done, what it costs and when you get it.
+
+### I pay a monthly fee for a tool. Can you get rid of it?
+Sometimes. I check whether an equivalent exists that you can host yourself. If it does, I set it up and charge what three months of that fee would cost. If it doesn't, I say so and charge nothing. I stay away from invoicing and anything with a legal obligation attached.
 
 ### How do I pay?
-Outside this website. Bank transfer or Bizum once the work is delivered and you have approved it. This page takes no payments and stores no banking data.
+Outside this website. Bank transfer or Bizum once the work sits in front of you and you have approved it. This page takes no payments and stores no banking data.
 
 ### Do you ask for a deposit?
-No. I start with nothing up front. I carry the risk that you won't like it.
+No. I start with nothing up front and carry the risk that you won't like it.
 
 ### Is the website really mine?
-Yes. The domain registers in your name, the code gets handed to you and the hosting sits in your account. If you want a different supplier tomorrow, you take everything without asking me.
+Yes. The domain registers in your name, the code gets handed to you and the hosting sits in your account. Tomorrow you can take everything without asking me.
 
 ### What do you need from me to start?
 The text you want to show, your logo if you have one, and access to the domain if you already bought it. If you have none of that, I write a first draft and you correct it.
 
 ### Do you work on site?
-I work remotely across Spain. In Madrid I can come in person when the job needs it, for example touching a server that isn't exposed to the internet.
+Remotely across Spain. In Madrid I come in person when the job needs it, for example to touch a server that never reaches the internet.
 
 ### I already have a website and I don't want to change it
-Then migration or an audit is what you want. I can move your current site to a cheaper server or review where it sits exposed, without redoing the design.
+Then look at the move or the review. I can shift what you have to a cheaper server, or tell you where it sits exposed, without touching the design.
 
 ### Do you issue invoices?
-Yes, with full tax details, and always after you approve the work.
+Yes, with full tax details, always after you approve the work.
 
 ### What do you do with my data?
 I keep your name and your contact so I can reply, nothing else. I sell no data, run no advertising and set no tracking. The privacy policy spells it out.
@@ -67,7 +74,7 @@ I keep your name and your contact so I can reply, nothing else. I sell no data, 
 - [Home, English](https://mechidan.com/en/): same content in English.
 - [Legal notice](https://mechidan.com/aviso-legal.html)
 - [Privacy policy](https://mechidan.com/privacidad.html)
-- [Scope of work template, PDF](https://mechidan.com/assets/docs/alcance-mechidan-es.pdf)
+- [Scope sheet template, PDF](https://mechidan.com/assets/docs/alcance-mechidan-es.pdf)
 
 Last updated: 2026-07-23
 
