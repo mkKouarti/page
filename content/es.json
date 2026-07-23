@@ -4,10 +4,10 @@
   "dir": "ltr",
   "altLocaleLabel": "EN",
   "meta": {
-    "title": "Webs, servidores y herramientas para negocios pequeños | {brand}",
-    "description": "Te monto la web, te muevo el servidor o te hago la herramienta que te falta. Entre uno y siete días. Si no te sirve, no lo pagas.",
-    "keywords": "web para pyme, web con reservas, agenda online negocio, mudanza de servidor, revisión de seguridad servidor, herramienta a medida, mantenimiento web Madrid",
-    "ogAlt": "{brand}: webs, servidores y herramientas para negocios pequeños."
+    "title": "Webs, servidores y herramientas para tu negocio | {brand}",
+    "description": "Te monto la web, te muevo el servidor o te hago la herramienta que te falta. Lo tienes en una semana. Si no te sirve, no lo pagas.",
+    "keywords": "web para negocios, web con reservas, agenda online negocio, mudanza de servidor, revisión de seguridad servidor, herramienta a medida, mantenimiento web Madrid",
+    "ogAlt": "{brand}: webs, servidores y herramientas para tu negocio."
   },
   "nav": {
     "services": "Servicios",
@@ -28,10 +28,10 @@
     "builtNote": "Esta página no usa cookies de seguimiento ni analítica."
   },
   "hero": {
-    "eyebrow": "Madrid. Trabajo con negocios de toda España.",
-    "h1Lead": "Webs y servidores para negocios que no tienen informático.",
+    "eyebrow": "Desde Madrid. Trabajo con negocios de España y de fuera.",
+    "h1Lead": "Webs y servidores con alguien detrás que coge el teléfono.",
     "h1Accent": "Si no te sirve, no lo pagas.",
-    "sub": "Te monto la web, te muevo el servidor o te hago la herramienta que te falta. Lo tienes entre uno y siete días, y hablas siempre con la misma persona.",
+    "sub": "Te monto la web, te muevo el servidor o te hago la herramienta que te falta. Lo tienes en una semana, y siempre hablas con quien lo está montando.",
     "trust": [
       "Empiezas sin pagar nada",
       "El dominio y el código van a tu nombre",
@@ -54,9 +54,9 @@
     ],
     "totalLabel": "Cerrado en",
     "note": "Si tu caso pide menos, quito lo que sobra y baja la cifra. Va escrita antes de empezar.",
-    "vatNote": "IVA aparte. Sin señal.",
+    "vatNote": "IVA incluido. Sin señal.",
     "deliveryLabel": "Entrega",
-    "deliveryValue": "{min} a {max} días",
+    "deliveryValue": "{min} a {max} días desde que tengo el material",
     "stamp": "No te sirve, no pagas",
     "cta": "Cuéntame tu caso",
     "ctaWhatsapp": "Escríbeme por WhatsApp",
@@ -100,10 +100,12 @@
         "includes": [
           "Pasas 200 pedidos de una hoja de cálculo a etiquetas en un clic",
           "Tus técnicos fichan desde el móvil y ves las horas a fin de mes",
-          "Cambias una cuota mensual por algo tuyo, y cobro lo que pagarías en tres meses",
+          "Si sustituye una cuota que ya pagas, cobro lo que pagarías en tres meses",
+          "Te doy la cifra antes de empezar, igual que en el resto",
           "Los datos se quedan en tu servidor, no en el mío"
         ],
-        "addons": {}
+        "addons": {},
+        "priceModel": "Según el caso"
       },
       "migration": {
         "name": "Mudanza de servidor",
@@ -146,7 +148,7 @@
       },
       {
         "name": "Lo monto",
-        "detail": "Entre uno y siete días según el encargo. Te voy enseñando avances por donde tú prefieras."
+        "detail": "Entre uno y siete días, contando desde que tengo el material: textos, logo y accesos. Te voy enseñando avances por donde tú prefieras."
       },
       {
         "name": "Lo miras y decides",
@@ -178,11 +180,11 @@
   "about": {
     "eyebrow": "Quiénes somos",
     "title": "Somos dos",
-    "lead": "Mi padre te escucha y te lo explica en cristiano. Yo monto lo que hay debajo.",
+    "lead": "Yo monto lo técnico. Mi socio habla contigo y lleva los números.",
     "body": [
-      "Él habla contigo, entiende qué le hace falta a tu negocio y te lo cuenta sin tecnicismos. Si te llama alguien para ver cómo va el encargo, es él.",
+      "Él es quien coge el teléfono, entiende qué le hace falta a tu negocio y te da fecha y cifra. Lleva veinte años negociando con proveedores y clientes en tres continentes, así que lee un plazo y unas cuentas antes de que termines de explicárselos.",
       "Yo mantengo unos 200 puestos Linux en una línea de producción de Amazon de lunes a viernes. Cuando uno cae, esa parte de la nave se para, así que arreglo rápido y lo dejo escrito para que no vuelva a pasar. Los fines de semana monto esto.",
-      "Antes de esto levantamos la red y las VPN de tres empresas pequeñas. Esta página está hecha igual que lo que te entrego: sin plantillas, sin rastreadores y sin nada cargando desde fuera."
+      "Esta página está hecha igual que lo que te entrego: sin plantillas, sin rastreadores y sin nada cargando desde fuera."
     ],
     "linkedin": "LinkedIn",
     "github": "Código en GitHub"
@@ -200,8 +202,12 @@
         "a": "Quito lo que no vayas a usar y baja la cifra. Te la doy por escrito en la hoja de alcance, antes de tocar nada."
       },
       {
+        "q": "¿Los precios llevan IVA?",
+        "a": "Sí. La cifra que ves en cada servicio es la que pagas."
+      },
+      {
         "q": "¿Cuánto tarda?",
-        "a": "Entre uno y siete días. Una web sencilla sale en dos. Una mudanza con correo y certificados se va a cinco o siete. La fecha exacta va escrita antes de empezar."
+        "a": "Entre uno y siete días, y la cuenta empieza el día que tengo todo el material: textos, logo y accesos. Una web sencilla sale en dos. Una mudanza con correo y certificados se va a cinco o siete. La fecha exacta va escrita antes de empezar."
       },
       {
         "q": "¿Puedo pedirte algo que no esté en la lista?",
@@ -228,8 +234,8 @@
         "a": "Los textos que quieras enseñar, el logo si lo tienes y el acceso al dominio si ya lo compraste. Si no tienes nada de eso, escribo un primer borrador y tú lo corriges."
       },
       {
-        "q": "¿Trabajáis presencial?",
-        "a": "En remoto para toda España. En Madrid voy en persona cuando el encargo lo pide, por ejemplo para tocar un servidor que no sale a internet."
+        "q": "¿Dónde trabajáis?",
+        "a": "En remoto, con clientes de España y de fuera. En Madrid voy en persona cuando el encargo lo pide, por ejemplo para tocar un servidor que no sale a internet."
       },
       {
         "q": "Ya tengo web y no quiero cambiarla",
@@ -321,7 +327,7 @@
       {
         "h": "Precios y contratación",
         "p": [
-          "Los precios publicados no incluyen IVA y cubren el alcance descrito en cada servicio. El precio en firme, el alcance y la fecha de entrega se fijan en la hoja de alcance que recibes antes de empezar.",
+          "Los precios publicados incluyen IVA y cubren el alcance descrito en cada servicio. El precio en firme, el alcance y la fecha de entrega se fijan en la hoja de alcance que recibes antes de empezar.",
           "Si el encargo necesita menos trabajo del descrito, la cifra baja y queda recogida en esa misma hoja.",
           "Este sitio no procesa pagos. El cobro se realiza fuera de la web por transferencia bancaria o Bizum, una vez entregado y aprobado el trabajo."
         ]
@@ -455,13 +461,13 @@
       {
         "h": "Fecha",
         "p": [
-          "Entre 1 y 7 días naturales desde que recibo los materiales. La fecha exacta se escribe aquí."
+          "Entre 1 y 7 días naturales, contando desde que recibo todo el material acordado. La fecha exacta se escribe aquí."
         ]
       },
       {
         "h": "Precio y pago",
         "p": [
-          "La cifra acordada, sin IVA. Si el alcance baja, la cifra baja con él.",
+          "La cifra acordada, IVA incluido. Si el alcance baja, la cifra baja con él.",
           "No hay señal. Pagas por transferencia o Bizum después de aprobar el trabajo."
         ]
       },

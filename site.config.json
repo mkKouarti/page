@@ -28,11 +28,36 @@
     "deliveryDaysMax": 7
   },
   "services": [
-    { "id": "web",       "basePrice": 299, "maintenance": 29, "addons": [] },
-    { "id": "panel",     "basePrice": 449, "maintenance": 29, "addons": [] },
-    { "id": "tool",      "basePrice": 199, "maintenance": 29, "addons": [] },
-    { "id": "migration", "basePrice": 199, "maintenance": 29, "addons": [] },
-    { "id": "audit",     "basePrice": 150, "maintenance": 0,  "addons": [] }
+    {
+      "id": "web",
+      "basePrice": 299,
+      "maintenance": 29,
+      "addons": []
+    },
+    {
+      "id": "panel",
+      "basePrice": 449,
+      "maintenance": 29,
+      "addons": []
+    },
+    {
+      "id": "tool",
+      "basePrice": 0,
+      "maintenance": 29,
+      "addons": []
+    },
+    {
+      "id": "migration",
+      "basePrice": 199,
+      "maintenance": 29,
+      "addons": []
+    },
+    {
+      "id": "audit",
+      "basePrice": 150,
+      "maintenance": 0,
+      "addons": []
+    }
   ],
   "form": {
     "endpoint": "https://formspree.io/f/xgognona",

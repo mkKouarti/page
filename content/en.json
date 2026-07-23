@@ -4,10 +4,10 @@
   "dir": "ltr",
   "altLocaleLabel": "ES",
   "meta": {
-    "title": "Websites, servers and tools for small businesses | {brand}",
-    "description": "I build your website, move your server or make the tool you are missing. One to seven days. If it doesn't work for you, you don't pay.",
-    "keywords": "small business website, booking website, server move, server security review, custom internal tool, website maintenance Madrid",
-    "ogAlt": "{brand}: websites, servers and tools for small businesses."
+    "title": "Websites, servers and tools for your business | {brand}",
+    "description": "I build your website, move your server or make the tool you are missing. You get it in a week. If it doesn't work for you, you don't pay.",
+    "keywords": "business website, booking website, server move, server security review, custom internal tool, website maintenance",
+    "ogAlt": "{brand}: websites, servers and tools for your business."
   },
   "nav": {
     "services": "Services",
@@ -28,10 +28,10 @@
     "builtNote": "This page uses no tracking cookies and no analytics."
   },
   "hero": {
-    "eyebrow": "Madrid. Working with businesses across Spain.",
-    "h1Lead": "Websites and servers for businesses with no IT person.",
+    "eyebrow": "Based in Madrid. Working with businesses in Spain and beyond.",
+    "h1Lead": "Websites and servers with someone behind them who picks up the phone.",
     "h1Accent": "If it doesn't work for you, you don't pay.",
-    "sub": "I build your website, move your server or make the tool you are missing. You get it in one to seven days, and you talk to the same person throughout.",
+    "sub": "I build your website, move your server or make the tool you are missing. You get it in a week, and you always speak to the person building it.",
     "trust": [
       "You start without paying anything",
       "The domain and the code sit in your name",
@@ -54,9 +54,9 @@
     ],
     "totalLabel": "Fixed at",
     "note": "If your case needs less, I take it out and the number drops. You get it in writing before I start.",
-    "vatNote": "VAT on top. No deposit.",
+    "vatNote": "VAT included. No deposit.",
     "deliveryLabel": "Delivery",
-    "deliveryValue": "{min} to {max} days",
+    "deliveryValue": "{min} to {max} days once I have your material",
     "stamp": "Doesn't work, doesn't get paid",
     "cta": "Tell me your case",
     "ctaWhatsapp": "Message me on WhatsApp",
@@ -100,10 +100,12 @@
         "includes": [
           "Turn 200 orders in a spreadsheet into labels with one click",
           "Your technicians clock in from their phones and you see the hours at month end",
-          "Swap a monthly fee for something of your own, and I charge what three months of it would cost",
+          "If it replaces a fee you already pay, I charge what three months of it would cost",
+          "You get the number before I start, same as everything else",
           "The data stays on your server, not mine"
         ],
-        "addons": {}
+        "addons": {},
+        "priceModel": "Depends on the case"
       },
       "migration": {
         "name": "Server move",
@@ -146,7 +148,7 @@
       },
       {
         "name": "I build it",
-        "detail": "One to seven days depending on the job. I show you progress through whichever channel you pick."
+        "detail": "One to seven days, counting from the moment I have your material: text, logo and access. I show you progress through whichever channel you pick."
       },
       {
         "name": "You look at it and decide",
@@ -178,11 +180,11 @@
   "about": {
     "eyebrow": "Who we are",
     "title": "There are two of us",
-    "lead": "My father listens to you and explains it in plain words. I build what sits underneath.",
+    "lead": "I build the technical side. My partner talks to you and runs the numbers.",
     "body": [
-      "He talks to you, works out what your business actually needs and tells you without the jargon. If someone calls you to check how the job is going, it is him.",
+      "He picks up the phone, works out what your business needs and gives you a date and a number. Twenty years negotiating with suppliers and customers across three continents sit behind that call, so he reads a deadline and a set of figures before you finish explaining them.",
       "I keep around 200 Linux stations running on an Amazon production line Monday to Friday. When one dies, that part of the floor stops, so I fix fast and write it down so it doesn't happen twice. I build this at the weekend.",
-      "Before this we set up the network and the VPNs for three small companies. This page is built the way I build yours: no templates, no trackers and nothing loading from outside."
+      "This page is built the way I build yours: no templates, no trackers and nothing loading from outside."
     ],
     "linkedin": "LinkedIn",
     "github": "Code on GitHub"
@@ -200,8 +202,12 @@
         "a": "I take out what you won't use and the number drops. You get it in writing in the scope sheet, before I touch anything."
       },
       {
+        "q": "Do the prices include VAT?",
+        "a": "Yes. The number you see on each service is the number you pay."
+      },
+      {
         "q": "How long does it take?",
-        "a": "One to seven days. A simple site lands in two. A move with mail and certificates runs to five or seven. The exact date goes in writing before I start."
+        "a": "One to seven days, and the clock starts the day I have all your material: text, logo and access. A simple site lands in two. A move with mail and certificates runs to five or seven. The exact date goes in writing before I start."
       },
       {
         "q": "Can I ask for something that isn't on the list?",
@@ -228,8 +234,8 @@
         "a": "The text you want to show, your logo if you have one, and access to the domain if you already bought it. If you have none of that, I write a first draft and you correct it."
       },
       {
-        "q": "Do you work on site?",
-        "a": "Remotely across Spain. In Madrid I come in person when the job needs it, for example to touch a server that never reaches the internet."
+        "q": "Where do you work?",
+        "a": "Remotely, with clients in Spain and abroad. In Madrid I come in person when the job needs it, for example to touch a server that never reaches the internet."
       },
       {
         "q": "I already have a website and I don't want to change it",
@@ -321,7 +327,7 @@
       {
         "h": "Prices and contracting",
         "p": [
-          "Published prices exclude VAT and cover the scope described for each service. The firm price, the scope and the delivery date get fixed in the scope sheet you receive before work starts.",
+          "Published prices include VAT and cover the scope described for each service. The firm price, the scope and the delivery date get fixed in the scope sheet you receive before work starts.",
           "If the job needs less work than described, the number drops and the scope sheet records it.",
           "This site processes no payments. Payment happens off the website by bank transfer or Bizum, once the work is delivered and approved."
         ]
@@ -455,13 +461,13 @@
       {
         "h": "Date",
         "p": [
-          "Between 1 and 7 calendar days from the moment I have the materials. The exact date goes here."
+          "Between 1 and 7 calendar days, counting from the moment I receive all the agreed material. The exact date goes here."
         ]
       },
       {
         "h": "Price and payment",
         "p": [
-          "The agreed number, excluding VAT. If the scope drops, the number drops with it.",
+          "The agreed number, VAT included. If the scope drops, the number drops with it.",
           "No deposit. You pay by bank transfer or Bizum after approving the work."
         ]
       },

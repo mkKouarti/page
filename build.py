@@ -584,7 +584,7 @@ def jsonld_home(cfg, c, ctx):
                 "@type": "PriceSpecification",
                 "price": str(svc["basePrice"]),
                 "priceCurrency": com["currency"],
-                "valueAddedTaxIncluded": False,
+                "valueAddedTaxIncluded": True,
             }
         offers.append(offer)
 
@@ -597,7 +597,7 @@ def jsonld_home(cfg, c, ctx):
         "description": c["meta"]["description"],
         "email": contact["email"],
         "founder": {"@type": "Person", "name": ident["displayName"]},
-        "areaServed": [{"@type": "Country", "name": "Spain"}],
+        "areaServed": [{"@type": "Country", "name": "Spain"}, {"@type": "Place", "name": "Worldwide"}],
         "availableLanguage": ["es", "en"],
         "priceRange": "\u20ac\u20ac",
         "address": {"@type": "PostalAddress", "addressCountry": "ES", "addressLocality": "Madrid"},
@@ -864,24 +864,24 @@ def build_llms(cfg, es, en, ctx_es):
         f'> {en["meta"]["description"]}',
         "",
         f'Two people: {ident["displayName"]} builds and runs the technical side, '
-        f'his father handles the conversation with the client. Based in Madrid, Spain. '
-        f'Serves businesses of 1 to 100 people, remotely across Spain, in Spanish and English.',
+        f'his business partner handles the conversation with the client. Based in Madrid, Spain. '
+        f'Serves businesses of 1 to 100 people, remotely in Spain and abroad, in Spanish and English.',
         f'Contact: {cfg["contact"]["email"]}',
         "",
         "## Services and prices",
         "",
     ]
     for svc in ctx_es["services"]:
-        price = f'{sym}{svc["basePrice"]}' if svc["basePrice"] > 0 else "per case"
-        lines.append(f'- **{svc["name"]}** ({price}, VAT excluded). {svc["pitch"]}')
+        price = f'{sym}{svc["basePrice"]}, VAT included' if svc["basePrice"] > 0 else "priced per case"
+        lines.append(f'- **{svc["name"]}** ({price}). {svc["pitch"]}')
         if svc["maintenance"] > 0:
             lines.append(f'  - Optional maintenance: {sym}{svc["maintenance"]} per month, cancel anytime.')
     lines += [
         "",
         "## Terms",
         "",
-        f'- Delivery: {com["deliveryDaysMin"]} to {com["deliveryDaysMax"]} days.',
-        "- Each price covers the whole job. Nothing gets added on top later.",
+        f'- Delivery: {com["deliveryDaysMin"]} to {com["deliveryDaysMax"]} days, counted from the moment the client has handed over all the material.',
+        "- Each price covers the whole job and includes VAT. Nothing gets added on top later.",
         "- If the job needs less than the description, the price drops and the scope sheet records it.",
         "- Guarantee: if the client does not like the delivered result, they do not pay and no invoice is issued.",
         "- No deposit and no payment up front.",
