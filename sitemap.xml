@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://mechidan.com/</loc>
+    <lastmod>2026-07-23</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mechidan.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mechidan.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mechidan.com/"/>
+  </url>
+  <url>
+    <loc>https://mechidan.com/en/</loc>
+    <lastmod>2026-07-23</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mechidan.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mechidan.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mechidan.com/"/>
+  </url>
+  <url>
+    <loc>https://mechidan.com/aviso-legal.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mechidan.com/aviso-legal.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mechidan.com/en/legal-notice.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mechidan.com/aviso-legal.html"/>
+  </url>
+  <url>
+    <loc>https://mechidan.com/privacidad.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mechidan.com/privacidad.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mechidan.com/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mechidan.com/privacidad.html"/>
+  </url>
+  <url>
+    <loc>https://mechidan.com/en/legal-notice.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mechidan.com/aviso-legal.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mechidan.com/en/legal-notice.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mechidan.com/aviso-legal.html"/>
+  </url>
+  <url>
+    <loc>https://mechidan.com/en/privacy.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mechidan.com/privacidad.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mechidan.com/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mechidan.com/privacidad.html"/>
+  </url>
+</urlset>

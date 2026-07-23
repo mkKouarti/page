@@ -1,0 +1,464 @@
+{
+  "locale": "es",
+  "htmlLang": "es-ES",
+  "dir": "ltr",
+  "altLocaleLabel": "EN",
+  "altLocaleName": "English",
+
+  "meta": {
+    "title": "Webs y servidores para pymes | {brand}",
+    "description": "Levanto tu web, muevo tu servidor o audito tu infraestructura. Precio publicado, entrega en 1 a 7 días. Si no te gusta el resultado, no lo pagas.",
+    "ogAlt": "{brand}: webs y servidores para pymes, con precio publicado y garantía de devolucion.",
+    "keywords": "diseño web pymes, migración servidor, auditoría seguridad servidor, mantenimiento web, alternativa autoalojada, precio cerrado web"
+  },
+
+  "nav": {
+    "services": "Servicios",
+    "process": "Como trabajo",
+    "faq": "Preguntas",
+    "contact": "Contacto",
+    "skipToContent": "Saltar al contenido",
+    "menuOpen": "Abrir menú",
+    "menuClose": "Cerrar menú",
+    "langSwitch": "Ver esta página en inglés"
+  },
+
+  "hero": {
+    "eyebrow": "Madrid. Trabajo en remoto para toda España.",
+    "h1Lead": "Webs y servidores para pymes.",
+    "h1Accent": "Si no te gusta, no lo pagas.",
+    "sub": "Levanto tu web, muevo tu servidor o reviso tu infraestructura. Ves el precio antes de que empiece. Entrego entre 1 y 7 días.",
+    "ctaPrimary": "Escríbeme por WhatsApp",
+    "ctaSecondary": "Cuéntame tu caso",
+    "trust": [
+      "Precio publicado, sin presupuesto sorpresa",
+      "Entrega en 1 a 7 días",
+      "Pagas cuando apruebas el trabajo"
+    ]
+  },
+
+  "quote": {
+    "docLabel": "Presupuesto",
+    "docRef": "REF",
+    "title": "Calcula tu precio",
+    "intro": "Elige el trabajo y los extras. El total se actualiza mientras eliges.",
+    "serviceLabel": "Trabajo",
+    "addonsLabel": "Extras",
+    "noAddons": "Este trabajo no lleva extras.",
+    "lineBase": "Base",
+    "subtotalLabel": "Subtotal",
+    "totalLabel": "Total",
+    "maintenanceLabel": "Mantenimiento opcional",
+    "perMonth": "/mes",
+    "deliveryLabel": "Entrega",
+    "deliveryValue": "{min} a {max} días",
+    "guaranteeStamp": "No te gusta, no pagas",
+    "vatNote": "Precios sin IVA.",
+    "variableNote": "Precio a medida. Me cuentas el caso y te digo la cifra antes de tocar nada.",
+    "cta": "Enviarme este presupuesto",
+    "ctaWhatsapp": "Mandarlo por WhatsApp",
+    "messageIntro": "Hola Kamil, quiero esto:",
+    "messageService": "Trabajo",
+    "messageAddons": "Extras",
+    "messageTotal": "Total estimado"
+  },
+
+  "services": {
+    "eyebrow": "Servicios",
+    "title": "Cuatro trabajos, precio publicado",
+    "sub": "Cada precio de abajo es el que pagas. Si tu caso se sale de esto, te digo la cifra antes de empezar.",
+    "priceFrom": "desde",
+    "priceCustom": "A medida",
+    "maintenanceFrom": "Mantenimiento",
+    "includesLabel": "Incluye",
+    "addonsHeading": "Puedes añadir",
+    "items": {
+      "web": {
+        "name": "Web nueva",
+        "pitch": "Una web que carga rápido, se ve bien en el móvil y no se rompe sola.",
+        "includes": [
+          "Varias páginas, diseñadas para tu negocio",
+          "Funciona en móvil, tablet y ordenador",
+          "Textos y estructura pensados para que te llamen",
+          "Aviso legal y política de privacidad listos"
+        ],
+        "addons": {
+          "growth": {
+            "name": "Captacion",
+            "detail": "Recorrido del usuario, SEO, SEM, visibilidad en buscadores con IA y un informe de resultados."
+          },
+          "commerce": {
+            "name": "Cobros y envíos",
+            "detail": "Tarjeta y PayPal, zonas de envío por pais y estadisticas de pedidos."
+          },
+          "server": {
+            "name": "Servidor propio",
+            "detail": "Monto Nginx o Apache, virtualhosts y certificados en tu maquína."
+          }
+        }
+      },
+      "migration": {
+        "name": "Migración",
+        "pitch": "Muevo tu web o tu aplicación a otro servidor sin que tus clientes noten nada.",
+        "includes": [
+          "Copia completa antes de tocar nada",
+          "Cambio de DNS y certificados",
+          "Ventana de corte fuera de tu horario de trabajo",
+          "Vuelta atras preparada por si algo falla"
+        ],
+        "addons": {
+          "cloud_exit": {
+            "name": "Salida de nube",
+            "detail": "Sales de un proveedor cloud a un VPS tuyo. Te paso la factura mensual comparada antes y después."
+          }
+        }
+      },
+      "audit": {
+        "name": "Auditoría",
+        "pitch": "Miro tu servidor por fuera y por dentro, y te digo por donde entran.",
+        "includes": [
+          "Qué expone tu servidor a internet ahora mismo",
+          "Hallazgos ordenados por gravedad, no una lista de 300 avisos",
+          "Un script que corrige lo que se puede corregir solo",
+          "Informe en castellaño, sin jerga"
+        ],
+        "addons": {
+          "recheck": {
+            "name": "Revision posterior",
+            "detail": "Vuelvo a auditar más adelante al precio de cliente."
+          }
+        }
+      },
+      "subkill": {
+        "name": "Matar una suscripcion",
+        "pitch": "Me dices qué SaaS pagas cada mes. Si existe alternativa que puedas alojar tu, la monto y te la quedas.",
+        "includes": [
+          "Primero comprobamos si tu caso encaja. Si no encaja, te lo digo y no cobro",
+          "Cobro lo que pagas en 3 meses de esa suscripcion",
+          "Tus datos pasan a tu servidor, no al mío",
+          "No toco facturación ni nada con obligación legal"
+        ],
+        "priceModel": "3 meses de lo que pagas ahora",
+        "addons": {}
+      }
+    }
+  },
+
+  "process": {
+    "eyebrow": "Como trabajo",
+    "title": "Cuatro pasos, sin reuniones de una hora",
+    "sub": "El orden importa: no empiezo hasta que los dos sabemos el precio y la fecha.",
+    "steps": [
+      {
+        "name": "Me cuentas el problema",
+        "detail": "Rellenas el formulario o me escribes por WhatsApp. Necesito dos cosas: que te molesta y para cuando lo quieres."
+      },
+      {
+        "name": "Te mando alcance y precio",
+        "detail": "Recibes un PDF de una página con lo que hago, lo que no hago, la fecha y la cifra. Si algo no cuadra, lo ajustamos ahi."
+      },
+      {
+        "name": "Lo construyo",
+        "detail": "Trabajo entre 1 y 7 días según el encargo. Te enseño avances por el canal que elijas."
+      },
+      {
+        "name": "Lo revisas y pagas",
+        "detail": "Lo miras con calma. Si te sirve, pagas por transferencia o Bizum. Si no te sirve, no pagas y te quedas sin factura."
+      }
+    ],
+    "scopeCta": "Descargar el modelo de alcance (PDF)",
+    "scopeNote": "Este es el documento que recibes en el paso 2. Míralo antes de escribirme."
+  },
+
+  "guarantee": {
+    "eyebrow": "Garantía",
+    "title": "Si no te gusta el resultado, no lo pagas",
+    "body": "Sin letra pequeña y sin discusion. Revisas el trabajo entregado, y si no te sirve me lo dices y cerramos ahi. No hay señal, no hay pago por adelantado y no hay penalizacion por irte.",
+    "points": [
+      {
+        "name": "Cero por adelantado",
+        "detail": "No pido señal para empezar."
+      },
+      {
+        "name": "El código es tuyo",
+        "detail": "Web, configuración y dominio quedan a tu nombre desde el primer día."
+      },
+      {
+        "name": "Sin permanencia",
+        "detail": "El mantenimiento se cancela cuando quieras, sin aviso previo."
+      }
+    ]
+  },
+
+  "launch": {
+    "badge": "Plazas de lanzamiento",
+    "title": "Los {slots} primeros clientes no pagan",
+    "body": "Estoy empezando por mi cuenta y necesito trabajos reales que enseñar. Te hago el encargo completo sin cobrarte. A cambio te pido dos cosas: que me digas sin filtro que ha ido mal, y que me dejes nombrarte como referencia si el resultado te convence.",
+    "note": "Se aplica a los servicios de arriba con el mismo alcance y la misma garantía."
+  },
+
+  "about": {
+    "eyebrow": "Quién lo hace",
+    "title": "Kamil El Kouarti",
+    "lead": "Administro sistemas Linux en producción de lunes a viernes. Los fines de semana construyo esto.",
+    "body": [
+      "Trabajo como técnico de sistemas en una línea de producción de Amazon con CEVA Logistics, donde mantengo unos {workstationsManaged} puestos Linux en marcha. Cuando un puesto cae, esa parte de la nave se para, así que el trabajo consiste en arreglar rápido y dejarlo documentado para que no vuelva a pasar.",
+      "Antes de eso monte la infraestructura VPN de {vpnClientNetworks} redes de pequeñas empresas: panel propio, doble stack WireGuard y OpenVPN, y automatización del alta de clientes en Linux y Windows.",
+      "No tengo cartera de clientes todavia. Por eso público los precios, no pido dinero por adelantado y regalo los primeros encargos. Prefiero que juzgues el trabajo antes que mi historia."
+    ],
+    "credsTitle": "Certificaciones verificables",
+    "credsNote": "Cada una enlaza a su credencial oficial.",
+    "certNames": {
+      "aws_cloud_foundations": "AWS Cloud Foundations",
+      "linux_essentials": "Linux Essentials",
+      "ccst_os_support": "CCST Operating Systems Support",
+      "network_technician": "Network Technician"
+    },
+    "statsTitle": "Números reales",
+    "stats": [
+      { "value": "{workstationsManaged}", "label": "puestos Linux que mantengo en producción" },
+      { "value": "{workstationsBuilt}", "label": "estaciónes montadas de cero" },
+      { "value": "{provisioningBefore}\u2192{provisioningAfter}", "label": "minutos por puesto tras automatizar el despliegue" }
+    ],
+    "linkedin": "Perfil de LinkedIn",
+    "github": "Código en GitHub"
+  },
+
+  "faq": {
+    "eyebrow": "Preguntas",
+    "title": "Lo que me preguntan antes de contratar",
+    "items": [
+      {
+        "q": "¿Qué pasa si no me gusta el resultado?",
+        "a": "No lo pagas. Revisas el trabajo entregado y si no te sirve me lo dices. No emito factura, no reclamo nada y te quedas con lo que ya este a tu nombre."
+      },
+      {
+        "q": "¿Cuánto tarda?",
+        "a": "Entre 1 y 7 días. Una web sencilla sale en 1 o 2. Una migración con correo y certificados se va a 5 o 7. La fecha exacta va escrita en el documento de alcance antes de empezar."
+      },
+      {
+        "q": "¿Cómo se paga?",
+        "a": "Fuera de esta web. Transferencia o Bizum cuando el trabajo esta entregado y tu lo has aprobado. Esta página no cobra ni guarda datos bancarios."
+      },
+      {
+        "q": "¿Pides algo por adelantado?",
+        "a": "No. Empiezo sin señal. Asumo yo el riesgo de que no te guste."
+      },
+      {
+        "q": "¿La web es mía de verdad?",
+        "a": "Si. El dominio se registra a tu nombre, el código se te entrega y el alojamiento va a una cuenta tuya. Si manana quieres cambiar de proveedor, te llevas todo sin pedirme permiso."
+      },
+      {
+        "q": "¿Qué necesitas de mí para empezar?",
+        "a": "Los textos que quieras mostrar, el logo si lo tienes, y acceso al dominio si ya lo tienes contratado. Si no tienes nada de eso, redacto un primer borrador y lo corriges."
+      },
+      {
+        "q": "¿Trabajas presencial?",
+        "a": "Trabajo en remoto para toda España. En Madrid puedo ir presencial si el encargo lo necesita, por ejemplo tocar un servidor que no esta expuesto a internet."
+      },
+      {
+        "q": "Ya tengo web y no quiero cambiarla",
+        "a": "Entonces te interesa la migración o la auditoría. Puedo mover tu web actual a un servidor más barato o revisar por donde esta expuesta, sin rehacer el diseño."
+      },
+      {
+        "q": "¿Emites factura?",
+        "a": "Si, con todos los datos fiscales, y siempre después de que apruebes el trabajo."
+      },
+      {
+        "q": "¿Qué haces con mis datos?",
+        "a": "Guardo tu nombre y tu contacto para responderte, nada más. No vendo datos, no hay publicidad y no hay seguimiento. Lo tienes detallado en la política de privacidad."
+      }
+    ]
+  },
+
+  "contact": {
+    "eyebrow": "Contacto",
+    "title": "Cuéntame que te esta fallando",
+    "sub": "Tres campos. Respondo en menos de {hours} horas, de lunes a domingo.",
+    "fields": {
+      "name": { "label": "Tu nombre", "placeholder": "Nombre y negocio" },
+      "need": { "label": "Qué necesitas", "placeholder": "Ejemplo: mi web tarda 9 segúndos en cargar y pierdo llamadas." },
+      "contact": { "label": "Como te contesto", "placeholder": "Email o teléfono" }
+    },
+    "channelLabel": "Prefieres que te conteste por",
+    "channels": { "email": "Email", "phone": "Teléfono", "whatsapp": "WhatsApp" },
+    "consent": "He leido la política de privacidad y acepto que uses mis datos para responderme.",
+    "consentLink": "política de privacidad",
+    "submit": "Enviar",
+    "submitting": "Enviando",
+    "orLabel": "o",
+    "whatsappCta": "Abrir WhatsApp",
+    "emailCta": "Escribir un email",
+    "phoneCta": "Llamar",
+    "success": {
+      "title": "Mensaje recibido",
+      "body": "Te contesto en menos de {hours} horas al contacto que me has dejado. Si tienes prisa, escríbeme por WhatsApp y lo vemos ahora."
+    },
+    "errors": {
+      "name": "Escribe tu nombre.",
+      "need": "Cuéntame en una frase que necesitas.",
+      "contact": "Deja un email o un teléfono para poder contestarte.",
+      "contactFormat": "Ese contacto no parece un email ni un teléfono.",
+      "consent": "Necesito tu permiso para usar el contacto que me das.",
+      "network": "No he podido enviar el formulario. Escríbeme por WhatsApp o al email y lo arreglamos.",
+      "tooFast": "Espera un segúndo y vuelve a enviar."
+    }
+  },
+
+  "footer": {
+    "tagline": "Webs, servidores y automatización para negocios de 1 a 100 personas.",
+    "legalNotice": "Aviso legal",
+    "privacy": "Política de privacidad",
+    "scope": "Modelo de alcance (PDF)",
+    "rights": "Todos los derechos reservados.",
+    "builtNote": "Esta página no usa cookies de seguimiento, ni analítica, ni fuentes externas."
+  },
+
+  "legalNotice": {
+    "title": "Aviso legal",
+    "updated": "Última actualización",
+    "pendingBanner": "Este aviso legal esta pendiente de completar con los datos fiscales del titular. Los campos marcados se rellenan al finalizar el alta como autonomo.",
+    "sections": [
+      {
+        "h": "Titular del sitio",
+        "p": ["Titular: {legalName}", "NIF: {taxId}", "Domicilio: {registeredAddress}", "Correo de contacto: {email}", "Sitio web: {baseUrl}"]
+      },
+      {
+        "h": "Objeto",
+        "p": ["Este sitio informa sobre los servicios de desarrollo web, migración de servidores, auditoría de infraestructura y automatización que presta el titular. Navegar por el sitio te convierte en usuario y supone que aceptas estas condiciones."]
+      },
+      {
+        "h": "Condiciones de uso",
+        "p": ["Puedes consultar y descargar los contenidos de este sitio para tu uso. No puedes reproducirlos con fines comerciales sin permiso escrito del titular.", "El titular no responde de los daños derivados de un uso del sitio distinto del previsto."]
+      },
+      {
+        "h": "Precios y contratacion",
+        "p": ["Los precios publicados no incluyen IVA y sirven de referencia. El precio en firme, el alcance y la fecha de entrega se fijan en el documento de alcance que recibes antes de empezar.", "Este sitio no procesa pagos. El cobro se realiza fuera de la web por transferencia bancaria o Bizum, una vez entregado y aprobado el trabajo."]
+      },
+      {
+        "h": "Garantía de satisfaccion",
+        "p": ["Si el trabajo entregado no te satisface, no lo pagas y no se emite factura. Esta garantía cubre el alcance acordado por escrito. No cubre trabajos ya aprobados y facturados, ni costes de terceros que hayas contratado a tu nombre, como dominios o alojamiento."]
+      },
+      {
+        "h": "Propiedad intelectual",
+        "p": ["El código, los textos y los diseños que se te entregan pasan a ser tuyos una vez abonado el trabajo. Los componentes de terceros conservan su licencia original.", "Las marcas y los logotipos de este sitio pertenecen a sus titulares."]
+      },
+      {
+        "h": "Alojamiento",
+        "p": ["Este sitio se aloja en {hostingProvider}."]
+      },
+      {
+        "h": "Legislacion aplicable",
+        "p": ["Estas condiciones se rigen por la legislacion española. Para cualquier controversia, las partes se someten a los juzgados del domicilio del consumidor cuando este tenga tal condición."]
+      }
+    ]
+  },
+
+  "privacy": {
+    "title": "Política de privacidad",
+    "updated": "Última actualización",
+    "intro": "Esta página explica que datos recojo, para que los uso y como los borras. Escrita para que se entienda, no para cubrirme las espaldas.",
+    "summaryTitle": "Resumen en cuatro líneas",
+    "summary": [
+      "Solo recojo lo que escribes en el formulario de contacto.",
+      "Lo uso para contestarte y para nada más.",
+      "No hay cookies de seguimiento, ni analítica, ni fuentes de terceros.",
+      "Pides que lo borre y lo borro."
+    ],
+    "sections": [
+      {
+        "h": "Quién trata tus datos",
+        "p": ["Responsable: {legalName}", "NIF: {taxId}", "Contacto: {email}"]
+      },
+      {
+        "h": "Qué datos recojo",
+        "p": ["Del formulario de contacto: el nombre que escribas, la descripcion de lo que necesitas, el email o teléfono que dejes y el canal por el que prefieres que te conteste.", "No recojo datos de navegación. Este sitio no instala cookies analíticas ni publicitarias, no carga fuentes ni scripts de terceros, y no usa pixeles de seguimiento.", "El servidor que aloja la página puede registrar tu dirección IP en sus registros técnicos, algo inevitable en cualquier servidor web y necesario para la seguridad del servicio."]
+      },
+      {
+        "h": "Para qué los uso y con qué base legal",
+        "p": ["Uso tus datos para responder a tu consulta y, si contratas, para gestiónar el encargo y emitir la factura.", "La base legal es tu consentimiento cuando marcas la casílla del formulario, y la ejecución del contrato cuando pasamos a trabajar juntos. La facturación se conserva por obligación legal."]
+      },
+      {
+        "h": "Cuánto tiempo los guardo",
+        "p": ["Si no llegamos a trabajar juntos, borro tu consulta a los {retention} meses.", "Si contratas, conservo los datos de facturación durante los plazos que exige la normativa fiscal española."]
+      },
+      {
+        "h": "Quien más los ve",
+        "p": ["El formulario lo procesa {processorName}, con servidores en {processorCountry}. Ese proveedor recibe el contenido del formulario para hacermelo llegar por correo. Puedes consultar su politica en su propio sitio.", "El alojamiento corre a cargo de {hostingProvider}.", "No vendo ni cedo tus datos a nadie más. No hay anunciantes."]
+      },
+      {
+        "h": "Si prefieres no usar el formulario",
+        "p": ["Escribe a {email} o por WhatsApp. Así tus datos no pasan por el proveedor del formulario."]
+      },
+      {
+        "h": "Tus derechos",
+        "p": ["Puedes pedirme acceso a tus datos, su rectificación, su supresión, la limitación del tratamiento, la portabilidad y oponerte al tratamiento. Escribe a {email} y te contesto en menos de un mes.", "Si crees que no he cumplido, puedes reclamar ante la {authority}."]
+      },
+      {
+        "h": "Cookies",
+        "p": ["Este sitio no usa cookies. Guarda en tu navegador un único dato técnico: el idioma que eliges, para no volver a preguntartelo. Ese dato no sale de tu dispositivo, no identifica a nadie y lo borras vaciando los datos del sitio en tu navegador.", "Por eso no verás un banner de cookies: no hay nada que consentir."]
+      }
+    ]
+  },
+
+  "scopeDoc": {
+    "docTitle": "Documento de alcance",
+    "subtitle": "Modelo del documento que recibes antes de empezar",
+    "preparedFor": "Cliente",
+    "preparedBy": "Proveedor",
+    "date": "Fecha",
+    "ref": "Referencia",
+    "placeholderClient": "[nombre del cliente]",
+    "intro": "Este es el documento que te mando en el paso 2. Una página, sin jerga y sin anexos. Lo firmamos por correo y empiezo.",
+    "sections": [
+      {
+        "h": "1. Qué voy a hacer",
+        "p": ["Lista cerrada de entregables, uno por línea. Si algo no aparece en esta lista, no esta incluido."]
+      },
+      {
+        "h": "2. Qué no voy a hacer",
+        "p": ["Lista explicita de lo que queda fuera. Evita discusiones al final y protege tu presupuesto."]
+      },
+      {
+        "h": "3. Qué necesito de ti",
+        "p": ["Textos, imagenes, logo y accesos. Con fecha limite. El plazo de entrega empieza a contar cuando recibo todo esto."]
+      },
+      {
+        "h": "4. Fecha de entrega",
+        "p": ["Una fecha concreta, entre 1 y 7 días naturales desde que recibo el material."]
+      },
+      {
+        "h": "5. Precio",
+        "p": ["Cifra cerrada, sin IVA. Cualquier cambio de alcance se presupuesta aparte y por escrito antes de ejecutarlo."]
+      },
+      {
+        "h": "6. Revisiones",
+        "p": ["Dos rondas de correcciones incluidas sobre el alcance acordado, dentro de los 14 días siguientes a la entrega."]
+      },
+      {
+        "h": "7. Garantía",
+        "p": ["Si el trabajo entregado no te satisface, no lo pagas y no emito factura. Los costes de terceros contratados a tu nombre, como el dominio o el alojamiento, quedan fuera de esta garantía porque el dinero no pasa por mi."]
+      },
+      {
+        "h": "8. Pago",
+        "p": ["Transferencia o Bizum, dentro de los 7 días siguientes a que apruebes el trabajo. Sin señal previa."]
+      },
+      {
+        "h": "9. Propiedad",
+        "p": ["El código, los textos y la configuración son tuyos. El dominio y el alojamiento se registran a tu nombre desde el primer día."]
+      },
+      {
+        "h": "10. Datos",
+        "p": ["Solo trato los datos necesarios para el encargo, según la política de privacidad publicada en {baseUrl}."]
+      }
+    ],
+    "signature": "Conforme",
+    "footerNote": "Modelo informativo. El documento definitivo llevara tus datos, el alcance concreto y la fecha."
+  },
+
+  "notFound": {
+    "title": "Esta página no existe",
+    "body": "El enlace que has seguido no lleva a ningún sitio. Vuelve al inicio o escríbeme y te digo donde esta lo que buscas.",
+    "cta": "Volver al inicio"
+  }
+}

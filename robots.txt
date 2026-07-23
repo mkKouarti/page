@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Answer engines are welcome. A plain-text summary lives at /llms.txt
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://mechidan.com/sitemap.xml

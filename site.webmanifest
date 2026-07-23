@@ -1,0 +1,27 @@
+{
+  "name": "Mechidan",
+  "short_name": "Mechidan",
+  "description": "Levanto tu web, muevo tu servidor o audito tu infraestructura. Precio publicado, entrega en 1 a 7 días. Si no te gusta el resultado, no lo pagas.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F2F0E9",
+  "theme_color": "#072B28",
+  "lang": "es-ES",
+  "icons": [
+    {
+      "src": "/assets/img/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/assets/img/icon-180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
