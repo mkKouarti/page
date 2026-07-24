@@ -8,19 +8,16 @@ Contact: kamil@mechidan.com
 ## Services and prices
 
 - **Web nueva** (€299, VAT included). Alguien busca lo que vendes, te encuentra y te llama. Ese es el único objetivo.
-  - Optional maintenance: €29 per month, cancel anytime.
 - **Web con reservas o pedidos** (€449, VAT included). Tu cliente reserva a las once de la noche y tú lo ves por la mañana desde el móvil.
-  - Optional maintenance: €29 per month, cancel anytime.
 - **Herramienta a medida** (priced per case). Me cuentas la tarea que te come la mañana y te la dejo en una pantalla.
-  - Optional maintenance: €29 per month, cancel anytime.
 - **Mudanza de servidor** (€199, VAT included). Tu web cambia de sitio un martes a las tres de la mañana y tus clientes no se enteran.
-  - Optional maintenance: €29 per month, cancel anytime.
 - **Revisión de seguridad** (€150, VAT included). Te digo qué puertas tienes abiertas y cierro las que se cierran esa misma tarde.
 
 ## Terms
 
 - Delivery: 1 to 7 days, counted from the moment the client has handed over all the material.
 - Each price covers the whole job and includes VAT. Nothing gets added on top later.
+- Optional maintenance on any job: €29 per month, cancel anytime. Clients who prefer to run it themselves pay nothing.
 - If the job needs less than the description, the price drops and the scope sheet records it.
 - Guarantee: if the client does not like the delivered result, they do not pay and no invoice is issued.
 - No deposit and no payment up front.
@@ -79,5 +76,5 @@ I keep your name and your contact so I can reply, nothing else. I sell no data, 
 - [Privacy policy](https://mechidan.com/privacidad.html)
 - [Scope sheet template, PDF](https://mechidan.com/assets/docs/alcance-mechidan-es.pdf)
 
-Last updated: 2026-07-23
+Last updated: 2026-07-24
 
