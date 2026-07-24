@@ -28,7 +28,7 @@
     "builtNote": "This page uses no tracking cookies and no analytics."
   },
   "hero": {
-    "eyebrow": "Based in Madrid. Working with businesses in Spain and beyond.",
+    "eyebrow": "What you are missing or what just broke, ready in a week.",
     "h1Lead": "Websites and servers with someone behind them who picks up the phone.",
     "h1Accent": "If it doesn't work for you, you don't pay.",
     "sub": "I build your website, move your server or make the tool you are missing. You get it in a week, and you always speak to the person building it.",
@@ -47,7 +47,7 @@
     "intro": "A business starting from nothing gets this, built and running.",
     "items": [
       "As many pages as the job needs, with the copy written",
-      "Reads well on a five-year-old phone",
+      "Opens in under two seconds on a phone",
       "You show up when someone searches your trade and your area",
       "The form reaches your inbox and your phone",
       "Legal notice and privacy policy done"
@@ -69,14 +69,13 @@
     "priceFrom": "from",
     "priceCustom": "Per case",
     "addonsHeading": "You can add",
-    "maintenanceFrom": "Maintenance",
     "items": {
       "web": {
         "name": "New website",
         "pitch": "Someone searches for what you sell, finds you and calls. That is the only goal.",
         "includes": [
           "As many pages as the job needs, with the copy written",
-          "Reads well on a five-year-old phone",
+          "Opens in under two seconds on a phone",
           "You show up when people search your trade and your area",
           "The form reaches your inbox and your phone",
           "Legal notice and privacy policy done"
@@ -131,7 +130,10 @@
         "addons": {}
       }
     },
-    "perMonth": "month"
+    "maintenanceNote": {
+      "label": "Optional maintenance, {price} a month",
+      "body": "I cover your back on any of the jobs above, with no lock-in. If you would rather run it yourself, you don't pay it."
+    }
   },
   "process": {
     "eyebrow": "How I work",
@@ -183,7 +185,7 @@
     "lead": "I build the technical side. My partner talks to you and runs the numbers.",
     "body": [
       "He picks up the phone, works out what your business needs and gives you a date and a number. Twenty years negotiating with suppliers and customers across three continents sit behind that call, so he reads a deadline and a set of figures before you finish explaining them.",
-      "I keep around 200 Linux stations running on an Amazon production line Monday to Friday. When one dies, that part of the floor stops, so I fix fast and write it down so it doesn't happen twice. I build this at the weekend.",
+      "I keep around 200 Linux stations running on an Amazon production line. When one dies, that part of the floor stops with people waiting in front of it, so I fix fast and write it down so it doesn't happen twice.",
       "This page is built the way I build yours: no templates, no trackers and nothing loading from outside."
     ],
     "linkedin": "LinkedIn",

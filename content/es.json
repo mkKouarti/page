@@ -28,7 +28,7 @@
     "builtNote": "Esta página no usa cookies de seguimiento ni analítica."
   },
   "hero": {
-    "eyebrow": "Desde Madrid. Trabajo con negocios de España y de fuera.",
+    "eyebrow": "Lo que te falta o lo que se te ha roto, listo en una semana.",
     "h1Lead": "Webs y servidores con alguien detrás que coge el teléfono.",
     "h1Accent": "Si no te sirve, no lo pagas.",
     "sub": "Te monto la web, te muevo el servidor o te hago la herramienta que te falta. Lo tienes en una semana, y siempre hablas con quien lo está montando.",
@@ -47,7 +47,7 @@
     "intro": "Un negocio que empieza de cero se lleva esto, montado y funcionando.",
     "items": [
       "Las páginas que haga falta, con los textos escritos",
-      "Se lee bien en un móvil de hace cinco años",
+      "Abre en menos de dos segundos desde el móvil",
       "Apareces cuando alguien busca tu oficio y tu barrio",
       "El formulario te llega al correo y al móvil",
       "Aviso legal y privacidad hechos"
@@ -69,14 +69,13 @@
     "priceFrom": "desde",
     "priceCustom": "A medida",
     "addonsHeading": "Puedes añadir",
-    "maintenanceFrom": "Mantenimiento",
     "items": {
       "web": {
         "name": "Web nueva",
         "pitch": "Alguien busca lo que vendes, te encuentra y te llama. Ese es el único objetivo.",
         "includes": [
           "Las páginas que haga falta, con los textos escritos",
-          "Se lee bien en un móvil de hace cinco años",
+          "Abre en menos de dos segundos desde el móvil",
           "Apareces cuando buscan tu oficio y tu barrio",
           "El formulario te llega al correo y al móvil",
           "Aviso legal y privacidad hechos"
@@ -131,7 +130,10 @@
         "addons": {}
       }
     },
-    "perMonth": "mes"
+    "maintenanceNote": {
+      "label": "Mantenimiento opcional, {price} al mes",
+      "body": "Te cubro la espalda en cualquiera de los trabajos de arriba, sin permanencia. Si prefieres llevar el control tú, no pagas esta cuota."
+    }
   },
   "process": {
     "eyebrow": "Cómo trabajo",
@@ -183,7 +185,7 @@
     "lead": "Yo monto lo técnico. Mi socio habla contigo y lleva los números.",
     "body": [
       "Él es quien coge el teléfono, entiende qué le hace falta a tu negocio y te da fecha y cifra. Lleva veinte años negociando con proveedores y clientes en tres continentes, así que lee un plazo y unas cuentas antes de que termines de explicárselos.",
-      "Yo mantengo unos 200 puestos Linux en una línea de producción de Amazon de lunes a viernes. Cuando uno cae, esa parte de la nave se para, así que arreglo rápido y lo dejo escrito para que no vuelva a pasar. Los fines de semana monto esto.",
+      "Yo mantengo unos 200 puestos Linux en una línea de producción de Amazon. Cuando uno cae, esa parte de la nave se para con gente esperando delante, así que arreglo rápido y lo dejo escrito para que no vuelva a pasar.",
       "Esta página está hecha igual que lo que te entrego: sin plantillas, sin rastreadores y sin nada cargando desde fuera."
     ],
     "linkedin": "LinkedIn",

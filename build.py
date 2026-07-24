@@ -344,20 +344,23 @@ def sec_services(cfg, c, ctx):
         includes = "".join(
             f'<li>{icon("check")}<span>{e(item)}</span></li>' for item in svc["includes"]
         )
-        maint = ""
-        if svc["maintenance"] > 0:
-            maint = (
-                f'<p class="svc__maint">{e(s["maintenanceFrom"])} '
-                f'{e(ctx["money"](svc["maintenance"]))}/{e(s.get("perMonth", "mes"))}</p>'
-            )
-
         cards.append(
             f"""<article class="svc reveal">
       <div class="svc__top"><h3 class="svc__name">{e(svc["name"])}</h3>{price}</div>
       <p class="svc__pitch">{e(svc["pitch"])}</p>
       <ul class="svc__list">{includes}</ul>
-      {maint}
     </article>"""
+        )
+
+    # maintenance is quoted once, under the grid, never per card
+    fee = max((item["maintenance"] for item in ctx["services"]), default=0)
+    note = ""
+    if fee > 0 and s.get("maintenanceNote"):
+        mn = s["maintenanceNote"]
+        note = (
+            '\n    <div class="scope-cta">'
+            f'<b>{e(fill(mn["label"], {"price": ctx["money"](fee)}))}</b>'
+            f'<p>{e(mn["body"])}</p></div>'
         )
 
     return f"""<section class="band" id="services">
@@ -365,7 +368,7 @@ def sec_services(cfg, c, ctx):
     <p class="eyebrow">{e(s["eyebrow"])}</p>
     <h2 class="h-sec">{e(s["title"])}</h2>
     <p class="sec-lede">{e(s["sub"])}</p>
-    <div class="svc-grid">{"".join(cards)}</div>
+    <div class="svc-grid">{"".join(cards)}</div>{note}
   </div>
 </section>"""
 
@@ -874,14 +877,13 @@ def build_llms(cfg, es, en, ctx_es):
     for svc in ctx_es["services"]:
         price = f'{sym}{svc["basePrice"]}, VAT included' if svc["basePrice"] > 0 else "priced per case"
         lines.append(f'- **{svc["name"]}** ({price}). {svc["pitch"]}')
-        if svc["maintenance"] > 0:
-            lines.append(f'  - Optional maintenance: {sym}{svc["maintenance"]} per month, cancel anytime.')
     lines += [
         "",
         "## Terms",
         "",
         f'- Delivery: {com["deliveryDaysMin"]} to {com["deliveryDaysMax"]} days, counted from the moment the client has handed over all the material.',
         "- Each price covers the whole job and includes VAT. Nothing gets added on top later.",
+        f'- Optional maintenance on any job: {sym}{max((s["maintenance"] for s in ctx_es["services"]), default=0)} per month, cancel anytime. Clients who prefer to run it themselves pay nothing.',
         "- If the job needs less than the description, the price drops and the scope sheet records it.",
         "- Guarantee: if the client does not like the delivered result, they do not pay and no invoice is issued.",
         "- No deposit and no payment up front.",
