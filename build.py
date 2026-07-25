@@ -7,8 +7,8 @@ Writes:  index.html, en/index.html, legal pages, 404.html,
          sitemap.xml, robots.txt, llms.txt, CNAME, .nojekyll
 
 Idempotent: run it as many times as you like, the output is identical
-for identical input. No hardcoded values live in this file; everything
-comes from the two JSON sources.
+for identical input. No copy or business value lives in this file;
+everything comes from the two JSON sources.
 
 Usage:  python3 build.py
 """
@@ -84,10 +84,9 @@ ICON = {
     "whatsapp": '<path d="M12.04 2A9.9 9.9 0 0 0 2.1 11.9a9.8 9.8 0 0 0 1.34 4.95L2 22l5.3-1.38a9.9 9.9 0 0 0 4.74 1.2h.01A9.9 9.9 0 0 0 22 11.92 9.9 9.9 0 0 0 12.04 2Zm5.8 14.05c-.25.69-1.44 1.32-1.98 1.37-.53.05-1.03.24-3.47-.72-2.92-1.15-4.77-4.14-4.91-4.33-.14-.2-1.17-1.56-1.17-2.97 0-1.42.74-2.11 1-2.4.26-.29.57-.36.76-.36l.55.01c.17 0 .41-.07.64.49l.88 2.13c.07.15.12.32.02.51-.1.2-.15.32-.3.49l-.44.51c-.14.15-.29.3-.13.6.17.28.75 1.23 1.6 2 1.11.98 2.04 1.28 2.33 1.43.29.15.46.12.63-.07l.9-1.05c.2-.24.38-.19.63-.1l1.8.85c.26.12.43.19.5.29.06.1.06.6-.19 1.29Z"/>',
     "linkedin": '<path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6 2.5 2.5 0 0 1 4.98 3.5ZM3 8.98h4V21H3ZM9.5 8.98h3.83v1.64h.05a4.2 4.2 0 0 1 3.78-2.08c4.04 0 4.79 2.66 4.79 6.12V21h-4v-5.45c0-1.3-.02-2.98-1.81-2.98-1.82 0-2.1 1.42-2.1 2.88V21h-4Z"/>',
     "github": '<path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48l-.01-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.1-1.47-1.1-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85l-.01 2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/>',
-    "external": '<path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>',
     "doc": '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M9 15h6"/>',
     "menu": '<path d="M3 6h18M3 12h18M3 18h18"/>',
-    "shield": '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/>',
+    "page": '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h5"/>',
 }
 
 
@@ -180,6 +179,7 @@ def masthead(cfg, c, ctx):
         f'<a href="{home}#{anchor}">{e(nav[key])}</a>'
         for key, anchor in (
             ("services", "services"),
+            ("work", "work"),
             ("process", "process"),
             ("faq", "faq"),
             ("contact", "contact"),
@@ -255,73 +255,56 @@ def page_shell(cfg, c, ctx, page, body, payload=None):
 # --------------------------------------------------------------------------
 def sec_hero(cfg, c, ctx):
     h = c["hero"]
-    p = c["panel"]
-    com = cfg["commercial"]
-    anchor = ctx["services"][0]
+    d = c["diagnostic"]
+    minutes = cfg["diagnostic"]["minutes"]
 
     trust = "".join(
         f'<li>{icon("check")}<span>{e(item)}</span></li>' for item in h["trust"]
     )
 
+    # the one WhatsApp button on the page
     cta = []
     if ctx["whatsapp"]:
         cta.append(
-            f'<a class="btn btn--brass" href="{e(ctx["wa_link"](p["waMessage"]))}" '
+            f'<a class="btn btn--brass" href="{e(ctx["wa_link"](fill(h["waMessage"], {"minutes": minutes})))}" '
             f'target="_blank" rel="noopener">{icon("whatsapp")}{e(h["ctaPrimary"])}</a>'
         )
-    # without a phone number the form link carries the primary weight instead
-    second_style = "btn--line" if ctx["whatsapp"] else "btn--brass"
-    cta.append(f'<a class="btn {second_style}" href="#contact">{e(h["ctaSecondary"])}{icon("arrow")}</a>')
+        second_style = "btn--line"
+    else:
+        second_style = "btn--brass"
+    cta.append(f'<a class="btn {second_style}" href="#services">{e(h["ctaSecondary"])}{icon("arrow")}</a>')
 
-    items = "".join(f'<li>{icon("check")}<span>{e(item)}</span></li>' for item in p["items"])
-    price = ctx["money"](anchor["basePrice"])
-    delivery = fill(p["deliveryValue"], {"min": com["deliveryDaysMin"], "max": com["deliveryDaysMax"]})
+    items = "".join(
+        f'<li>{icon("check")}<span>{e(fill(item, {"minutes": minutes}))}</span></li>'
+        for item in d["items"]
+    )
 
-    wa_btn = ""
-    if ctx["whatsapp"]:
-        wa_btn = (
-            f'<a class="btn btn--line btn--block" href="{e(ctx["wa_link"](p["waMessage"]))}" '
-            f'target="_blank" rel="noopener">{icon("whatsapp")}{e(p["ctaWhatsapp"])}</a>'
-        )
-
-    return f"""<section class="hero">
+    return f"""<section class="hero" data-tone="paper">
   <div class="shell hero__grid">
-    <div>
-      <p class="hero__eyebrow"><span class="pulse"></span>{e(h["eyebrow"])}</p>
+    <div class="hero__copy">
+      <p class="hero__eyebrow"><span class="pulse"></span>{e(fill(h["eyebrow"], {"minutes": minutes}))}</p>
       <h1>{e(h["h1Lead"])} <span class="accent">{e(h["h1Accent"])}</span></h1>
       <p class="hero__sub">{e(h["sub"])}</p>
       <div class="hero__cta">{"".join(cta)}</div>
+      <p class="hero__queue">{e(h["queueNote"])}</p>
       <ul class="trustrow">{trust}</ul>
     </div>
 
     <aside class="docket" aria-labelledby="docket-title">
       <div class="docket__head">
-        <span class="docket__label">{e(p["label"])}</span>
-        <span class="docket__ref">{e(p["ref"])}</span>
+        <span class="docket__label">{e(d["label"])}</span>
+        <span class="docket__ref">{e(fill(d["ref"], {"minutes": minutes}))}</span>
       </div>
       <div class="docket__body">
-        <h2 class="docket__title" id="docket-title">{e(fill(p["title"], {"price": price}))}</h2>
-        <p class="docket__intro">{e(p["intro"])}</p>
+        <h2 class="docket__title" id="docket-title">{icon("page", "docket__glyph")}{e(d["title"])}</h2>
+        <p class="docket__intro">{e(fill(d["intro"], {"minutes": minutes}))}</p>
 
         <ul class="svc__list">{items}</ul>
 
-        <dl class="ledger">
-          <div class="ledger__total">
-            <dt>{e(p["totalLabel"])}</dt>
-            <dd>{e(price)}</dd>
-          </div>
-        </dl>
-        <p class="ledger__note">{e(p["note"])}</p>
-        <p class="ledger__note">{e(p["vatNote"])}</p>
-
-        <div class="docket__meta">
-          <span>{e(p["deliveryLabel"])}: {e(delivery)}</span>
-          <span class="stamp">{icon("shield")}{e(p["stamp"])}</span>
-        </div>
+        <p class="ledger__note">{e(d["note"])}</p>
 
         <div class="docket__actions">
-          {wa_btn}
-          <a class="btn btn--ink btn--block" href="#contact">{e(p["cta"])}{icon("arrow")}</a>
+          <a class="btn btn--ink btn--block" href="#contact">{e(d["cta"])}{icon("arrow")}</a>
         </div>
       </div>
     </aside>
@@ -331,12 +314,12 @@ def sec_hero(cfg, c, ctx):
 
 def sec_services(cfg, c, ctx):
     s = c["services"]
+    com = cfg["commercial"]
     cards = []
-    for svc in ctx["services"]:
+    for i, svc in enumerate(ctx["services"]):
         if svc["basePrice"] > 0:
             price = (
-                f'<div class="svc__price"><small>{e(s["priceFrom"])}</small>'
-                f'{e(ctx["money"](svc["basePrice"]))}</div>'
+                f'<div class="svc__price">{e(ctx["money"](svc["basePrice"]))}</div>'
             )
         else:
             price = f'<div class="svc__price is-text">{e(svc.get("priceModel") or s["priceCustom"])}</div>'
@@ -345,51 +328,74 @@ def sec_services(cfg, c, ctx):
             f'<li>{icon("check")}<span>{e(item)}</span></li>' for item in svc["includes"]
         )
         cards.append(
-            f"""<article class="svc reveal">
+            f"""<article class="svc reveal" style="--i:{i}">
       <div class="svc__top"><h3 class="svc__name">{e(svc["name"])}</h3>{price}</div>
       <p class="svc__pitch">{e(svc["pitch"])}</p>
       <ul class="svc__list">{includes}</ul>
     </article>"""
         )
 
-    # maintenance is quoted once, under the grid, never per card
-    fee = max((item["maintenance"] for item in ctx["services"]), default=0)
-    note = ""
-    if fee > 0 and s.get("maintenanceNote"):
-        mn = s["maintenanceNote"]
-        note = (
-            '\n    <div class="scope-cta">'
-            f'<b>{e(fill(mn["label"], {"price": ctx["money"](fee)}))}</b>'
-            f'<p>{e(mn["body"])}</p></div>'
-        )
+    # care is stated once, under the grid, never per card
+    cn = s["careNote"]
+    care = (
+        '\n    <div class="care reveal">'
+        f'<b>{e(fill(cn["label"], {"months": com["careIncludedMonths"]}))}</b>'
+        f'<p>{e(fill(cn["body"], {"price": ctx["money"](com["carePriceAfter"]), "months": com["careIncludedMonths"]}))}</p></div>'
+    )
 
-    return f"""<section class="band" id="services">
+    return f"""<section class="band" id="services" data-tone="paper">
   <div class="shell">
     <p class="eyebrow">{e(s["eyebrow"])}</p>
     <h2 class="h-sec">{e(s["title"])}</h2>
     <p class="sec-lede">{e(s["sub"])}</p>
-    <div class="svc-grid">{"".join(cards)}</div>{note}
+    <div class="svc-grid">{"".join(cards)}</div>{care}
+  </div>
+</section>"""
+
+
+def sec_work(cfg, c, ctx):
+    if not ctx["work"]:
+        return ""
+    w = c["work"]
+    rows = "".join(
+        f"""<li class="job reveal" style="--i:{i}">
+      <span class="job__client">{e(item["client"])}</span>
+      <span class="job__line">{e(item["line"])}</span>
+    </li>"""
+        for i, item in enumerate(ctx["work"])
+    )
+    return f"""<section class="band band--tight" id="work" data-tone="sunk">
+  <div class="shell">
+    <p class="eyebrow">{e(w["eyebrow"])}</p>
+    <h2 class="h-sec">{e(w["title"])}</h2>
+    <ul class="jobs">{rows}</ul>
   </div>
 </section>"""
 
 
 def sec_process(cfg, c, ctx):
     p = c["process"]
+    com = cfg["commercial"]
+    values = {
+        "minutes": cfg["diagnostic"]["minutes"],
+        "min": com["deliveryDaysMin"],
+        "max": com["deliveryDaysMax"],
+    }
     steps = "".join(
-        f"""<article class="step reveal">
+        f"""<article class="step reveal" style="--i:{i}">
       <div class="step__n" aria-hidden="true"></div>
-      <div><h3 class="step__name">{e(st["name"])}</h3>
-      <p class="step__detail">{e(st["detail"])}</p></div>
+      <div><h3 class="step__name">{e(fill(st["name"], values))}</h3>
+      <p class="step__detail">{e(fill(st["detail"], values))}</p></div>
     </article>"""
-        for st in p["steps"]
+        for i, st in enumerate(p["steps"])
     )
-    return f"""<section class="band" id="process">
+    return f"""<section class="band" id="process" data-tone="paper">
   <div class="shell">
     <p class="eyebrow">{e(p["eyebrow"])}</p>
     <h2 class="h-sec">{e(p["title"])}</h2>
     <p class="sec-lede">{e(p["sub"])}</p>
     <div class="steps">{steps}</div>
-    <div class="scope-cta">
+    <div class="scope-cta reveal">
       <a class="btn btn--line" href="{ctx["scopeUrl"]}" download>{icon("doc")}{e(p["scopeCta"])}</a>
       <p>{e(p["scopeNote"])}</p>
     </div>
@@ -400,10 +406,10 @@ def sec_process(cfg, c, ctx):
 def sec_guarantee(cfg, c, ctx):
     g = c["guarantee"]
     points = "".join(
-        f'<li class="gpoint"><b>{e(pt["name"])}</b><span>{e(pt["detail"])}</span></li>'
-        for pt in g["points"]
+        f'<li class="gpoint reveal" style="--i:{i}"><b>{e(pt["name"])}</b><span>{e(pt["detail"])}</span></li>'
+        for i, pt in enumerate(g["points"])
     )
-    return f"""<section class="guarantee band" id="guarantee">
+    return f"""<section class="guarantee band" id="guarantee" data-tone="deep">
   <div class="shell guarantee__grid">
     <div>
       <p class="eyebrow">{e(g["eyebrow"])}</p>
@@ -418,7 +424,7 @@ def sec_guarantee(cfg, c, ctx):
 def sec_about(cfg, c, ctx):
     a = c["about"]
     body = "".join(f"<p>{e(par)}</p>" for par in a["body"])
-    return f"""<section class="band" id="about">
+    return f"""<section class="band" id="about" data-tone="paper">
   <div class="shell about__grid">
     <div>
       <p class="eyebrow">{e(a["eyebrow"])}</p>
@@ -443,7 +449,7 @@ def sec_faq(cfg, c, ctx):
     </details>"""
         for item in f["items"]
     )
-    return f"""<section class="band" id="faq">
+    return f"""<section class="band" id="faq" data-tone="paper">
   <div class="shell">
     <p class="eyebrow">{e(f["eyebrow"])}</p>
     <h2 class="h-sec">{e(f["title"])}</h2>
@@ -454,35 +460,20 @@ def sec_faq(cfg, c, ctx):
 
 def sec_contact(cfg, c, ctx):
     ct = c["contact"]
-    hours = cfg["contact"]["responseWindowHours"]
     hp = cfg["form"]["honeypotField"]
+    phone = filled(cfg["contact"]["phoneE164"])
 
     channels = []
-    if ctx["whatsapp"]:
+    if phone:
         channels.append(
-            f'<a class="channel" href="{e(ctx["wa_link"](c["panel"]["waMessage"]))}" '
-            f'target="_blank" rel="noopener">'
-            f'{icon("whatsapp")}<span><b>{e(ct["whatsappCta"])}</b>'
+            f'<a class="channel" href="tel:{e(phone)}">'
+            f'{icon("phone")}<span><b>{e(ct["phoneCta"])}</b>'
             f'<span>{e(cfg["contact"]["phoneDisplay"])}</span></span></a>'
         )
     channels.append(
         f'<a class="channel" href="mailto:{e(cfg["contact"]["email"])}">'
         f'{icon("mail")}<span><b>{e(ct["emailCta"])}</b>'
         f'<span>{e(cfg["contact"]["email"])}</span></span></a>'
-    )
-    if filled(cfg["contact"]["phoneE164"]):
-        channels.append(
-            f'<a class="channel" href="tel:{e(cfg["contact"]["phoneE164"])}">'
-            f'{icon("phone")}<span><b>{e(ct["phoneCta"])}</b>'
-            f'<span>{e(cfg["contact"]["phoneDisplay"])}</span></span></a>'
-        )
-
-    usable = [(k, v) for k, v in ct["channels"].items()
-              if k != "whatsapp" or ctx["whatsapp"]]
-    chips = "".join(
-        f'<label class="chip"><input type="radio" name="channel" value="{e(key)}"'
-        f'{" checked" if i == 0 else ""}><span>{e(label)}</span></label>'
-        for i, (key, label) in enumerate(usable)
     )
 
     action = filled(cfg["form"]["endpoint"]) or ""
@@ -491,13 +482,69 @@ def sec_contact(cfg, c, ctx):
         f'<a href="{ctx["privacyUrl"]}" target="_blank" rel="noopener">{e(ct["consentLink"])}</a>',
     )
 
-    return f"""<section class="contact band" id="contact">
+    # one question per panel, in the order the conversation would happen
+    total = 3
+    panels = []
+    order = ("need", "name", "contact")
+    for i, name in enumerate(order):
+        field = ct["fields"][name]
+        progress = fill(ct["progress"], {"step": i + 1, "total": total})
+        if name == "need":
+            control = (
+                f'<textarea id="f-need" name="need" '
+                f'placeholder="{e(field["placeholder"])}" required></textarea>'
+            )
+        else:
+            autocomplete = "name" if name == "name" else "email"
+            control = (
+                f'<input type="text" id="f-{name}" name="{name}" autocomplete="{autocomplete}" '
+                f'placeholder="{e(field["placeholder"])}" required>'
+            )
+        consent = ""
+        if name == "contact":
+            consent = f"""
+          <div class="field" data-field="consent">
+            <label class="consent" for="f-consent">
+              <input type="checkbox" id="f-consent" name="consent" value="yes" required>
+              <span>{consent_text}</span>
+            </label>
+            <p class="err"></p>
+          </div>"""
+        buttons = []
+        if i > 0:
+            buttons.append(
+                f'<button class="btn btn--line" type="button" data-wizard-back>'
+                f'{icon("back")}{e(ct["back"])}</button>'
+            )
+        if i < total - 1:
+            buttons.append(
+                f'<button class="btn btn--ink" type="button" data-wizard-next>'
+                f'{e(ct["next"])}{icon("arrow")}</button>'
+            )
+        else:
+            buttons.append(
+                f'<button class="btn btn--brass" id="form-submit" type="submit">{e(ct["submit"])}</button>'
+            )
+        panels.append(f"""<fieldset class="wizard__panel" data-panel="{i}" {'aria-hidden="true" hidden' if i else ''}>
+          <legend class="wizard__progress">{e(progress)}</legend>
+          <div class="field" data-field="{name}">
+            <label for="f-{name}">{e(field["label"])}</label>
+            {control}
+            <p class="err"></p>
+          </div>{consent}
+          <div class="wizard__nav">{"".join(buttons)}</div>
+        </fieldset>""")
+
+    one_liner = f'<p class="oneliner">{e(ct["oneLiner"])}</p>' if ct.get("oneLiner") else ""
+
+    return f"""<section class="contact band" id="contact" data-tone="sunk">
   <div class="shell contact__grid">
     <div>
       <p class="eyebrow">{e(ct["eyebrow"])}</p>
       <h2 class="h-sec">{e(ct["title"])}</h2>
-      <p class="sec-lede">{e(fill(ct["sub"], {"hours": hours}))}</p>
+      <p class="sec-lede">{e(ct["sub"])}</p>
       <div class="channels">{"".join(channels)}</div>
+      {one_liner}
     </div>
 
     <div>
@@ -505,47 +552,13 @@ def sec_contact(cfg, c, ctx):
         <div class="form success">
           {icon("check")}
           <h3>{e(ct["success"]["title"])}</h3>
-          <p>{e(fill(ct["success"]["body"], {"hours": hours}))}</p>
+          <p>{e(ct["success"]["body"])}</p>
         </div>
       </div>
 
-      <form class="form" id="contact-form" action="{e(action)}" method="post" novalidate>
+      <form class="form wizard" id="contact-form" action="{e(action)}" method="post" novalidate>
         <div class="formalert" id="form-alert" role="alert"></div>
-
-        <div class="field" data-field="name">
-          <label for="f-name">{e(ct["fields"]["name"]["label"])}</label>
-          <input type="text" id="f-name" name="name" autocomplete="name"
-                 placeholder="{e(ct["fields"]["name"]["placeholder"])}" required>
-          <p class="err"></p>
-        </div>
-
-        <div class="field" data-field="need">
-          <label for="f-need">{e(ct["fields"]["need"]["label"])}</label>
-          <textarea id="f-need" name="need"
-                    placeholder="{e(ct["fields"]["need"]["placeholder"])}" required></textarea>
-          <p class="err"></p>
-        </div>
-
-        <div class="field" data-field="contact">
-          <label for="f-contact">{e(ct["fields"]["contact"]["label"])}</label>
-          <input type="text" id="f-contact" name="contact" autocomplete="email"
-                 placeholder="{e(ct["fields"]["contact"]["placeholder"])}" required>
-          <p class="err"></p>
-        </div>
-
-        <div class="field">
-          <label>{e(ct["channelLabel"])}</label>
-          <div class="chips">{chips}</div>
-        </div>
-
-        <div class="field" data-field="consent">
-          <label class="consent" for="f-consent">
-            <input type="checkbox" id="f-consent" name="consent" value="yes" required>
-            <span>{consent_text}</span>
-          </label>
-          <p class="err"></p>
-        </div>
-
+        {"".join(panels)}
         <div class="hp" aria-hidden="true">
           <label for="{e(hp)}">Leave this field empty</label>
           <input type="text" id="{e(hp)}" name="{e(hp)}" tabindex="-1" autocomplete="off">
@@ -553,8 +566,6 @@ def sec_contact(cfg, c, ctx):
         <input type="hidden" name="_subject" value="{e(cfg["identity"]["brand"])} - {e(ct["eyebrow"])}">
         <input type="hidden" name="_replyto" id="f-replyto" value="">
         <input type="hidden" name="locale" value="{e(c["locale"])}">
-
-        <button class="btn btn--brass btn--block" id="form-submit" type="submit">{e(ct["submit"])}</button>
         <p class="formnote">{e(c["footer"]["builtNote"])}</p>
       </form>
     </div>
@@ -570,6 +581,7 @@ def jsonld_home(cfg, c, ctx):
     ident = cfg["identity"]
     contact = cfg["contact"]
     com = cfg["commercial"]
+    sd = cfg["structuredData"]
 
     offers = []
     for svc in ctx["services"]:
@@ -600,16 +612,20 @@ def jsonld_home(cfg, c, ctx):
         "description": c["meta"]["description"],
         "email": contact["email"],
         "founder": {"@type": "Person", "name": ident["displayName"]},
-        "areaServed": [{"@type": "Country", "name": "Spain"}, {"@type": "Place", "name": "Worldwide"}],
-        "availableLanguage": ["es", "en"],
-        "priceRange": "\u20ac\u20ac",
-        "address": {"@type": "PostalAddress", "addressCountry": "ES", "addressLocality": "Madrid"},
+        "areaServed": [
+            {"@type": "Country", "name": sd["areaServed"][0]},
+            {"@type": "Place", "name": sd["areaServed"][1]},
+        ],
+        "availableLanguage": sd["availableLanguage"],
+        "priceRange": sd["priceRange"],
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": sd["addressCountry"],
+            "addressLocality": sd["addressLocality"],
+        },
         "sameAs": [cfg["social"]["linkedin"], cfg["social"]["github"]],
         "makesOffer": offers,
-        "knowsAbout": [
-            "Linux server administration", "Website development", "Server migration",
-            "Infrastructure security audit", "Self-hosted software", "Booking systems", "Nginx",
-        ],
+        "knowsAbout": sd["knowsAbout"],
     }
     phone = filled(contact["phoneE164"])
     if phone:
@@ -639,18 +655,23 @@ def jsonld_home(cfg, c, ctx):
         "publisher": {"@id": base + "/#business"},
     }
 
+    values = {
+        "minutes": cfg["diagnostic"]["minutes"],
+        "min": com["deliveryDaysMin"],
+        "max": com["deliveryDaysMax"],
+    }
     howto = {
         "@context": "https://schema.org",
         "@type": "HowTo",
-        "name": c["process"]["title"],
-        "description": c["process"]["sub"],
+        "name": fill(c["process"]["title"], values),
+        "description": fill(c["process"]["sub"], values),
         "totalTime": f'P{com["deliveryDaysMax"]}D',
         "step": [
             {
                 "@type": "HowToStep",
                 "position": i + 1,
-                "name": st["name"],
-                "text": st["detail"],
+                "name": fill(st["name"], values),
+                "text": fill(st["detail"], values),
             }
             for i, st in enumerate(c["process"]["steps"])
         ],
@@ -677,6 +698,7 @@ def build_home(cfg, c, ctx):
     body = "\n".join(filter(None, [
         sec_hero(cfg, c, ctx),
         sec_services(cfg, c, ctx),
+        sec_work(cfg, c, ctx),
         sec_process(cfg, c, ctx),
         sec_guarantee(cfg, c, ctx),
         sec_about(cfg, c, ctx),
@@ -726,10 +748,11 @@ def build_doc(cfg, c, ctx, key, path, alt_paths):
     doc = c[key]
     ident = cfg["identity"]
     legal = cfg["legal"]
+    pending = c["pendingValue"]
     values = {
         "legalName": filled(ident["legalName"]) or ident["displayName"],
-        "taxId": filled(ident["taxId"]) or "[pendiente]",
-        "registeredAddress": filled(ident["registeredAddress"]) or "[pendiente]",
+        "taxId": filled(ident["taxId"]) or pending,
+        "registeredAddress": filled(ident["registeredAddress"]) or pending,
         "email": cfg["contact"]["email"],
         "baseUrl": cfg["site"]["baseUrl"],
         "hostingProvider": legal["hostingProvider"],
@@ -737,6 +760,7 @@ def build_doc(cfg, c, ctx, key, path, alt_paths):
         "processorCountry": legal["processorCountry"],
         "retention": legal["dataRetentionMonths"],
         "authority": legal["supervisoryAuthority"],
+        "careMonths": cfg["commercial"]["careIncludedMonths"],
     }
 
     parts = [f'<h1>{e(doc["title"])}</h1>']
@@ -854,12 +878,13 @@ def build_robots(cfg):
     )
 
 
-def build_llms(cfg, es, en, ctx_es):
+def build_llms(cfg, es, en, ctx_es, ctx_en):
     """Plain-text brief for answer engines. Facts first, no marketing."""
     base = cfg["site"]["baseUrl"]
     ident = cfg["identity"]
     com = cfg["commercial"]
     sym = com["currencySymbol"]
+    minutes = cfg["diagnostic"]["minutes"]
 
     lines = [
         f'# {ident["brand"]}',
@@ -869,21 +894,28 @@ def build_llms(cfg, es, en, ctx_es):
         f'Two people: {ident["displayName"]} builds and runs the technical side, '
         f'his business partner handles the conversation with the client. Based in Madrid, Spain. '
         f'Serves businesses of 1 to 100 people, remotely in Spain and abroad, in Spanish and English.',
-        f'Contact: {cfg["contact"]["email"]}',
+        f'Contact: {cfg["contact"]["email"]}, phone and WhatsApp {cfg["contact"]["phoneDisplay"]}'
+        if filled(cfg["contact"]["phoneE164"]) else f'Contact: {cfg["contact"]["email"]}',
+        "",
+        "## Free diagnostic",
+        "",
+        f'- A {minutes}-minute conversation, free of charge.',
+        "- The client receives one written page: what the owner would do, in what order, the fixed price of each step, and what the client can do themselves without paying.",
+        "- The page ends with one concrete offer and a delivery date. The client decides: do it themselves, hire someone else, or hire Mechidan.",
         "",
         "## Services and prices",
         "",
     ]
-    for svc in ctx_es["services"]:
-        price = f'{sym}{svc["basePrice"]}, VAT included' if svc["basePrice"] > 0 else "priced per case"
+    for svc in ctx_en["services"]:
+        price = f'{sym}{svc["basePrice"]}, VAT included' if svc["basePrice"] > 0 else "fixed price quoted after the diagnostic"
         lines.append(f'- **{svc["name"]}** ({price}). {svc["pitch"]}')
     lines += [
         "",
         "## Terms",
         "",
         f'- Delivery: {com["deliveryDaysMin"]} to {com["deliveryDaysMax"]} days, counted from the moment the client has handed over all the material.',
-        "- Each price covers the whole job and includes VAT. Nothing gets added on top later.",
-        f'- Optional maintenance on any job: {sym}{max((s["maintenance"] for s in ctx_es["services"]), default=0)} per month, cancel anytime. Clients who prefer to run it themselves pay nothing.',
+        "- Prices are fixed, cover the whole job and include VAT. Nothing gets added on top later.",
+        f'- Every job includes {com["careIncludedMonths"]} months of care: if something acts up, the client calls and it gets fixed with no invoice. After that, optional care at {sym}{com["carePriceAfter"]} per month, cancel anytime.',
         "- If the job needs less than the description, the price drops and the scope sheet records it.",
         "- Guarantee: if the client does not like the delivered result, they do not pay and no invoice is issued.",
         "- No deposit and no payment up front.",
@@ -963,12 +995,17 @@ def make_context(cfg, c, locale):
         services.append({
             "id": svc_cfg["id"],
             "basePrice": svc_cfg["basePrice"],
-            "maintenance": svc_cfg["maintenance"],
             "name": copy["name"],
             "pitch": copy["pitch"],
             "includes": copy["includes"],
             "priceModel": copy.get("priceModel"),
         })
+
+    work = []
+    for job_cfg in cfg.get("work", []):
+        copy = c["work"]["items"].get(job_cfg["id"])
+        if copy:
+            work.append(copy)
 
     return {
         "locale": locale,
@@ -982,6 +1019,7 @@ def make_context(cfg, c, locale):
         "wa_link": wa_link,
         "money": money,
         "services": services,
+        "work": work,
         "altPaths": {
             "home": {"es": "/", "en": "/en/"},
             "legal": {"es": "/aviso-legal.html", "en": "/en/legal-notice.html"},
@@ -998,7 +1036,7 @@ def main():
     es = load("content/es.json")
     en = load("content/en.json")
 
-    require(cfg["contact"]["phoneE164"], "contact.phoneE164 (WhatsApp and call buttons stay hidden)")
+    require(cfg["contact"]["phoneE164"], "contact.phoneE164 (WhatsApp and call actions stay hidden)")
     require(cfg["form"]["endpoint"], "form.endpoint (the form falls back to opening a mail client)")
     require(cfg["identity"]["legalName"], "identity.legalName (legal notice shows the display name)")
     require(cfg["identity"]["taxId"], "identity.taxId (legal notice shows a pending marker)")
@@ -1024,7 +1062,7 @@ def main():
             ("/en/privacy.html", "0.3", ctx_es["altPaths"]["privacy"]),
         ])),
         write("robots.txt", build_robots(cfg)),
-        write("llms.txt", build_llms(cfg, es, en, ctx_es)),
+        write("llms.txt", build_llms(cfg, es, en, ctx_es, ctx_en)),
         write("site.webmanifest", build_manifest(cfg, es)),
         write("CNAME", cfg["site"]["domain"] + "\n"),
         write(".nojekyll", ""),

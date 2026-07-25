@@ -16,47 +16,50 @@
   },
   "contact": {
     "email": "kamil@mechidan.com",
-    "phoneE164": "FILL_ME +34600000000",
-    "phoneDisplay": "FILL_ME +34 600 00 00 00",
-    "whatsappEnabled": true,
-    "responseWindowHours": 24
+    "phoneE164": "+34611283310",
+    "phoneDisplay": "+34 611 283 310",
+    "whatsappEnabled": true
   },
   "commercial": {
     "currency": "EUR",
     "currencySymbol": "€",
     "deliveryDaysMin": 1,
-    "deliveryDaysMax": 7
+    "deliveryDaysMax": 7,
+    "careIncludedMonths": 3,
+    "carePriceAfter": 29
+  },
+  "diagnostic": {
+    "minutes": 30
   },
   "services": [
     {
       "id": "web",
-      "basePrice": 299,
-      "maintenance": 29,
-      "addons": []
+      "basePrice": 299
     },
     {
       "id": "panel",
-      "basePrice": 449,
-      "maintenance": 29,
-      "addons": []
+      "basePrice": 449
     },
     {
       "id": "tool",
-      "basePrice": 0,
-      "maintenance": 29,
-      "addons": []
+      "basePrice": 0
     },
     {
       "id": "migration",
-      "basePrice": 199,
-      "maintenance": 29,
-      "addons": []
+      "basePrice": 199
     },
     {
       "id": "audit",
       "basePrice": 150,
-      "maintenance": 0,
-      "addons": []
+      "careIncluded": false
+    }
+  ],
+  "work": [
+    {
+      "id": "vpn"
+    },
+    {
+      "id": "amazon"
     }
   ],
   "form": {
@@ -72,6 +75,22 @@
     "dataRetentionMonths": 24,
     "supervisoryAuthority": "Agencia Española de Protección de Datos (AEPD)",
     "supervisoryAuthorityUrl": "https://www.aepd.es"
+  },
+  "structuredData": {
+    "addressCountry": "ES",
+    "addressLocality": "Madrid",
+    "areaServed": ["Spain", "Worldwide"],
+    "availableLanguage": ["es", "en"],
+    "priceRange": "€€",
+    "knowsAbout": [
+      "Linux server administration",
+      "Website development",
+      "Server migration",
+      "Infrastructure security audit",
+      "Self-hosted software",
+      "Booking systems",
+      "Nginx"
+    ]
   },
   "social": {
     "linkedin": "https://www.linkedin.com/in/elkouarti/",

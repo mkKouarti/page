@@ -6,7 +6,7 @@ dependencies for the HTML, no third-party requests at runtime.
 ## Layout
 
 ```
-site.config.json      every value that changes: prices, contact, legal, toggles
+site.config.json      every value that changes: prices, contact, legal, care, work entries
 content/es.json       Spanish copy
 content/en.json       English copy
 build.py              renders HTML, sitemap, robots.txt, llms.txt   (stdlib only)
@@ -14,7 +14,7 @@ check.py              verifies the build, and prints the DNS table  (stdlib only
 make_assets.py        renders scope PDFs, favicon, social card      (needs pip deps)
 Makefile              shortcuts for all of the above
 assets/css/style.css  the whole stylesheet
-assets/js/app.js      quote builder, form, language preference
+assets/js/app.js      wizard form, scroll behaviour, language preference
 assets/fonts/*.woff2  self-hosted, OFL licensed
 ```
 
@@ -33,6 +33,20 @@ make deploy    # build, verify, commit, push
 make dns       # print the Porkbun records
 ```
 
+## The offer, in config
+
+The page sells one entry point: a free diagnostic that ends in a written page and one
+concrete offer. Its length lives in `diagnostic.minutes`. The care terms live in
+`commercial.careIncludedMonths` and `commercial.carePriceAfter`; both feed the services
+band, the legal notice, the scope PDF and `llms.txt`, so a single edit updates all four.
+
+## Adding a delivered job
+
+The work grid shows client plus one line, nothing else. Add an id to the `work` array in
+`site.config.json`, then add the copy under `work.items` in both `content/es.json` and
+`content/en.json`. `check.py` fails the build if a locale misses an entry. An empty
+`work` array hides the section.
+
 ## First-time setup
 
 ### 1. Fill the placeholders
@@ -42,7 +56,7 @@ without them, and hides whatever it cannot show. Fill these in `site.config.json
 
 | Key | Effect while unset |
 |---|---|
-| `contact.phoneE164` | WhatsApp and call buttons stay hidden |
+| `contact.phoneE164` | the call channel and the WhatsApp button stay hidden |
 | `form.endpoint` | the form opens a mail client instead of posting |
 | `identity.legalName`, `taxId`, `registeredAddress` | legal notice shows a pending banner |
 
@@ -66,7 +80,7 @@ thing you sell.
 
 ```bash
 git add -A
-git commit -m "Initial site"
+git commit -m "Rebuild site"
 git push -u origin main
 ```
 
@@ -102,18 +116,17 @@ you also need a consent banner, and the "no cookies" claims in both policies sto
 
 ## Editing prices
 
-Prices live in `site.config.json` under `services`. Names and descriptions live in
-`content/*.json` under `services.items`, keyed by the same ids. Change a number, run
-`make all`, and it updates the cards, the quote builder, the structured data and `llms.txt`
-at once.
-
-To retire the launch offer, set `commercial.launchOffer.enabled` to `false`.
+Prices live in `site.config.json` under `services`. Names, pitches and descriptions live in
+`content/*.json` under `services.items`, keyed by the same ids. Prices display as fixed
+numbers, never as "from". Change a number, run `make all`, and it updates the cards, the
+structured data and `llms.txt` at once.
 
 ## SEO and answer engines
 
 Both locales carry canonical URLs and reciprocal `hreflang` tags, with Spanish as `x-default`.
 `sitemap.xml` lists both language versions of every page. Structured data covers
-`ProfessionalService` with priced offers, `FAQPage`, `HowTo` and `WebSite`.
+`ProfessionalService` with priced offers, `FAQPage`, `HowTo` and `WebSite`; the constants it
+uses (address, languages, `knowsAbout`) live under `structuredData` in the config.
 
-`llms.txt` is a plain-text brief for answer engines: prices, terms and the full FAQ, generated
-from the same JSON so it never drifts from the page.
+`llms.txt` is a plain-text brief for answer engines: the diagnostic, prices, terms and the
+full FAQ, generated from the same JSON so it never drifts from the page.

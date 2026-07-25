@@ -1,7 +1,7 @@
 {
   "name": "Mechidan",
   "short_name": "Mechidan",
-  "description": "Te monto la web, te muevo el servidor o te hago la herramienta que te falta. Lo tienes en una semana. Si no te sirve, no lo pagas.",
+  "description": "Tu negocio se lleva en una semana la web, el servidor o la herramienta que le falta. Diagnóstico de 30 minutos gratis y por escrito. Precio cerrado.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#F2F0E9",

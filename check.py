@@ -105,21 +105,17 @@ def check():
         if declared != cfg["site"]["domain"]:
             failures.append(f"CNAME says {declared}, config says {cfg['site']['domain']}")
 
-    # the two locales must describe the same services
+    # the two locales must describe the same services and the same delivered jobs
     es = json.load(io.open("content/es.json", encoding="utf-8"))
     en = json.load(io.open("content/en.json", encoding="utf-8"))
     for svc in cfg["services"]:
         for locale, content in (("es", es), ("en", en)):
-            item = content["services"]["items"].get(svc["id"])
-            if item is None:
+            if svc["id"] not in content["services"]["items"]:
                 failures.append(f"content/{locale}.json has no copy for service '{svc['id']}'")
-                continue
-            for addon in svc["addons"]:
-                if addon["id"] not in item.get("addons", {}):
-                    failures.append(
-                        f"content/{locale}.json: service '{svc['id']}' has no copy "
-                        f"for add-on '{addon['id']}'"
-                    )
+    for job in cfg.get("work", []):
+        for locale, content in (("es", es), ("en", en)):
+            if job["id"] not in content.get("work", {}).get("items", {}):
+                failures.append(f"content/{locale}.json has no copy for job '{job['id']}'")
 
     # placeholders are worth flagging but do not fail the build
     def unset(value):

@@ -14,6 +14,8 @@
   function $(sel, scope) { return (scope || document).querySelector(sel); }
   function $$(sel, scope) { return Array.prototype.slice.call((scope || document).querySelectorAll(sel)); }
 
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   /* ---------- mobile menu ---------------------------------------------- */
   (function menu() {
     var burger = $('#burger');
@@ -77,8 +79,7 @@
     var items = $$('.reveal');
     if (!items.length) return;
 
-    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduced || !('IntersectionObserver' in window)) {
+    if (reducedMotion || !('IntersectionObserver' in window)) {
       items.forEach(function (el) { el.classList.add('is-in'); });
       return;
     }
@@ -94,7 +95,22 @@
     items.forEach(function (el) { observer.observe(el); });
   }());
 
-  /* ---------- contact form ---------------------------------------------- */
+  /* ---------- background tone follows the section in view --------------- */
+  (function tone() {
+    var sections = $$('[data-tone]');
+    if (!sections.length || reducedMotion || !('IntersectionObserver' in window)) return;
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        document.body.dataset.tone = entry.target.dataset.tone;
+      });
+    }, { rootMargin: '-40% 0px -40% 0px', threshold: 0 });
+
+    sections.forEach(function (el) { observer.observe(el); });
+  }());
+
+  /* ---------- contact form: one question at a time ----------------------- */
   (function contactForm() {
     var form = $('#contact-form');
     if (!form || !data) return;
@@ -103,10 +119,15 @@
     var success = $('#form-success');
     var button = $('#form-submit');
     var replyTo = $('#f-replyto');
+    var panels = $$('.wizard__panel', form);
     var openedAt = Date.now();
+    var current = 0;
 
     var EMAIL = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
     var PHONE = /^[+()\d\s.-]{7,}$/;
+
+    /* which field each panel carries, in panel order */
+    var PANEL_FIELDS = ['need', 'name', 'contact'];
 
     function setError(name, message) {
       var field = form.querySelector('[data-field="' + name + '"]');
@@ -122,44 +143,75 @@
       alertBox.dataset.show = message ? 'true' : 'false';
     }
 
-    function validate() {
-      var values = {
-        name: form.elements.name.value.trim(),
-        need: form.elements.need.value.trim(),
-        contact: form.elements.contact.value.trim()
-      };
-      var ok = true;
-
-      setError('name', values.name.length >= 2 ? '' : (ok = false, t.errName));
-      setError('need', values.need.length >= 5 ? '' : (ok = false, t.errNeed));
-
-      if (!values.contact) {
-        setError('contact', t.errContact);
-        ok = false;
-      } else if (!EMAIL.test(values.contact) && !PHONE.test(values.contact)) {
-        setError('contact', t.errContactFormat);
-        ok = false;
-      } else {
+    function validateField(name) {
+      var value = (form.elements[name] ? form.elements[name].value : '').trim();
+      if (name === 'need') {
+        var okNeed = value.length >= 5;
+        setError('need', okNeed ? '' : t.errNeed);
+        return okNeed;
+      }
+      if (name === 'name') {
+        var okName = value.length >= 2;
+        setError('name', okName ? '' : t.errName);
+        return okName;
+      }
+      if (name === 'contact') {
+        if (!value) { setError('contact', t.errContact); return false; }
+        if (!EMAIL.test(value) && !PHONE.test(value)) {
+          setError('contact', t.errContactFormat);
+          return false;
+        }
         setError('contact', '');
+        if (replyTo && EMAIL.test(value)) replyTo.value = value;
+        return true;
       }
-
-      if (form.elements.consent.checked) {
-        setError('consent', '');
-      } else {
-        setError('consent', t.errConsent);
-        ok = false;
-      }
-
-      if (ok && replyTo && EMAIL.test(values.contact)) replyTo.value = values.contact;
-      return ok;
+      return true;
     }
 
-    ['name', 'need', 'contact'].forEach(function (name) {
+    function validateConsent() {
+      if (form.elements.consent.checked) { setError('consent', ''); return true; }
+      setError('consent', t.errConsent);
+      return false;
+    }
+
+    function show(index) {
+      panels.forEach(function (panel, i) {
+        var active = i === index;
+        panel.hidden = !active;
+        panel.setAttribute('aria-hidden', active ? 'false' : 'true');
+      });
+      current = index;
+      var input = panels[index] && panels[index].querySelector('input[type="text"], textarea');
+      if (input) input.focus({ preventScroll: true });
+    }
+
+    panels.forEach(function (panel, i) {
+      var next = panel.querySelector('[data-wizard-next]');
+      var back = panel.querySelector('[data-wizard-back]');
+      if (next) {
+        next.addEventListener('click', function () {
+          if (validateField(PANEL_FIELDS[i])) show(i + 1);
+        });
+      }
+      if (back) {
+        back.addEventListener('click', function () { show(i - 1); });
+      }
+      /* Enter advances instead of submitting early */
+      panel.addEventListener('keydown', function (ev) {
+        if (ev.key !== 'Enter' || ev.target.tagName === 'TEXTAREA') return;
+        if (i < panels.length - 1) {
+          ev.preventDefault();
+          if (validateField(PANEL_FIELDS[i])) show(i + 1);
+        }
+      });
+    });
+
+    PANEL_FIELDS.forEach(function (name) {
       var input = form.elements[name];
       if (!input) return;
       input.addEventListener('input', function () {
         var field = form.querySelector('[data-field="' + name + '"]');
-        if (field && field.dataset.invalid === 'true') validate();
+        if (field && field.dataset.invalid === 'true') validateField(name);
       });
     });
 
@@ -167,7 +219,7 @@
       form.style.display = 'none';
       if (success) {
         success.dataset.show = 'true';
-        success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        success.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'center' });
       }
     }
 
@@ -182,9 +234,16 @@
         shout(t.errTooFast);
         return;
       }
-      if (!validate()) {
-        var broken = form.querySelector('[data-invalid="true"] input, [data-invalid="true"] textarea');
-        if (broken) broken.focus();
+
+      var ok = true;
+      PANEL_FIELDS.forEach(function (name) { if (!validateField(name)) ok = false; });
+      if (!validateConsent()) ok = false;
+      if (!ok) {
+        /* jump back to the first panel with a problem */
+        for (var i = 0; i < PANEL_FIELDS.length; i += 1) {
+          var field = form.querySelector('[data-field="' + PANEL_FIELDS[i] + '"]');
+          if (field && field.dataset.invalid === 'true') { show(i); return; }
+        }
         return;
       }
 

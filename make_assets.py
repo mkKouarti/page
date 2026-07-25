@@ -17,6 +17,7 @@ Idempotent. Safe to run repeatedly.
 import io
 import json
 import os
+import re
 import sys
 from datetime import date
 
@@ -50,6 +51,14 @@ RULE = colors.HexColor("#CFD4CB")
 def load(path):
     with open(os.path.join(ROOT, path), encoding="utf-8") as fh:
         return json.load(fh)
+
+
+def fill(template, values):
+    """Replace {token} placeholders in copy with real values."""
+    def sub(match):
+        key = match.group(1)
+        return str(values.get(key, match.group(0)))
+    return re.sub(r"\{(\w+)\}", sub, str(template))
 
 
 # --------------------------------------------------------------------------
@@ -88,7 +97,11 @@ def register_fonts():
 def scope_pdf(cfg, c, out_path):
     doc_copy = c["scopeDoc"]
     ident = cfg["identity"]
-    com = cfg["commercial"]
+    values = {
+        "baseUrl": cfg["site"]["baseUrl"],
+        "careMonths": cfg["commercial"]["careIncludedMonths"],
+        "minutes": cfg["diagnostic"]["minutes"],
+    }
 
     styles = {
         "h1": ParagraphStyle("h1", fontName="Brand", fontSize=21, leading=24,
@@ -176,7 +189,7 @@ def scope_pdf(cfg, c, out_path):
     for section in doc_copy["sections"]:
         story.append(Paragraph(section["h"], styles["h2"]))
         for para in section["p"]:
-            story.append(Paragraph(para.replace("{baseUrl}", cfg["site"]["baseUrl"]), styles["p"]))
+            story.append(Paragraph(fill(para, values), styles["p"]))
 
     story.append(Spacer(1, 9 * mm))
     sign = Table(
@@ -237,7 +250,7 @@ def og_png(cfg, c, faces, out_path):
 
     d.rectangle([0, 0, W, 10], fill="#C9930E")
 
-    brand = ImageFont.truetype(faces["Brand"], 74)
+    brand = ImageFont.truetype(faces["Brand"], 58)
     brand_sm = ImageFont.truetype(faces["Brand"], 27)
     body = ImageFont.truetype(faces["Body"], 25)
     data = ImageFont.truetype(faces["Data"], 20)
@@ -247,33 +260,45 @@ def og_png(cfg, c, faces, out_path):
     d.text((W - pad, 66), cfg["site"]["domain"], font=data, fill="#8FA9A2", anchor="ra")
 
     h = c["hero"]
-    d.text((pad, 170), h["h1Lead"], font=brand, fill="#F2F0E9")
-    d.text((pad, 258), h["h1Accent"], font=brand, fill="#E8B93A")
+    minutes = cfg["diagnostic"]["minutes"]
 
-    d.line([(pad, 386), (pad + 92, 386)], fill="#C9930E", width=4)
-
-    # wrap the subtitle on word boundaries within the card width
+    # wrap the headline on word boundaries within the card width
     max_w = W - pad * 2
-    words, line, rows = h["sub"].split(), "", []
-    for word in words:
-        trial = (line + " " + word).strip()
-        if d.textlength(trial, font=body) <= max_w:
-            line = trial
-        else:
-            rows.append(line)
-            line = word
-        if len(rows) == 2:
-            break
-    if line and len(rows) < 2:
-        rows.append(line)
-    for i, row in enumerate(rows):
-        d.text((pad, 412 + i * 36), row, font=body, fill="#B9CCC6")
 
-    y = 530
+    def wrap(text, font, limit):
+        words, line, rows = text.split(), "", []
+        for word in words:
+            trial = (line + " " + word).strip()
+            if d.textlength(trial, font=font) <= max_w:
+                line = trial
+            else:
+                rows.append(line)
+                line = word
+            if len(rows) == limit:
+                break
+        if line and len(rows) < limit:
+            rows.append(line)
+        return rows
+
+    y = 160
+    for row in wrap(h["h1Lead"], brand, 3):
+        d.text((pad, y), row, font=brand, fill="#F2F0E9")
+        y += 68
+    d.text((pad, y + 6), h["h1Accent"], font=brand_sm, fill="#E8B93A")
+    y += 60
+
+    d.line([(pad, y + 20), (pad + 92, y + 20)], fill="#C9930E", width=4)
+    y += 48
+
+    for row in wrap(fill(h["eyebrow"], {"minutes": minutes}), body, 1):
+        d.text((pad, y), row, font=body, fill="#B9CCC6")
+    y += 44
+
+    ty = max(y + 10, 508)
     for item in h["trust"][:3]:
-        d.ellipse([pad, y + 7, pad + 9, y + 16], fill="#C9930E")
-        d.text((pad + 22, y), item, font=data, fill="#8FA9A2")
-        y += 34
+        d.ellipse([pad, ty + 7, pad + 9, ty + 16], fill="#C9930E")
+        d.text((pad + 22, ty), item, font=data, fill="#8FA9A2")
+        ty += 34
 
     img.save(out_path, quality=92)
     return out_path
