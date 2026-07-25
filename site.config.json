@@ -26,7 +26,11 @@
     "deliveryDaysMin": 1,
     "deliveryDaysMax": 7,
     "careIncludedMonths": 3,
-    "carePriceAfter": 29
+    "careTiers": [
+      { "id": "cuidado", "price": 39 },
+      { "id": "protegido", "price": 79 },
+      { "id": "critico", "price": 139 }
+    ]
   },
   "diagnostic": {
     "minutes": 30
@@ -34,8 +38,7 @@
   "services": [
     {
       "id": "audit",
-      "basePrice": 99,
-      "careIncluded": false
+      "basePrice": 99
     },
     {
       "id": "migration",
@@ -44,10 +47,6 @@
     {
       "id": "web",
       "basePrice": 299
-    },
-    {
-      "id": "panel",
-      "basePrice": 449
     },
     {
       "id": "tool",
@@ -84,10 +83,10 @@
     "priceRange": "€€",
     "knowsAbout": [
       "Linux server administration",
-      "Website development",
       "Server migration",
       "Infrastructure security audit",
       "Self-hosted software",
+      "Website development",
       "Booking systems",
       "Nginx"
     ]

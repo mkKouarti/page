@@ -5,15 +5,15 @@
   "altLocaleLabel": "EN",
   "pendingValue": "[pendiente]",
   "meta": {
-    "title": "Webs, servidores y herramientas para tu negocio | {brand}",
-    "description": "Tu negocio se lleva en una semana la web, el servidor o la herramienta que le falta. Diagnóstico de 30 minutos gratis y por escrito. Precio cerrado.",
-    "keywords": "web para negocios, web con reservas, agenda online negocio, mudanza de servidor, revisión de seguridad servidor, herramienta a medida, mantenimiento web Madrid",
-    "ogAlt": "{brand}: webs, servidores y herramientas para tu negocio."
+    "title": "Servidores, webs y herramientas para tu negocio | {brand}",
+    "description": "Auditamos, migramos y mantenemos la infraestructura de la que vive tu negocio. Diagnóstico de 30 minutos por escrito y precio cerrado antes de empezar.",
+    "keywords": "mantenimiento de servidores, migración de servidor, auditoría de seguridad servidor, web corporativa, herramienta a medida, soporte técnico pymes Madrid",
+    "ogAlt": "{brand}: servidores, webs y herramientas para tu negocio."
   },
   "nav": {
     "services": "Servicios",
     "work": "Trabajos",
-    "process": "Cómo trabajo",
+    "process": "Cómo trabajamos",
     "faq": "Preguntas",
     "contact": "Contacto",
     "langSwitch": "Ver esta página en inglés",
@@ -22,7 +22,7 @@
     "skipToContent": "Saltar al contenido"
   },
   "footer": {
-    "tagline": "Webs, servidores y herramientas para negocios de 1 a 100 personas.",
+    "tagline": "Servidores, webs y herramientas para negocios de 1 a 100 personas.",
     "legalNotice": "Aviso legal",
     "privacy": "Política de privacidad",
     "scope": "Hoja de alcance (PDF)",
@@ -30,32 +30,32 @@
     "builtNote": "Esta página no usa cookies de seguimiento ni analítica."
   },
   "hero": {
-    "eyebrow": "Diagnóstico de {minutes} minutos, gratis y por escrito",
-    "h1Lead": "Levantamos y mantenemos el servidor, la web o la herramienta de tu negocio.",
-    "h1Accent": "Una semana. Precio cerrado. Nadie se entera de la mudanza.",
-    "sub": "Nos cuentas qué te frena. Te devolvemos una página con lo que haríamos, el orden, la cifra de cada paso y lo que puedes hacer tú sin pagarnos. Con eso decides.",
+    "eyebrow": "Diagnóstico de {minutes} minutos, por escrito",
+    "h1Lead": "Auditamos, migramos y mantenemos el servidor del que vive tu negocio.",
+    "h1Accent": "Precio cerrado y fecha por escrito antes de empezar.",
+    "sub": "Nos cuentas qué te frena. Te devolvemos una página con el plan, el orden y la cifra de cada paso. Con esa página decides.",
     "trust": [
-      "Un plan por escrito antes de gastar un euro",
-      "El código y el servidor a tu nombre",
-      "Cuando algo falla, hay alguien al otro lado"
+      "Un plan por escrito antes de que toquemos nada",
+      "El código, la configuración y el dominio a tu nombre",
+      "Cuando algo falla, responde una persona, no un ticket"
     ],
     "ctaPrimary": "Pedir el diagnóstico por WhatsApp",
-    "ctaSecondary": "Ver los precios",
-    "waMessage": "Hola, tengo un negocio y quiero el diagnóstico de 30 minutos."
+    "ctaSecondary": "Ver servicios y precios",
+    "waMessage": "Hola, quiero el diagnóstico de 30 minutos para mi negocio."
   },
   "diagnostic": {
     "label": "Diagnóstico",
-    "ref": "{minutes} minutos · gratis",
+    "ref": "{minutes} minutos",
     "title": "Una página con tu caso resuelto",
-    "intro": "Hablamos {minutes} minutos. El mismo día te mando una página con:",
+    "intro": "Hablamos {minutes} minutos: nos cuentas tu problema y te proponemos la solución. El dinero no está en la fórmula. Nos llevamos algo que valoramos más: conocer de primera mano los problemas de tu sector. El mismo día recibes una página con:",
     "items": [
-      "Lo que yo haría, paso a paso y en orden",
+      "Lo que haríamos, paso a paso y en orden",
       "La cifra cerrada de cada paso",
-      "Lo que puedes hacer tú mismo, sin pagarme",
-      "Una oferta concreta, con fecha de entrega"
+      "Lo que puedes resolver con tu propio equipo",
+      "Una oferta concreta con fecha de entrega"
     ],
-    "note": "Con esa página decides: lo haces tú, lo hace otro o lo hago yo.",
-    "cta": "Cuéntame tu caso"
+    "note": "Con esa página decides: lo resuelves dentro, se lo encargas a otro o nos lo encargas.",
+    "cta": "Cuéntanos tu caso"
   },
   "services": {
     "eyebrow": "Servicios",
@@ -63,64 +63,84 @@
     "sub": "Precios cerrados, con IVA. La cifra que ves es la que pagas.",
     "priceCustom": "A medida",
     "items": {
-      "web": {
-        "name": "Web nueva",
-        "pitch": "Alguien busca lo que vendes, te encuentra y te llama.",
+      "audit": {
+        "name": "Revisión de servidor",
+        "pitch": "Antes de que un cliente descubra que tu servidor falla, lo descubres tú.",
         "includes": [
-          "Las páginas que haga falta, con los textos escritos",
-          "Abre en menos de dos segundos desde el móvil",
-          "Apareces cuando buscan tu oficio y tu barrio",
-          "El formulario te llega al correo y al móvil",
-          "Aviso legal y privacidad hechos"
+          "Qué se ve de tu servidor desde fuera y por dónde entrarían",
+          "Qué está al día, qué caducó y qué lleva meses sin tocarse",
+          "Backups: si existen, cuándo se probaron y si volverías de un desastre",
+          "Servicios y cuotas mensuales que ya no usa nadie",
+          "Lo grave primero, escrito en tu idioma"
         ]
       },
-      "panel": {
-        "name": "Web con reservas o pedidos",
-        "pitch": "Tu cliente reserva a las once de la noche y tú lo ves por la mañana desde el móvil.",
+      "migration": {
+        "name": "Migración de servidor",
+        "pitch": "Movemos tu servicio a un servidor mejor sin parar tu operación.",
         "includes": [
-          "Agenda, reservas o pedidos, según lo que vendas",
-          "Un panel donde cambias horarios, precios y huecos sin llamarme",
-          "Cobro con tarjeta y Bizum cuando hace falta",
-          "Corre en un servidor que llevo yo, o te lo dejo montado en el tuyo"
+          "Copiamos todo antes de tocar nada",
+          "Movemos DNS, certificados y el correo del dominio",
+          "Cortamos fuera de tu horario y avisamos antes",
+          "Si algo falla, volvemos atrás en minutos",
+          "Ves la factura del hosting antes y después"
+        ]
+      },
+      "web": {
+        "name": "Web corporativa",
+        "pitch": "Tu cliente te busca, te encuentra y te escribe.",
+        "includes": [
+          "Varias páginas con los textos escritos y el diseño adaptado a tu marca",
+          "Estudiamos el recorrido del usuario antes de diseñar",
+          "Posicionamiento inicial: SEO, SEM y buscadores de IA",
+          "Analítica instalada y un informe que se entiende",
+          "Pagos, envíos por zonas o ajustes de servidor: los presupuestamos aparte tras el diagnóstico"
         ]
       },
       "tool": {
         "name": "Herramienta a medida",
-        "pitch": "Me cuentas la tarea que te come la mañana y te la dejo en una pantalla.",
+        "pitch": "Nos cuentas la tarea que come horas a tu equipo y la dejamos en una pantalla.",
         "includes": [
           "Pasas 200 pedidos de una hoja de cálculo a etiquetas en un clic",
-          "Tus técnicos fichan desde el móvil y ves las horas a fin de mes",
-          "Si sustituye una cuota que ya pagas, cobro tres meses de esa cuota",
-          "Los datos se quedan en tu servidor, no en el mío"
+          "Tu equipo ficha desde el móvil y ves las horas a fin de mes",
+          "Si sustituye una cuota que ya pagas, cobramos tres meses de esa cuota",
+          "Los datos se quedan en tu servidor"
         ],
         "priceModel": "Cerrado tras el diagnóstico"
-      },
-      "migration": {
-        "name": "Mudanza de servidor",
-        "pitch": "Tu web cambia de sitio un martes a las tres de la mañana y tus clientes no se enteran.",
-        "includes": [
-          "Copia entera antes de tocar nada",
-          "DNS, certificados y el correo que cuelga del dominio",
-          "El corte va fuera de tu horario",
-          "Si algo falla, vuelvo atrás en minutos",
-          "Ves la factura del hosting antes y después"
-        ]
-      },
-      "audit": {
-        "name": "Revisión de servidor",
-        "pitch": "Antes de que un cliente descubra que tu servidor está mal, lo descubres tú.",
-        "includes": [
-          "Qué se ve de tu servidor desde fuera y por dónde entrarían",
-          "Qué está al día, qué está caducado y qué lleva meses sin tocarse",
-          "Backups: si existen, cuándo se probaron y si volverías del fuego",
-          "Servicios y cuotas mensuales que ya no usa nadie",
-          "Lo grave primero, escrito en tu idioma, no en jerga técnica"
-        ]
       }
     },
-    "careNote": {
-      "label": "Cada encargo incluye {months} meses de cuidado",
-      "body": "Si algo falla, me llamas y lo arreglo, sin factura. Después, si quieres que siga detrás, {price} al mes, y lo cancelas cuando quieras."
+    "tiers": {
+      "label": "Mantenimiento mensual",
+      "lead": "Cada encargo incluye {months} meses de cuidado sin coste. Después eliges un plan. La cifra es fija por cliente, cubra un servidor o cinco, y lo cancelas sin preaviso.",
+      "per": "/mes",
+      "items": {
+        "cuidado": {
+          "name": "Cuidado",
+          "includes": [
+            "Aplicamos actualizaciones y parches de seguridad",
+            "Vigilamos que tu servicio siga en pie",
+            "Si algo se rompe, lo arreglamos",
+            "2 horas de trabajo al mes"
+          ]
+        },
+        "protegido": {
+          "name": "Protegido",
+          "includes": [
+            "Todo lo de Cuidado",
+            "Copias de seguridad con restauración probada",
+            "Monitorización con alertas",
+            "4 horas de trabajo al mes"
+          ]
+        },
+        "critico": {
+          "name": "Crítico",
+          "includes": [
+            "Todo lo de Protegido",
+            "Respuesta prioritaria",
+            "Horas para cambios y encargos pequeños",
+            "6 horas de trabajo a la semana"
+          ]
+        }
+      }
     }
   },
   "work": {
@@ -132,7 +152,7 @@
         "client": "Sección 9 Consultoría S.C.P., Barcelona",
         "line": "Hub VPN para 3 redes de pymes: 40 conexiones a la vez, por debajo de 50 ms.",
         "case": {
-          "context": "Sección 9 necesitaba dar acceso remoto cifrado a las redes de sus clientes sin pagar licencias por usuario. Monté el panel de gestión completo, conecté las redes, lo endurecí y lo dejé funcionando en su servidor.",
+          "context": "Sección 9 necesitaba dar acceso remoto cifrado a las redes de sus clientes sin pagar licencias por usuario. Montamos el panel de gestión completo, conectamos las redes, endurecimos la instalación y la dejamos funcionando en su servidor.",
           "stats": [
             { "n": "40", "label": "conexiones simultáneas por debajo de 50 ms de latencia, en un servidor de 1 vCPU y 1 GB de RAM" },
             { "n": "45 → 10", "label": "minutos por cada alta de cliente, con instaladores automáticos para Linux y Windows" },
@@ -151,38 +171,38 @@
     }
   },
   "process": {
-    "eyebrow": "Cómo trabajo",
+    "eyebrow": "Cómo trabajamos",
     "title": "Del mensaje a la entrega en cuatro pasos",
-    "sub": "Sabes la fecha y la cifra antes de que yo toque nada.",
+    "sub": "Sabes la fecha y la cifra antes de que toquemos nada.",
     "steps": [
       {
-        "name": "Me escribes",
+        "name": "Nos escribes",
         "detail": "Un WhatsApp o el formulario. Dos frases sobre tu negocio bastan."
       },
       {
         "name": "Hablamos {minutes} minutos",
-        "detail": "El mismo día te mando una página: lo que haría, el orden, la cifra de cada paso y lo que haces tú sin pagarme."
+        "detail": "El mismo día te mandamos una página: el plan, el orden, la cifra de cada paso y lo que puedes resolver con tu equipo."
       },
       {
-        "name": "Lo monto",
-        "detail": "La hoja de alcance fija la fecha y la cifra por escrito. Entrego entre {min} y {max} días desde que tengo tu material: textos, logo y accesos."
+        "name": "Lo montamos",
+        "detail": "La hoja de alcance fija la fecha y la cifra por escrito. Entregamos entre {min} y {max} días desde que tenemos tu material: textos, logo y accesos."
       },
       {
-        "name": "Lo miras y decides",
+        "name": "Lo revisas y decides",
         "detail": "Si te encaja, pagas por transferencia o Bizum."
       }
     ],
     "scopeCta": "Descargar la hoja de alcance (PDF)",
-    "scopeNote": "Es el documento del paso 3. Míralo antes de escribirme."
+    "scopeNote": "Es el documento del paso 3. Léelo antes de escribirnos."
   },
   "guarantee": {
     "eyebrow": "Garantía",
     "title": "Si no te sirve, no lo pagas",
-    "body": "Revisas lo entregado y me lo dices. Cierro ahí, sin factura y sin discusión.",
+    "body": "Revisas lo entregado y nos lo dices. Cerramos ahí, sin factura y sin discusión.",
     "points": [
       {
-        "name": "Empiezas sin pagar",
-        "detail": "No pido señal para ponerme a trabajar."
+        "name": "Sin señal",
+        "detail": "No pedimos dinero para empezar a trabajar."
       },
       {
         "name": "El código es tuyo",
@@ -190,49 +210,54 @@
       },
       {
         "name": "Sin permanencia",
-        "detail": "Cancelas el cuidado mensual cuando quieras, sin preaviso."
+        "detail": "Cancelas el mantenimiento cuando quieras, sin preaviso."
       }
     ]
   },
   "about": {
     "eyebrow": "Quiénes somos",
-    "title": "Somos dos, y siempre hay alguien al otro lado",
-    "lead": "Kamil lleva la parte técnica y su socio lleva el trato contigo. Los dos entramos en tu encargo y los dos respondemos si algo se rompe.",
+    "title": "Siempre hay alguien al otro lado",
+    "lead": "Kamil construye y opera la parte técnica. Younes dirige la comercial y los números. Fatima organiza todo lo demás.",
     "body": [
-      "Si uno no coge el teléfono, coge el otro. No hay una sola persona de la que dependa tu negocio, y esa es la parte que más nos importa.",
-      "Trabajamos con negocios de 1 a 100 personas, en España y fuera. En Madrid vamos en persona cuando el encargo lo pide: un servidor que no sale a internet, una oficina donde hace falta ver la instalación, un cambio que se hace mejor sentado enfrente.",
-      "Esta página está hecha igual que lo que te entregamos: sin plantillas, sin rastreadores, sin nada cargando desde fuera y con el código a la vista en GitHub."
+      "Younes negocia con proveedores, controla presupuestos y entra en la técnica cuando hace falta: contabilidad, análisis de datos, programación. Ha dirigido equipos de cincuenta personas y operaciones de compra en tres continentes.",
+      "Fatima lleva la agenda, la documentación, el marketing y los textos, en cuatro idiomas. Cuando escribes, ella se encarga de que nadie te deje sin respuesta.",
+      "Trabajamos con negocios de 1 a 100 personas, en España y fuera. En Madrid vamos en persona cuando el encargo lo pide: un servidor que no sale a internet, una oficina donde hay que ver la instalación.",
+      "Esta página está hecha igual que lo que entregamos: sin plantillas, sin rastreadores, sin nada cargando desde fuera y con el código a la vista en GitHub."
     ],
     "linkedin": "LinkedIn",
     "github": "Código en GitHub"
   },
   "faq": {
     "eyebrow": "Preguntas",
-    "title": "Lo que me preguntan antes de contratar",
+    "title": "Lo que nos preguntan antes de contratar",
     "items": [
       {
         "q": "¿El precio es cerrado de verdad?",
-        "a": "Sí. La cifra de cada servicio incluye IVA y el trabajo entero. Si tu caso pide menos, quito lo que sobra y baja. La cifra final va por escrito en la hoja de alcance."
+        "a": "Sí. La cifra de cada servicio incluye IVA y el trabajo entero. Si tu caso pide menos, quitamos lo que sobra y la cifra baja. La cifra final va por escrito en la hoja de alcance."
       },
       {
         "q": "¿Cuánto tarda?",
-        "a": "Entre uno y siete días desde que tengo tu material: textos, logo y accesos. Una web sencilla sale en dos. Una mudanza con correo y certificados se va a cinco o siete. La fecha exacta va en la hoja de alcance."
+        "a": "Entre uno y siete días desde que tenemos tu material: textos, logo y accesos. Una web sencilla sale en dos. Una migración con correo y certificados se va a cinco o siete. La fecha exacta va en la hoja de alcance."
       },
       {
         "q": "¿Cómo se paga?",
-        "a": "Fuera de esta web, por transferencia o Bizum, cuando apruebas el trabajo. Emito factura con todos los datos fiscales. Esta página no cobra ni guarda datos bancarios."
+        "a": "Fuera de esta web, por transferencia o Bizum, cuando apruebas el trabajo. Emitimos factura con todos los datos fiscales. Esta página no cobra ni guarda datos bancarios."
+      },
+      {
+        "q": "¿Qué cubre cada plan de mantenimiento?",
+        "a": "La cifra es fija al mes por cliente, mantengamos un servidor o cinco. Cuidado aplica parches, vigila el servicio y arregla lo que se rompa. Protegido añade copias con restauración probada y alertas. Crítico añade respuesta prioritaria y horas para encargos pequeños."
       },
       {
         "q": "¿La web es mía de verdad?",
-        "a": "Sí. El dominio se registra a tu nombre, el código se te entrega y el alojamiento va a una cuenta tuya. Mañana te llevas todo sin pedirme permiso."
+        "a": "Sí. El dominio se registra a tu nombre, el código se te entrega y el alojamiento va a una cuenta tuya. Mañana te llevas todo sin pedirnos permiso."
       },
       {
-        "q": "Pago una cuota todos los meses por una herramienta, ¿me la puedes quitar?",
-        "a": "A veces. Miro si existe algo equivalente que puedas alojar tú. Si existe, lo monto y cobro tres meses de esa cuota. Si no existe, te lo digo y no cobro. No toco facturación ni nada con obligación legal detrás."
+        "q": "Pago una cuota todos los meses por una herramienta, ¿me la podéis quitar?",
+        "a": "A veces. Miramos si existe algo equivalente que puedas alojar tú. Si existe, lo montamos y cobramos tres meses de esa cuota. Si no existe, te lo decimos y no cobramos. No tocamos facturación ni nada con obligación legal detrás."
       },
       {
-        "q": "¿Qué necesitas de mí para empezar?",
-        "a": "Los textos que quieras enseñar, el logo si lo tienes y el acceso al dominio si ya lo compraste. Si no tienes nada de eso, escribo un primer borrador y tú lo corriges."
+        "q": "¿Qué necesitáis de mí para empezar?",
+        "a": "Los textos que quieras enseñar, el logo si lo tienes y el acceso al dominio si ya lo compraste. Si no tienes nada de eso, escribimos un primer borrador y tú lo corriges."
       },
       {
         "q": "¿Dónde trabajáis?",
@@ -240,19 +265,19 @@
       },
       {
         "q": "Ya tengo web y no quiero cambiarla",
-        "a": "Entonces mira la mudanza o la revisión. Muevo lo que tienes a un servidor más barato, o te digo por dónde está expuesta, sin tocar el diseño."
+        "a": "Entonces mira la migración o la revisión. Movemos lo que tienes a un servidor más barato, o te decimos por dónde está expuesta, sin tocar el diseño."
       },
       {
         "q": "¿Qué hacéis con mis datos?",
-        "a": "Guardo tu nombre y tu contacto para contestarte, nada más. No vendo datos, no hay publicidad y no hay seguimiento. Lo tienes detallado en la política de privacidad."
+        "a": "Guardamos tu nombre y tu contacto para contestarte, nada más. No vendemos datos, no hay publicidad y no hay seguimiento. Lo tienes detallado en la política de privacidad."
       }
     ]
   },
   "contact": {
     "eyebrow": "Contacto",
-    "title": "Cuéntame qué te frena",
-    "sub": "Tres preguntas, una cada vez. Te contesto el mismo día.",
-    "oneLiner": "No trabajo por horas, trabajo por encargo cerrado.",
+    "title": "Cuéntanos qué te frena",
+    "sub": "Tres preguntas, una cada vez. Contestamos el mismo día.",
+    "oneLiner": "No vendemos horas. Entregamos encargos cerrados.",
     "phoneCta": "Llama o escribe por WhatsApp",
     "emailCta": "Escribe un correo",
     "progress": "{step} de {total}",
@@ -265,28 +290,28 @@
     "fields": {
       "need": {
         "label": "¿Qué le falta a tu negocio o qué se le ha roto?",
-        "placeholder": "Mi web tarda nueve segundos en abrir y pierdo llamadas."
+        "placeholder": "Nuestro servidor lleva dos años sin que nadie lo revise."
       },
       "name": {
         "label": "¿Tu nombre y tu negocio?",
         "placeholder": "Marta, Clínica Dental Sol"
       },
       "contact": {
-        "label": "¿Dónde te mando el diagnóstico?",
+        "label": "¿Dónde te mandamos el diagnóstico?",
         "placeholder": "Email o teléfono"
       }
     },
     "success": {
       "title": "Mensaje recibido",
-      "body": "Te contesto el mismo día al contacto que me has dejado. Si tienes prisa, llámame."
+      "body": "Te contestamos el mismo día al contacto que nos has dejado. Si tienes prisa, llama."
     },
     "errors": {
       "name": "Escribe tu nombre.",
-      "need": "Cuéntame en una frase qué necesitas.",
+      "need": "Cuéntanos en una frase qué necesitas.",
       "contact": "Deja un email o un teléfono para poder contestarte.",
       "contactFormat": "Ese contacto no parece un email ni un teléfono.",
-      "consent": "Necesito tu permiso para usar el contacto que me das.",
-      "network": "No he podido enviar el formulario. Llámame o escríbeme un correo y lo arreglamos.",
+      "consent": "Necesitamos tu permiso para usar el contacto que nos das.",
+      "network": "No hemos podido enviar el formulario. Llámanos o escríbenos un correo y lo arreglamos.",
       "tooFast": "Espera un segundo y vuelve a enviar."
     }
   },
@@ -323,7 +348,7 @@
         "p": [
           "Los precios publicados incluyen IVA y cubren el alcance descrito en cada servicio. El precio en firme, el alcance y la fecha de entrega se fijan en la hoja de alcance que recibes antes de empezar.",
           "Si el encargo necesita menos trabajo del descrito, la cifra baja y queda recogida en esa misma hoja.",
-          "Cada encargo incluye {careMonths} meses de soporte correctivo tras la entrega, sin coste. Pasado ese periodo, el mantenimiento es opcional y se cancela sin preaviso.",
+          "Cada encargo incluye {careMonths} meses de soporte correctivo tras la entrega, sin coste. Pasado ese periodo, el mantenimiento es opcional, por suscripción mensual, y se cancela sin preaviso.",
           "Este sitio no procesa pagos. El cobro se realiza fuera de la web por transferencia bancaria o Bizum, una vez entregado y aprobado el trabajo."
         ]
       },
@@ -428,12 +453,12 @@
   },
   "notFound": {
     "title": "Esta página no existe",
-    "body": "El enlace que has seguido no lleva a ningún sitio. Vuelve al inicio o escríbeme y te digo dónde está lo que buscas.",
+    "body": "El enlace que has seguido no lleva a ningún sitio. Vuelve al inicio o escríbenos y te decimos dónde está lo que buscas.",
     "cta": "Volver al inicio"
   },
   "scopeDoc": {
     "docTitle": "Hoja de alcance",
-    "subtitle": "Qué entrego, qué no entrego, cuándo y por cuánto.",
+    "subtitle": "Qué entregamos, qué no entregamos, cuándo y por cuánto.",
     "preparedBy": "Lo firma",
     "preparedFor": "Para",
     "date": "Fecha",
@@ -441,14 +466,14 @@
     "intro": "Este documento recoge el trabajo acordado antes de empezar. Si algo no cuadra, se corrige aquí y se vuelve a firmar.",
     "sections": [
       {
-        "h": "Qué entrego",
+        "h": "Qué entregamos",
         "p": [
           "Lista cerrada del trabajo, con el detalle suficiente para que puedas comprobar cada punto.",
           "Cada punto se da por entregado cuando lo ves funcionando."
         ]
       },
       {
-        "h": "Qué no entrego",
+        "h": "Qué no entregamos",
         "p": [
           "Todo lo que no aparece arriba queda fuera. Si lo pides después, se presupuesta aparte."
         ]
@@ -456,14 +481,14 @@
       {
         "h": "Fecha",
         "p": [
-          "Entre 1 y 7 días naturales, contando desde que recibo todo el material acordado. La fecha exacta se escribe aquí."
+          "Entre 1 y 7 días naturales, contando desde que recibimos todo el material acordado. La fecha exacta se escribe aquí."
         ]
       },
       {
         "h": "Precio y pago",
         "p": [
           "La cifra acordada, IVA incluido. Si el alcance baja, la cifra baja con él.",
-          "El precio incluye {careMonths} meses de cuidado tras la entrega: si algo falla, lo arreglo sin coste.",
+          "El precio incluye {careMonths} meses de cuidado tras la entrega: si algo falla, lo arreglamos sin coste.",
           "No hay señal. Pagas por transferencia o Bizum después de aprobar el trabajo."
         ]
       },

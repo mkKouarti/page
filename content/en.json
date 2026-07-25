@@ -5,15 +5,15 @@
   "altLocaleLabel": "ES",
   "pendingValue": "[pending]",
   "meta": {
-    "title": "Websites, servers and tools for your business | {brand}",
-    "description": "Your business gets the website, server or tool it is missing, within a week. Free 30-minute diagnostic, in writing. Fixed price before work starts.",
-    "keywords": "business website, booking website, server move, server security review, custom internal tool, website maintenance",
-    "ogAlt": "{brand}: websites, servers and tools for your business."
+    "title": "Servers, websites and tools for your business | {brand}",
+    "description": "We audit, migrate and maintain the infrastructure your business runs on. 30-minute diagnostic in writing and a fixed price before work starts.",
+    "keywords": "server maintenance, server migration, server security audit, corporate website, custom internal tool, SMB technical support",
+    "ogAlt": "{brand}: servers, websites and tools for your business."
   },
   "nav": {
     "services": "Services",
     "work": "Work",
-    "process": "How I work",
+    "process": "How we work",
     "faq": "Questions",
     "contact": "Contact",
     "langSwitch": "View this page in Spanish",
@@ -22,7 +22,7 @@
     "skipToContent": "Skip to content"
   },
   "footer": {
-    "tagline": "Websites, servers and tools for businesses of 1 to 100 people.",
+    "tagline": "Servers, websites and tools for businesses of 1 to 100 people.",
     "legalNotice": "Legal notice",
     "privacy": "Privacy policy",
     "scope": "Scope sheet (PDF)",
@@ -30,32 +30,32 @@
     "builtNote": "This page uses no tracking cookies and no analytics."
   },
   "hero": {
-    "eyebrow": "{minutes}-minute diagnostic, free and in writing",
-    "h1Lead": "We stand up and maintain the server, the website or the tool your business runs on.",
-    "h1Accent": "One week. Fixed price. Your customers don't notice we moved anything.",
-    "sub": "You tell us what is holding you back. We send you one page: what we would do, in what order, the price of each step, and what you can do yourself without paying us. Then you decide.",
+    "eyebrow": "{minutes}-minute diagnostic, in writing",
+    "h1Lead": "We audit, migrate and maintain the server your business runs on.",
+    "h1Accent": "Fixed price and a written date before we start.",
+    "sub": "You tell us what is holding you back. We send back one page: the plan, the order and the number for each step. With that page you decide.",
     "trust": [
-      "A written plan before you spend a euro",
-      "The code and the server in your name",
-      "When something breaks, there is someone on the other end"
+      "A written plan before we touch anything",
+      "Code, configuration and domain in your name",
+      "When something breaks, a person answers, not a ticket"
     ],
     "ctaPrimary": "Ask for the diagnostic on WhatsApp",
-    "ctaSecondary": "See the prices",
-    "waMessage": "Hi, I run a business and I want the 30-minute diagnostic."
+    "ctaSecondary": "See services and prices",
+    "waMessage": "Hi, I want the 30-minute diagnostic for my business."
   },
   "diagnostic": {
     "label": "Diagnostic",
-    "ref": "{minutes} minutes · free",
+    "ref": "{minutes} minutes",
     "title": "One page with your case solved",
-    "intro": "We talk for {minutes} minutes. The same day I send you one page with:",
+    "intro": "We talk for {minutes} minutes: you explain your problem and we propose the solution. Money is not part of the formula. We take something we value more: first-hand knowledge of the problems in your sector. The same day you receive one page with:",
     "items": [
-      "What I would do, step by step and in order",
-      "The fixed price of each step",
-      "What you can do yourself, without paying me",
-      "One concrete offer, with a delivery date"
+      "What we would do, step by step and in order",
+      "The fixed number for each step",
+      "What you can solve with your own team",
+      "One concrete offer with a delivery date"
     ],
-    "note": "With that page you decide: do it yourself, hire someone else, or hire me.",
-    "cta": "Tell me your case"
+    "note": "With that page you decide: solve it in-house, hire someone else, or hire us.",
+    "cta": "Tell us your case"
   },
   "services": {
     "eyebrow": "Services",
@@ -63,64 +63,84 @@
     "sub": "Fixed prices, VAT included. The number you see is the number you pay.",
     "priceCustom": "Per case",
     "items": {
-      "web": {
-        "name": "New website",
-        "pitch": "Someone searches for what you sell, finds you and calls.",
+      "audit": {
+        "name": "Server review",
+        "pitch": "Before a customer discovers your server is failing, you do.",
         "includes": [
-          "As many pages as the job needs, with the copy written",
-          "Opens in under two seconds on a phone",
-          "You show up when people search your trade and your area",
-          "The form reaches your inbox and your phone",
-          "Legal notice and privacy policy done"
+          "What your server shows from the outside, and where someone would get in",
+          "What is patched, what expired, and what nobody has touched in months",
+          "Backups: whether they exist, when they were tested, and whether you would come back from a disaster",
+          "Services and monthly fees nobody uses anymore",
+          "Serious findings first, written in plain terms"
         ]
       },
-      "panel": {
-        "name": "Website with bookings or orders",
-        "pitch": "Your customer books at eleven at night and you see it in the morning from your phone.",
+      "migration": {
+        "name": "Server migration",
+        "pitch": "We move your service to a better server without stopping your operation.",
         "includes": [
-          "Calendar, bookings or orders, depending on what you sell",
-          "A panel where you change hours, prices and slots without calling me",
-          "Card and Bizum payments when the job needs them",
-          "Runs on a server I look after, or on yours if you prefer"
+          "We copy everything before touching anything",
+          "We move DNS, certificates and the domain's mail",
+          "We cut over outside your hours and warn you first",
+          "If something fails, we roll back in minutes",
+          "You see the hosting bill before and after"
+        ]
+      },
+      "web": {
+        "name": "Corporate website",
+        "pitch": "Your client searches, finds you and writes.",
+        "includes": [
+          "Several pages with the copy written and the design matched to your brand",
+          "We study the user journey before designing",
+          "Initial positioning: SEO, SEM and AI search engines",
+          "Analytics installed, plus a report you can read",
+          "Payments, shipping zones or server configuration: we quote them separately after the diagnostic"
         ]
       },
       "tool": {
         "name": "A tool built for you",
-        "pitch": "Tell me the task that eats your morning and I put it on one screen.",
+        "pitch": "You tell us the task that eats your team's hours and we put it on one screen.",
         "includes": [
           "Turn 200 orders in a spreadsheet into labels with one click",
-          "Your technicians clock in from their phones and you see the totals at month end",
-          "If it replaces a fee you already pay, I charge three months of that fee",
-          "The data stays on your server, not mine"
+          "Your team clocks in from their phones and you see the totals at month end",
+          "If it replaces a fee you already pay, we charge three months of that fee",
+          "The data stays on your server"
         ],
         "priceModel": "Fixed after the diagnostic"
-      },
-      "migration": {
-        "name": "Server move",
-        "pitch": "Your site changes address on a Tuesday at three in the morning and your customers never notice.",
-        "includes": [
-          "Full copy before anything gets touched",
-          "DNS, certificates and the mail hanging off the domain",
-          "The cutover happens outside your working times",
-          "If something fails, I roll back in minutes",
-          "You see the hosting bill before and after"
-        ]
-      },
-      "audit": {
-        "name": "Server review",
-        "pitch": "Before a customer discovers your server is broken, you do.",
-        "includes": [
-          "What your server looks like from the outside, and where someone would come in",
-          "What is patched, what is out of date, and what hasn't been touched in months",
-          "Backups: whether they exist, when they were tested, and whether you'd come back from a fire",
-          "Services and monthly fees nobody uses anymore",
-          "Serious findings first, written in plain terms, not a wall of jargon"
-        ]
       }
     },
-    "careNote": {
-      "label": "Every job includes {months} months of care",
-      "body": "If something acts up, you call and I fix it, no invoice. After that, if you want me to stay behind it, {price} a month, cancel whenever you want."
+    "tiers": {
+      "label": "Monthly maintenance",
+      "lead": "Every job includes {months} months of care at no cost. Then you pick a plan. The number is flat per client, whether we maintain one server or five, and you cancel without notice.",
+      "per": "/month",
+      "items": {
+        "cuidado": {
+          "name": "Care",
+          "includes": [
+            "We apply updates and security patches",
+            "We watch that your service stays up",
+            "If something breaks, we fix it",
+            "2 hours of work per month"
+          ]
+        },
+        "protegido": {
+          "name": "Protected",
+          "includes": [
+            "Everything in Care",
+            "Backups with tested restoration",
+            "Monitoring with alerts",
+            "4 hours of work per month"
+          ]
+        },
+        "critico": {
+          "name": "Critical",
+          "includes": [
+            "Everything in Protected",
+            "Priority response",
+            "Hours for changes and small jobs",
+            "6 hours of work per week"
+          ]
+        }
+      }
     }
   },
   "work": {
@@ -132,7 +152,7 @@
         "client": "Sección 9 Consultoría S.C.P., Barcelona",
         "line": "VPN hub for 3 SMB networks: 40 concurrent connections, under 50 ms.",
         "case": {
-          "context": "Sección 9 needed to give encrypted remote access to its clients' networks without paying per-user licences. I built the full management panel, connected the networks, hardened the setup and left it running on their server.",
+          "context": "Sección 9 needed to give encrypted remote access to its clients' networks without paying per-user licences. We built the full management panel, connected the networks, hardened the setup and left it running on their server.",
           "stats": [
             { "n": "40", "label": "simultaneous connections under 50 ms of latency, on a server with 1 vCPU and 1 GB of RAM" },
             { "n": "45 → 10", "label": "minutes per client onboarding, with automatic installers for Linux and Windows" },
@@ -151,38 +171,38 @@
     }
   },
   "process": {
-    "eyebrow": "How I work",
+    "eyebrow": "How we work",
     "title": "From your message to delivery in four steps",
-    "sub": "You know the date and the number before I touch anything.",
+    "sub": "You know the date and the number before we touch anything.",
     "steps": [
       {
-        "name": "You write to me",
+        "name": "You write to us",
         "detail": "A WhatsApp message or the form. Two sentences about your business are enough."
       },
       {
         "name": "We talk for {minutes} minutes",
-        "detail": "The same day I send you one page: what I would do, in what order, the price of each step, and what you can do yourself without paying me."
+        "detail": "The same day we send you one page: the plan, the order, the number for each step and what you can solve with your own team."
       },
       {
-        "name": "I build it",
-        "detail": "The scope sheet fixes the date and the number in writing. I deliver in {min} to {max} days once I have your material: text, logo and access."
+        "name": "We build it",
+        "detail": "The scope sheet fixes the date and the number in writing. We deliver in {min} to {max} days once we have your material: text, logo and access."
       },
       {
-        "name": "You look at it and decide",
+        "name": "You review it and decide",
         "detail": "If it fits, you pay by bank transfer or Bizum."
       }
     ],
     "scopeCta": "Download the scope sheet (PDF)",
-    "scopeNote": "This is the document from step 3. Read it before you write to me."
+    "scopeNote": "This is the document from step 3. Read it before you write to us."
   },
   "guarantee": {
     "eyebrow": "Guarantee",
     "title": "If it doesn't work for you, you don't pay",
-    "body": "You review what I delivered and you tell me. I close it there, with no invoice and no argument.",
+    "body": "You review what we delivered and you tell us. We close it there, with no invoice and no argument.",
     "points": [
       {
-        "name": "You start without paying",
-        "detail": "I ask for no deposit to get to work."
+        "name": "No deposit",
+        "detail": "We ask for no money to start working."
       },
       {
         "name": "The code is yours",
@@ -190,17 +210,18 @@
       },
       {
         "name": "No lock-in",
-        "detail": "Cancel the monthly care whenever you want, with no notice."
+        "detail": "Cancel maintenance whenever you want, with no notice."
       }
     ]
   },
   "about": {
     "eyebrow": "Who we are",
-    "title": "Two of us, always someone on the other end",
-    "lead": "Kamil runs the technical side and his partner runs the conversation with you. We both work on your job and we both answer when something breaks.",
+    "title": "There is always someone on the other end",
+    "lead": "Kamil builds and runs the technical side. Younes runs the commercial side and the numbers. Fatima organizes everything else.",
     "body": [
-      "If one of us doesn't pick up, the other does. Your business doesn't ride on a single person, and that matters more to us than anything else.",
-      "We work with businesses of 1 to 100 people, in Spain and beyond. In Madrid we come in person when the job calls for it: a server that never reaches the internet, an office where we need to see the setup, a change that goes faster sitting across a table.",
+      "Younes negotiates with suppliers, controls budgets and steps into the technical side when needed: accounting, data analysis, programming. He has run teams of fifty and purchasing operations across three continents.",
+      "Fatima runs the agenda, the documentation, the marketing and the copy, in four languages. When you write, she makes sure nobody leaves you without an answer.",
+      "We work with businesses of 1 to 100 people, in Spain and abroad. In Madrid we come in person when the job calls for it: a server that never reaches the internet, an office where we need to see the setup.",
       "This page is built the way we build yours: no templates, no trackers, nothing loading from outside, and the code sitting in the open on GitHub."
     ],
     "linkedin": "LinkedIn",
@@ -212,27 +233,31 @@
     "items": [
       {
         "q": "Is the price really fixed?",
-        "a": "Yes. The number on each service includes VAT and the whole job. If your case needs less, I take out what you won't use and the number drops. The final number goes in writing in the scope sheet."
+        "a": "Yes. The number on each service includes VAT and the whole job. If your case needs less, we take out what you won't use and the number drops. The final number goes in writing in the scope sheet."
       },
       {
         "q": "How long does it take?",
-        "a": "One to seven days once I have your material: text, logo and access. A simple site lands in two. A move with mail and certificates runs to five or seven. The exact date goes in the scope sheet."
+        "a": "One to seven days once we have your material: text, logo and access. A simple site lands in two. A migration with mail and certificates runs to five or seven. The exact date goes in the scope sheet."
       },
       {
         "q": "How do I pay?",
-        "a": "Outside this website, by bank transfer or Bizum, once you approve the work. I issue an invoice with full tax details. This page takes no payments and stores no banking data."
+        "a": "Outside this website, by bank transfer or Bizum, once you approve the work. We issue an invoice with full tax details. This page takes no payments and stores no banking data."
+      },
+      {
+        "q": "What does each maintenance plan cover?",
+        "a": "The number is flat per month per client, whether we maintain one server or five. Care applies patches, watches the service and fixes what breaks. Protected adds backups with tested restoration and alerts. Critical adds priority response and hours for small jobs."
       },
       {
         "q": "Is the website really mine?",
-        "a": "Yes. The domain registers in your name, the code gets handed to you and the hosting sits in your account. Tomorrow you can take everything without asking me."
+        "a": "Yes. The domain registers in your name, the code gets handed to you and the hosting sits in your account. Tomorrow you can take everything without asking us."
       },
       {
         "q": "I pay a monthly fee for a tool. Can you get rid of it?",
-        "a": "Sometimes. I check whether an equivalent exists that you can host yourself. If it does, I set it up and charge three months of that fee. If it doesn't, I say so and charge nothing. I stay away from invoicing and anything with a legal obligation attached."
+        "a": "Sometimes. We check whether an equivalent exists that you can host yourself. If it does, we set it up and charge three months of that fee. If it doesn't, we say so and charge nothing. We stay away from invoicing and anything with a legal obligation attached."
       },
       {
         "q": "What do you need from me to start?",
-        "a": "The text you want to show, your logo if you have one, and access to the domain if you already bought it. If you have none of that, I write a first draft and you correct it."
+        "a": "The text you want to show, your logo if you have one, and access to the domain if you already bought it. If you have none of that, we write a first draft and you correct it."
       },
       {
         "q": "Where do you work?",
@@ -240,19 +265,19 @@
       },
       {
         "q": "I already have a website and I don't want to change it",
-        "a": "Then look at the move or the review. I can shift what you have to a cheaper server, or tell you where it sits exposed, without touching the design."
+        "a": "Then look at the migration or the review. We can shift what you have to a cheaper server, or tell you where it sits exposed, without touching the design."
       },
       {
         "q": "What do you do with my data?",
-        "a": "I keep your name and your contact so I can reply, nothing else. I sell no data, run no advertising and set no tracking. The privacy policy spells it out."
+        "a": "We keep your name and your contact so we can reply, nothing else. We sell no data, run no advertising and set no tracking. The privacy policy spells it out."
       }
     ]
   },
   "contact": {
     "eyebrow": "Contact",
-    "title": "Tell me what is holding you back",
-    "sub": "Three questions, one at a time. I answer the same day.",
-    "oneLiner": "I don't sell time, I deliver a fixed job.",
+    "title": "Tell us what is holding you back",
+    "sub": "Three questions, one at a time. We answer the same day.",
+    "oneLiner": "We don't sell hours. We deliver fixed jobs.",
     "phoneCta": "Call or WhatsApp",
     "emailCta": "Write an email",
     "progress": "{step} of {total}",
@@ -265,28 +290,28 @@
     "fields": {
       "need": {
         "label": "What is your business missing, or what broke?",
-        "placeholder": "My site takes nine seconds to open and I lose calls."
+        "placeholder": "Nobody has reviewed our server in two years."
       },
       "name": {
         "label": "Your name and your business?",
         "placeholder": "Marta, Sol Dental Clinic"
       },
       "contact": {
-        "label": "Where do I send the diagnostic?",
+        "label": "Where do we send the diagnostic?",
         "placeholder": "Email or phone"
       }
     },
     "success": {
       "title": "Message received",
-      "body": "I answer the same day at the contact you left. If you are in a hurry, call me."
+      "body": "We answer the same day at the contact you left. If you are in a hurry, call."
     },
     "errors": {
       "name": "Write your name.",
-      "need": "Tell me in one sentence what you need.",
-      "contact": "Leave an email or a phone number so I can reply.",
+      "need": "Tell us in one sentence what you need.",
+      "contact": "Leave an email or a phone number so we can reply.",
       "contactFormat": "That doesn't look like an email or a phone number.",
-      "consent": "I need your permission to use the contact details you give me.",
-      "network": "The form didn't send. Call me or write an email and we sort it out.",
+      "consent": "We need your permission to use the contact details you give us.",
+      "network": "The form didn't send. Call us or write an email and we sort it out.",
       "tooFast": "Wait a second and send again."
     }
   },
@@ -323,7 +348,7 @@
         "p": [
           "Published prices include VAT and cover the scope described for each service. The firm price, the scope and the delivery date get fixed in the scope sheet you receive before work starts.",
           "If the job needs less work than described, the number drops and the scope sheet records it.",
-          "Every job includes {careMonths} months of corrective support after delivery, at no cost. After that period, maintenance is optional and cancels with no notice.",
+          "Every job includes {careMonths} months of corrective support after delivery, at no cost. After that period, maintenance is optional, billed monthly, and cancels with no notice.",
           "This site processes no payments. Payment happens off the website by bank transfer or Bizum, once the work is delivered and approved."
         ]
       },
@@ -428,12 +453,12 @@
   },
   "notFound": {
     "title": "This page does not exist",
-    "body": "The link you followed leads nowhere. Go back to the start, or write to me and I tell you where to find what you were after.",
+    "body": "The link you followed leads nowhere. Go back to the start, or write to us and we tell you where to find what you were after.",
     "cta": "Back to the start"
   },
   "scopeDoc": {
     "docTitle": "Scope sheet",
-    "subtitle": "What I deliver, what I don't, when and for how much.",
+    "subtitle": "What we deliver, what we don't, when and for how much.",
     "preparedBy": "Signed by",
     "preparedFor": "For",
     "date": "Date",
@@ -441,14 +466,14 @@
     "intro": "This document records the work agreed before anything starts. If something looks wrong, we correct it here and sign again.",
     "sections": [
       {
-        "h": "What I deliver",
+        "h": "What we deliver",
         "p": [
           "A closed list of the work, detailed enough for you to check every point.",
           "Each point counts as delivered once you see it running."
         ]
       },
       {
-        "h": "What I don't deliver",
+        "h": "What we don't deliver",
         "p": [
           "Anything missing from the list above sits outside the job. Ask for it later and it gets quoted separately."
         ]
@@ -456,14 +481,14 @@
       {
         "h": "Date",
         "p": [
-          "Between 1 and 7 calendar days, counting from the moment I receive all the agreed material. The exact date goes here."
+          "Between 1 and 7 calendar days, counting from the moment we receive all the agreed material. The exact date goes here."
         ]
       },
       {
         "h": "Price and payment",
         "p": [
           "The agreed number, VAT included. If the scope drops, the number drops with it.",
-          "The price includes {careMonths} months of care after delivery: if something acts up, I fix it at no cost.",
+          "The price includes {careMonths} months of care after delivery: if something acts up, we fix it at no cost.",
           "No deposit. You pay by bank transfer or Bizum after approving the work."
         ]
       },

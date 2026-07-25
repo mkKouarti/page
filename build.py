@@ -334,12 +334,25 @@ def sec_services(cfg, c, ctx):
     </article>"""
         )
 
-    # care is stated once, under the grid, never per card
-    cn = s["careNote"]
-    care = (
-        '\n    <div class="care reveal">'
-        f'<b>{e(fill(cn["label"], {"months": com["careIncludedMonths"]}))}</b>'
-        f'<p>{e(fill(cn["body"], {"price": ctx["money"](com["carePriceAfter"]), "months": com["careIncludedMonths"]}))}</p></div>'
+    # maintenance tiers, flat per client, stated once under the grid
+    tiers_copy = s["tiers"]
+    tier_cards = []
+    for i, tier_cfg in enumerate(com["careTiers"]):
+        tc = tiers_copy["items"][tier_cfg["id"]]
+        feats = "".join(
+            f'<li>{icon("check")}<span>{e(item)}</span></li>' for item in tc["includes"]
+        )
+        tier_cards.append(
+            f"""<article class="svc tier reveal" style="--i:{i}">
+      <div class="svc__top"><h3 class="svc__name">{e(tc["name"])}</h3><div class="svc__price">{e(ctx["money"](tier_cfg["price"]))}<span class="tier__per">{e(tiers_copy["per"])}</span></div></div>
+      <ul class="svc__list">{feats}</ul>
+    </article>"""
+        )
+    tiers = (
+        '\n    <div class="tiers-head reveal">'
+        f'<h3 class="tiers__title">{e(tiers_copy["label"])}</h3>'
+        f'<p class="tiers__lead">{e(fill(tiers_copy["lead"], {"months": com["careIncludedMonths"]}))}</p></div>'
+        f'\n    <div class="svc-grid tiers">{"".join(tier_cards)}</div>'
     )
 
     return f"""<section class="band" id="services" data-tone="paper">
@@ -347,7 +360,7 @@ def sec_services(cfg, c, ctx):
     <p class="eyebrow">{e(s["eyebrow"])}</p>
     <h2 class="h-sec">{e(s["title"])}</h2>
     <p class="sec-lede">{e(s["sub"])}</p>
-    <div class="svc-grid">{"".join(cards)}</div>{care}
+    <div class="svc-grid">{"".join(cards)}</div>{tiers}
   </div>
 </section>"""
 
@@ -637,6 +650,25 @@ def jsonld_home(cfg, c, ctx):
             }
         offers.append(offer)
 
+    for tier_cfg in com["careTiers"]:
+        tc = c["services"]["tiers"]["items"][tier_cfg["id"]]
+        offers.append({
+            "@type": "Offer",
+            "name": tc["name"],
+            "description": "; ".join(tc["includes"]),
+            "priceCurrency": com["currency"],
+            "availability": "https://schema.org/InStock",
+            "url": base + ctx["home"] + "#services",
+            "price": str(tier_cfg["price"]),
+            "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": str(tier_cfg["price"]),
+                "priceCurrency": com["currency"],
+                "valueAddedTaxIncluded": True,
+                "unitCode": "MON",
+            },
+        })
+
     business = {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
@@ -920,22 +952,28 @@ def build_llms(cfg, es, en, ctx_es, ctx_en):
     sym = com["currencySymbol"]
     minutes = cfg["diagnostic"]["minutes"]
 
+    tier_bits = ", ".join(
+        f'{en["services"]["tiers"]["items"][t["id"]]["name"]} at {sym}{t["price"]}/month'
+        for t in com["careTiers"]
+    )
+
     lines = [
         f'# {ident["brand"]}',
         "",
         f'> {en["meta"]["description"]}',
         "",
-        f'Two people: {ident["displayName"]} builds and runs the technical side, '
-        f'his business partner handles the conversation with the client. Based in Madrid, Spain. '
-        f'Serves businesses of 1 to 100 people, remotely in Spain and abroad, in Spanish and English.',
+        f'The team: {ident["displayName"]} builds and runs the technical side. '
+        f'Younes runs the commercial side and the numbers: budgets, supplier negotiation, accounting, data analysis. '
+        f'Fatima runs organization, documentation, marketing and copy, in four languages. '
+        f'Based in Madrid, Spain. Serves businesses of 1 to 100 people, remotely in Spain and abroad, in Spanish and English.',
         f'Contact: {cfg["contact"]["email"]}, phone and WhatsApp {cfg["contact"]["phoneDisplay"]}'
         if filled(cfg["contact"]["phoneE164"]) else f'Contact: {cfg["contact"]["email"]}',
         "",
-        "## Free diagnostic",
+        "## The diagnostic",
         "",
-        f'- A {minutes}-minute conversation, free of charge.',
-        "- The client receives one written page: what the owner would do, in what order, the fixed price of each step, and what the client can do themselves without paying.",
-        "- The page ends with one concrete offer and a delivery date. The client decides: do it themselves, hire someone else, or hire Mechidan.",
+        f'- A {minutes}-minute conversation. The client explains the problem, Mechidan proposes the solution. Money is not part of that exchange; Mechidan takes first-hand knowledge of the sector\'s problems.',
+        "- The client receives one written page: what Mechidan would do, in what order, the fixed price of each step, and what the client can solve with their own team.",
+        "- The page ends with one concrete offer and a delivery date. The client decides: solve it in-house, hire someone else, or hire Mechidan.",
         "",
         "## Services and prices",
         "",
@@ -945,11 +983,21 @@ def build_llms(cfg, es, en, ctx_es, ctx_en):
         lines.append(f'- **{svc["name"]}** ({price}). {svc["pitch"]}')
     lines += [
         "",
+        "## Monthly maintenance plans",
+        "",
+        f'Every job includes {com["careIncludedMonths"]} months of care at no cost. '
+        f'After that, three optional plans, flat per client regardless of how many servers Mechidan maintains: {tier_bits}. Cancel anytime, no notice.',
+        "",
+    ]
+    for tier_cfg in com["careTiers"]:
+        tc = en["services"]["tiers"]["items"][tier_cfg["id"]]
+        lines.append(f'- **{tc["name"]}** ({sym}{tier_cfg["price"]}/month): ' + "; ".join(tc["includes"]) + ".")
+    lines += [
+        "",
         "## Terms",
         "",
         f'- Delivery: {com["deliveryDaysMin"]} to {com["deliveryDaysMax"]} days, counted from the moment the client has handed over all the material.',
         "- Prices are fixed, cover the whole job and include VAT. Nothing gets added on top later.",
-        f'- Every job includes {com["careIncludedMonths"]} months of care: if something acts up, the client calls and it gets fixed with no invoice. After that, optional care at {sym}{com["carePriceAfter"]} per month, cancel anytime.',
         "- If the job needs less than the description, the price drops and the scope sheet records it.",
         "- Guarantee: if the client does not like the delivered result, they do not pay and no invoice is issued.",
         "- No deposit and no payment up front.",

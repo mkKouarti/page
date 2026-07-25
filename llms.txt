@@ -1,29 +1,35 @@
 # Mechidan
 
-> Your business gets the website, server or tool it is missing, within a week. Free 30-minute diagnostic, in writing. Fixed price before work starts.
+> We audit, migrate and maintain the infrastructure your business runs on. 30-minute diagnostic in writing and a fixed price before work starts.
 
-Two people: Kamil El Kouarti builds and runs the technical side, his business partner handles the conversation with the client. Based in Madrid, Spain. Serves businesses of 1 to 100 people, remotely in Spain and abroad, in Spanish and English.
+The team: Kamil El Kouarti builds and runs the technical side. Younes runs the commercial side and the numbers: budgets, supplier negotiation, accounting, data analysis. Fatima runs organization, documentation, marketing and copy, in four languages. Based in Madrid, Spain. Serves businesses of 1 to 100 people, remotely in Spain and abroad, in Spanish and English.
 Contact: kamil@mechidan.com, phone and WhatsApp +34 611 283 310
 
-## Free diagnostic
+## The diagnostic
 
-- A 30-minute conversation, free of charge.
-- The client receives one written page: what the owner would do, in what order, the fixed price of each step, and what the client can do themselves without paying.
-- The page ends with one concrete offer and a delivery date. The client decides: do it themselves, hire someone else, or hire Mechidan.
+- A 30-minute conversation. The client explains the problem, Mechidan proposes the solution. Money is not part of that exchange; Mechidan takes first-hand knowledge of the sector's problems.
+- The client receives one written page: what Mechidan would do, in what order, the fixed price of each step, and what the client can solve with their own team.
+- The page ends with one concrete offer and a delivery date. The client decides: solve it in-house, hire someone else, or hire Mechidan.
 
 ## Services and prices
 
-- **Server review** (€99, VAT included). Before a customer discovers your server is broken, you do.
-- **Server move** (€199, VAT included). Your site changes address on a Tuesday at three in the morning and your customers never notice.
-- **New website** (€299, VAT included). Someone searches for what you sell, finds you and calls.
-- **Website with bookings or orders** (€449, VAT included). Your customer books at eleven at night and you see it in the morning from your phone.
-- **A tool built for you** (fixed price quoted after the diagnostic). Tell me the task that eats your morning and I put it on one screen.
+- **Server review** (€99, VAT included). Before a customer discovers your server is failing, you do.
+- **Server migration** (€199, VAT included). We move your service to a better server without stopping your operation.
+- **Corporate website** (€299, VAT included). Your client searches, finds you and writes.
+- **A tool built for you** (fixed price quoted after the diagnostic). You tell us the task that eats your team's hours and we put it on one screen.
+
+## Monthly maintenance plans
+
+Every job includes 3 months of care at no cost. After that, three optional plans, flat per client regardless of how many servers Mechidan maintains: Care at €39/month, Protected at €79/month, Critical at €139/month. Cancel anytime, no notice.
+
+- **Care** (€39/month): We apply updates and security patches; We watch that your service stays up; If something breaks, we fix it; 2 hours of work per month.
+- **Protected** (€79/month): Everything in Care; Backups with tested restoration; Monitoring with alerts; 4 hours of work per month.
+- **Critical** (€139/month): Everything in Protected; Priority response; Hours for changes and small jobs; 6 hours of work per week.
 
 ## Terms
 
 - Delivery: 1 to 7 days, counted from the moment the client has handed over all the material.
 - Prices are fixed, cover the whole job and include VAT. Nothing gets added on top later.
-- Every job includes 3 months of care: if something acts up, the client calls and it gets fixed with no invoice. After that, optional care at €29 per month, cancel anytime.
 - If the job needs less than the description, the price drops and the scope sheet records it.
 - Guarantee: if the client does not like the delivered result, they do not pay and no invoice is issued.
 - No deposit and no payment up front.
@@ -33,7 +39,7 @@ Contact: kamil@mechidan.com, phone and WhatsApp +34 611 283 310
 ## Delivered work
 
 - **Sección 9 Consultoría S.C.P., Barcelona**. VPN hub for 3 SMB networks: 40 concurrent connections, under 50 ms.
-  Sección 9 needed to give encrypted remote access to its clients' networks without paying per-user licences. I built the full management panel, connected the networks, hardened the setup and left it running on their server.
+  Sección 9 needed to give encrypted remote access to its clients' networks without paying per-user licences. We built the full management panel, connected the networks, hardened the setup and left it running on their server.
   - 40: simultaneous connections under 50 ms of latency, on a server with 1 vCPU and 1 GB of RAM
   - 45 → 10: minutes per client onboarding, with automatic installers for Linux and Windows
   - 3+: SMB networks linked together; where a corporate firewall blocks the tunnel, the connection falls back to port 443 and keeps working
@@ -45,31 +51,34 @@ Contact: kamil@mechidan.com, phone and WhatsApp +34 611 283 310
 ## Questions and answers
 
 ### Is the price really fixed?
-Yes. The number on each service includes VAT and the whole job. If your case needs less, I take out what you won't use and the number drops. The final number goes in writing in the scope sheet.
+Yes. The number on each service includes VAT and the whole job. If your case needs less, we take out what you won't use and the number drops. The final number goes in writing in the scope sheet.
 
 ### How long does it take?
-One to seven days once I have your material: text, logo and access. A simple site lands in two. A move with mail and certificates runs to five or seven. The exact date goes in the scope sheet.
+One to seven days once we have your material: text, logo and access. A simple site lands in two. A migration with mail and certificates runs to five or seven. The exact date goes in the scope sheet.
 
 ### How do I pay?
-Outside this website, by bank transfer or Bizum, once you approve the work. I issue an invoice with full tax details. This page takes no payments and stores no banking data.
+Outside this website, by bank transfer or Bizum, once you approve the work. We issue an invoice with full tax details. This page takes no payments and stores no banking data.
+
+### What does each maintenance plan cover?
+The number is flat per month per client, whether we maintain one server or five. Care applies patches, watches the service and fixes what breaks. Protected adds backups with tested restoration and alerts. Critical adds priority response and hours for small jobs.
 
 ### Is the website really mine?
-Yes. The domain registers in your name, the code gets handed to you and the hosting sits in your account. Tomorrow you can take everything without asking me.
+Yes. The domain registers in your name, the code gets handed to you and the hosting sits in your account. Tomorrow you can take everything without asking us.
 
 ### I pay a monthly fee for a tool. Can you get rid of it?
-Sometimes. I check whether an equivalent exists that you can host yourself. If it does, I set it up and charge three months of that fee. If it doesn't, I say so and charge nothing. I stay away from invoicing and anything with a legal obligation attached.
+Sometimes. We check whether an equivalent exists that you can host yourself. If it does, we set it up and charge three months of that fee. If it doesn't, we say so and charge nothing. We stay away from invoicing and anything with a legal obligation attached.
 
 ### What do you need from me to start?
-The text you want to show, your logo if you have one, and access to the domain if you already bought it. If you have none of that, I write a first draft and you correct it.
+The text you want to show, your logo if you have one, and access to the domain if you already bought it. If you have none of that, we write a first draft and you correct it.
 
 ### Where do you work?
 Remotely, with clients in Spain and abroad. In Madrid we come in person when the job needs it: a server that doesn't reach the internet, an office where we need to see the setup.
 
 ### I already have a website and I don't want to change it
-Then look at the move or the review. I can shift what you have to a cheaper server, or tell you where it sits exposed, without touching the design.
+Then look at the migration or the review. We can shift what you have to a cheaper server, or tell you where it sits exposed, without touching the design.
 
 ### What do you do with my data?
-I keep your name and your contact so I can reply, nothing else. I sell no data, run no advertising and set no tracking. The privacy policy spells it out.
+We keep your name and your contact so we can reply, nothing else. We sell no data, run no advertising and set no tracking. The privacy policy spells it out.
 
 ## Pages
 

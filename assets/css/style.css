@@ -60,6 +60,47 @@
   --ease: cubic-bezier(.22, .61, .36, 1);
 }
 
+/* --------------------------------------------------------------------------
+   Maintenance tiers (append this block to the end of assets/css/style.css)
+   Reuses the .svc card system; only the heading strip and per-month
+   suffix are new.
+   -------------------------------------------------------------------------- */
+
+.tiers-head {
+  margin-top: 2.6rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--rule-strong);
+}
+
+.tiers__title {
+  font-size: 1.3rem;
+  font-weight: 720;
+  letter-spacing: -0.01em;
+}
+
+.tiers__lead {
+  margin-top: 0.6rem;
+  color: var(--slate);
+  max-width: 62ch;
+  font-size: 0.95rem;
+}
+
+.svc-grid.tiers {
+  margin-top: 1.4rem;
+}
+
+.svc.tier {
+  border-top-color: var(--brass);
+}
+
+.tier__per {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--slate);
+  margin-left: 0.1rem;
+}
+
+
 /* ---------- reset ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
