@@ -112,12 +112,18 @@
   <div class="shell">
     <p class="eyebrow">Trabajos</p>
     <h2 class="h-sec">Encargos entregados</h2>
-    <ul class="jobs"><li class="job reveal" style="--i:0">
-      <span class="job__client">Sección 9 Consultoría S.C.P., Barcelona</span>
-      <span class="job__line">Concentrador VPN híbrido y WAF.</span>
-    </li><li class="job reveal" style="--i:1">
-      <span class="job__client">Línea de producción de Amazon</span>
-      <span class="job__line">200 puestos Linux en planta, administrados y monitorizados.</span>
+    <ul class="jobs"><li class="reveal" style="--i:0"><details class="jobcase">
+      <summary>
+        <span class="job__client">Sección 9 Consultoría S.C.P., Barcelona</span><span class="job__line">Hub VPN para 3 redes de pymes: 40 conexiones a la vez, por debajo de 50 ms.</span>
+        <span class="jobcase__open"><span class="job__hint">Ver los números</span><svg class="qa__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></span>
+      </summary>
+      <div class="case__body">
+        <p class="case__ctx">Sección 9 necesitaba dar acceso remoto cifrado a las redes de sus clientes sin pagar licencias por usuario. Monté el panel de gestión completo, conecté las redes, lo endurecí y lo dejé funcionando en su servidor.</p>
+        <ul class="case__stats"><li><b>40</b><span>conexiones simultáneas por debajo de 50 ms de latencia, en un servidor de 1 vCPU y 1 GB de RAM</span></li><li><b>45 → 10</b><span>minutos por cada alta de cliente, con instaladores automáticos para Linux y Windows</span></li><li><b>3+</b><span>redes de pymes conectadas entre sí; donde el firewall corporativo bloquea el túnel, la conexión sale por el puerto 443 y sigue funcionando</span></li><li><b>512 MB</b><span>de RAM le bastan al panel: sin base de datos, estado en ficheros y un único servicio del sistema</span></li><li><b>0</b><span>datos fuera del servidor del cliente: bloqueo de intentos por IP, Fail2ban y registro de cada acción del panel</span></li></ul>
+        <a class="case__link" href="https://github.com/mkKouarti/oedon-vpn-panel" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48l-.01-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.1-1.47-1.1-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85l-.01 2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>Código público en GitHub</a>
+      </div>
+    </details></li><li class="job reveal" style="--i:1">
+      <span class="job__client">Nave logística, Madrid</span><span class="job__line">200 puestos Linux en planta, administrados y monitorizados.</span>
     </li></ul>
   </div>
 </section>
@@ -164,7 +170,7 @@
     <div>
       <p class="eyebrow">Quiénes somos</p>
       <h2 class="h-sec">Somos dos, y siempre hay alguien al otro lado</h2>
-      <p class="about__lead">Somos Kamil y Jonas. Los dos hablamos contigo, los dos entramos en tu encargo, los dos respondemos si algo se rompe.</p>
+      <p class="about__lead">Kamil lleva la parte técnica y su socio lleva el trato contigo. Los dos entramos en tu encargo y los dos respondemos si algo se rompe.</p>
       <div class="about__body"><p>Si uno no coge el teléfono, coge el otro. No hay una sola persona de la que dependa tu negocio, y esa es la parte que más nos importa.</p><p>Trabajamos con negocios de 1 a 100 personas, en España y fuera. En Madrid vamos en persona cuando el encargo lo pide: un servidor que no sale a internet, una oficina donde hace falta ver la instalación, un cambio que se hace mejor sentado enfrente.</p><p>Esta página está hecha igual que lo que te entregamos: sin plantillas, sin rastreadores, sin nada cargando desde fuera y con el código a la vista en GitHub.</p></div>
       <div class="about__links">
         <a href="https://www.linkedin.com/in/elkouarti/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6 2.5 2.5 0 0 1 4.98 3.5ZM3 8.98h4V21H3ZM9.5 8.98h3.83v1.64h.05a4.2 4.2 0 0 1 3.78-2.08c4.04 0 4.79 2.66 4.79 6.12V21h-4v-5.45c0-1.3-.02-2.98-1.81-2.98-1.82 0-2.1 1.42-2.1 2.88V21h-4Z"/></svg>LinkedIn</a>

@@ -719,3 +719,74 @@ legend { padding: 0; }
   .masthead, .foot, .docket__actions, .form, .channels { display: none; }
   body { background: #fff; }
 }
+
+/* ==========================================================================
+   Work: a job with a case study becomes one collapsible row.
+   Closed, it looks exactly like any other .job line plus a hint and a plus
+   icon. Open, it shows two sentences of context, the outcome ledger and the
+   repo link. Reuses the FAQ icon rotation and the section's hairline rules.
+   ========================================================================== */
+.jobcase { border-bottom: 1px solid var(--rule); }
+.jobcase > summary {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr) auto;
+  gap: .4rem 2rem;
+  padding: 1.15rem 0;
+  align-items: baseline;
+  cursor: pointer;
+  list-style: none;
+  transition: color .15s var(--ease);
+}
+.jobcase > summary::-webkit-details-marker { display: none; }
+.jobcase > summary:hover .job__client { color: var(--petrol); }
+.jobcase__open {
+  display: inline-flex; align-items: center; gap: .55rem;
+  justify-self: end;
+}
+.job__hint {
+  font-family: var(--font-mono);
+  font-size: .7rem; font-weight: 600; letter-spacing: .09em; text-transform: uppercase;
+  color: var(--brass);
+  white-space: nowrap;
+}
+.jobcase .qa__icon { margin: 0; align-self: center; }
+.jobcase[open] .qa__icon { transform: rotate(45deg); }
+.jobcase[open] > summary { border-bottom: 1px dashed var(--rule); }
+
+@media (max-width: 640px) {
+  .jobcase > summary { grid-template-columns: minmax(0, 1fr) auto; }
+  .jobcase > summary .job__line { grid-column: 1; }
+  .jobcase > summary .jobcase__open { grid-row: 1; grid-column: 2; }
+  .job__hint { display: none; }
+}
+
+.case__body { padding: 1.2rem 0 1.5rem; }
+.case__ctx { color: var(--slate); font-size: .95rem; max-width: 62ch; margin: 0 0 1.15rem; }
+.case__stats {
+  display: grid;
+  border-top: 1px solid var(--rule-strong);
+  max-width: 720px;
+}
+.case__stats li {
+  display: flex; gap: 1.1rem; align-items: baseline;
+  padding: .72rem 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: .93rem; line-height: 1.5;
+}
+.case__stats b {
+  font-family: var(--font-mono);
+  font-size: 1.18rem; font-weight: 700; color: var(--petrol);
+  flex: none; min-width: 6.6ch;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.case__stats span { color: var(--slate); }
+.case__link {
+  display: inline-flex; align-items: center; gap: .45rem;
+  margin-top: 1.25rem; min-height: 44px;
+  font-size: .93rem; font-weight: 560;
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--brass); padding-bottom: 2px;
+}
+.case__link:hover { color: var(--petrol); }
+.case__link svg { width: 16px; height: 16px; }

@@ -356,18 +356,53 @@ def sec_work(cfg, c, ctx):
     if not ctx["work"]:
         return ""
     w = c["work"]
-    rows = "".join(
-        f"""<li class="job reveal" style="--i:{i}">
-      <span class="job__client">{e(item["client"])}</span>
-      <span class="job__line">{e(item["line"])}</span>
+    rows = []
+    for i, item in enumerate(ctx["work"]):
+        head = (
+            f'<span class="job__client">{e(item["client"])}</span>'
+            f'<span class="job__line">{e(item["line"])}</span>'
+        )
+        case = item.get("case")
+        if not case:
+            rows.append(
+                f"""<li class="job reveal" style="--i:{i}">
+      {head}
     </li>"""
-        for i, item in enumerate(ctx["work"])
-    )
+            )
+            continue
+
+        # a job with a case study becomes one collapsible row, closed by default
+        stats = "".join(
+            f'<li><b>{e(st["n"])}</b><span>{e(st["label"])}</span></li>'
+            for st in case["stats"]
+        )
+        link = ""
+        if case.get("repo"):
+            link = (
+                f'<a class="case__link" href="{e(case["repo"])}" target="_blank" rel="noopener">'
+                f'{icon("github")}{e(case["linkLabel"])}</a>'
+            )
+        hint = ""
+        if w.get("openHint"):
+            hint = f'<span class="job__hint">{e(w["openHint"])}</span>'
+        rows.append(
+            f"""<li class="reveal" style="--i:{i}"><details class="jobcase">
+      <summary>
+        {head}
+        <span class="jobcase__open">{hint}{icon("plus", "qa__icon")}</span>
+      </summary>
+      <div class="case__body">
+        <p class="case__ctx">{e(case["context"])}</p>
+        <ul class="case__stats">{stats}</ul>
+        {link}
+      </div>
+    </details></li>"""
+        )
     return f"""<section class="band band--tight" id="work" data-tone="sunk">
   <div class="shell">
     <p class="eyebrow">{e(w["eyebrow"])}</p>
     <h2 class="h-sec">{e(w["title"])}</h2>
-    <ul class="jobs">{rows}</ul>
+    <ul class="jobs">{"".join(rows)}</ul>
   </div>
 </section>"""
 
@@ -921,6 +956,23 @@ def build_llms(cfg, es, en, ctx_es, ctx_en):
         "- Payment happens off the website by bank transfer or Bizum, after the client approves the work.",
         "- The client owns the code, the configuration and the domain from day one. No lock-in.",
         "",
+    ]
+
+    # delivered jobs, with the case study numbers where a job carries them
+    if ctx_en["work"]:
+        lines += ["## Delivered work", ""]
+        for item in ctx_en["work"]:
+            lines.append(f'- **{item["client"]}**. {item["line"]}')
+            case = item.get("case")
+            if case:
+                lines.append(f'  {case["context"]}')
+                for st in case["stats"]:
+                    lines.append(f'  - {st["n"]}: {st["label"]}')
+                if case.get("repo"):
+                    lines.append(f'  - Public code: {case["repo"]}')
+        lines.append("")
+
+    lines += [
         "## Questions and answers",
         "",
     ]

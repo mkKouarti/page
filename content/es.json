@@ -126,13 +126,26 @@
   "work": {
     "eyebrow": "Trabajos",
     "title": "Encargos entregados",
+    "openHint": "Ver los números",
     "items": {
       "vpn": {
         "client": "Sección 9 Consultoría S.C.P., Barcelona",
-        "line": "Concentrador VPN híbrido y WAF."
+        "line": "Hub VPN para 3 redes de pymes: 40 conexiones a la vez, por debajo de 50 ms.",
+        "case": {
+          "context": "Sección 9 necesitaba dar acceso remoto cifrado a las redes de sus clientes sin pagar licencias por usuario. Monté el panel de gestión completo, conecté las redes, lo endurecí y lo dejé funcionando en su servidor.",
+          "stats": [
+            { "n": "40", "label": "conexiones simultáneas por debajo de 50 ms de latencia, en un servidor de 1 vCPU y 1 GB de RAM" },
+            { "n": "45 → 10", "label": "minutos por cada alta de cliente, con instaladores automáticos para Linux y Windows" },
+            { "n": "3+", "label": "redes de pymes conectadas entre sí; donde el firewall corporativo bloquea el túnel, la conexión sale por el puerto 443 y sigue funcionando" },
+            { "n": "512 MB", "label": "de RAM le bastan al panel: sin base de datos, estado en ficheros y un único servicio del sistema" },
+            { "n": "0", "label": "datos fuera del servidor del cliente: bloqueo de intentos por IP, Fail2ban y registro de cada acción del panel" }
+          ],
+          "linkLabel": "Código público en GitHub",
+          "repo": "https://github.com/mkKouarti/oedon-vpn-panel"
+        }
       },
-      "amazon": {
-        "client": "Línea de producción de Amazon",
+      "logistics": {
+        "client": "Nave logística, Madrid",
         "line": "200 puestos Linux en planta, administrados y monitorizados."
       }
     }
@@ -184,7 +197,7 @@
   "about": {
     "eyebrow": "Quiénes somos",
     "title": "Somos dos, y siempre hay alguien al otro lado",
-    "lead": "Somos Kamil y Jonas. Los dos hablamos contigo, los dos entramos en tu encargo, los dos respondemos si algo se rompe.",
+    "lead": "Kamil lleva la parte técnica y su socio lleva el trato contigo. Los dos entramos en tu encargo y los dos respondemos si algo se rompe.",
     "body": [
       "Si uno no coge el teléfono, coge el otro. No hay una sola persona de la que dependa tu negocio, y esa es la parte que más nos importa.",
       "Trabajamos con negocios de 1 a 100 personas, en España y fuera. En Madrid vamos en persona cuando el encargo lo pide: un servidor que no sale a internet, una oficina donde hace falta ver la instalación, un cambio que se hace mejor sentado enfrente.",

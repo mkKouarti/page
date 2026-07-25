@@ -30,6 +30,18 @@ Contact: kamil@mechidan.com, phone and WhatsApp +34 611 283 310
 - Payment happens off the website by bank transfer or Bizum, after the client approves the work.
 - The client owns the code, the configuration and the domain from day one. No lock-in.
 
+## Delivered work
+
+- **Sección 9 Consultoría S.C.P., Barcelona**. VPN hub for 3 SMB networks: 40 concurrent connections, under 50 ms.
+  Sección 9 needed to give encrypted remote access to its clients' networks without paying per-user licences. I built the full management panel, connected the networks, hardened the setup and left it running on their server.
+  - 40: simultaneous connections under 50 ms of latency, on a server with 1 vCPU and 1 GB of RAM
+  - 45 → 10: minutes per client onboarding, with automatic installers for Linux and Windows
+  - 3+: SMB networks linked together; where a corporate firewall blocks the tunnel, the connection falls back to port 443 and keeps working
+  - 512 MB: of RAM is all the panel needs: no database, file-based state and a single system service
+  - 0: data outside the client's server: per-IP attempt blocking, Fail2ban and an audit log of every panel action
+  - Public code: https://github.com/mkKouarti/oedon-vpn-panel
+- **Logistics warehouse, Madrid**. 200 Linux stations on the floor, administered and monitored.
+
 ## Questions and answers
 
 ### Is the price really fixed?

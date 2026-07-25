@@ -112,12 +112,18 @@
   <div class="shell">
     <p class="eyebrow">Work</p>
     <h2 class="h-sec">Jobs delivered</h2>
-    <ul class="jobs"><li class="job reveal" style="--i:0">
-      <span class="job__client">Sección 9 Consultoría S.C.P., Barcelona</span>
-      <span class="job__line">Hybrid VPN concentrator and WAF.</span>
-    </li><li class="job reveal" style="--i:1">
-      <span class="job__client">Amazon production line</span>
-      <span class="job__line">200 Linux stations on the floor, administered and monitored.</span>
+    <ul class="jobs"><li class="reveal" style="--i:0"><details class="jobcase">
+      <summary>
+        <span class="job__client">Sección 9 Consultoría S.C.P., Barcelona</span><span class="job__line">VPN hub for 3 SMB networks: 40 concurrent connections, under 50 ms.</span>
+        <span class="jobcase__open"><span class="job__hint">See the numbers</span><svg class="qa__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></span>
+      </summary>
+      <div class="case__body">
+        <p class="case__ctx">Sección 9 needed to give encrypted remote access to its clients&#x27; networks without paying per-user licences. I built the full management panel, connected the networks, hardened the setup and left it running on their server.</p>
+        <ul class="case__stats"><li><b>40</b><span>simultaneous connections under 50 ms of latency, on a server with 1 vCPU and 1 GB of RAM</span></li><li><b>45 → 10</b><span>minutes per client onboarding, with automatic installers for Linux and Windows</span></li><li><b>3+</b><span>SMB networks linked together; where a corporate firewall blocks the tunnel, the connection falls back to port 443 and keeps working</span></li><li><b>512 MB</b><span>of RAM is all the panel needs: no database, file-based state and a single system service</span></li><li><b>0</b><span>data outside the client&#x27;s server: per-IP attempt blocking, Fail2ban and an audit log of every panel action</span></li></ul>
+        <a class="case__link" href="https://github.com/mkKouarti/oedon-vpn-panel" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48l-.01-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.1-1.47-1.1-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85l-.01 2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>Public code on GitHub</a>
+      </div>
+    </details></li><li class="job reveal" style="--i:1">
+      <span class="job__client">Logistics warehouse, Madrid</span><span class="job__line">200 Linux stations on the floor, administered and monitored.</span>
     </li></ul>
   </div>
 </section>
@@ -164,7 +170,7 @@
     <div>
       <p class="eyebrow">Who we are</p>
       <h2 class="h-sec">Two of us, always someone on the other end</h2>
-      <p class="about__lead">We&#x27;re Kamil and Jonas. We both talk to you, we both work on your job, and we both answer when something breaks.</p>
+      <p class="about__lead">Kamil runs the technical side and his partner runs the conversation with you. We both work on your job and we both answer when something breaks.</p>
       <div class="about__body"><p>If one of us doesn&#x27;t pick up, the other does. Your business doesn&#x27;t ride on a single person, and that matters more to us than anything else.</p><p>We work with businesses of 1 to 100 people, in Spain and beyond. In Madrid we come in person when the job calls for it: a server that never reaches the internet, an office where we need to see the setup, a change that goes faster sitting across a table.</p><p>This page is built the way we build yours: no templates, no trackers, nothing loading from outside, and the code sitting in the open on GitHub.</p></div>
       <div class="about__links">
         <a href="https://www.linkedin.com/in/elkouarti/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6 2.5 2.5 0 0 1 4.98 3.5ZM3 8.98h4V21H3ZM9.5 8.98h3.83v1.64h.05a4.2 4.2 0 0 1 3.78-2.08c4.04 0 4.79 2.66 4.79 6.12V21h-4v-5.45c0-1.3-.02-2.98-1.81-2.98-1.82 0-2.1 1.42-2.1 2.88V21h-4Z"/></svg>LinkedIn</a>
