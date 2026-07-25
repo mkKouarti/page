@@ -31,18 +31,17 @@
   },
   "hero": {
     "eyebrow": "Diagnóstico de {minutes} minutos, gratis y por escrito",
-    "h1Lead": "Tu negocio se lleva en una semana la web, el servidor o la herramienta que le falta.",
-    "h1Accent": "Precio cerrado antes de empezar.",
-    "sub": "Me cuentas qué te frena. Te devuelvo una página con lo que haría, el orden, la cifra de cada paso y lo que puedes hacer tú sin pagarme. Con eso decides.",
-    "queueNote": "Monto los encargos el fin de semana. Lo que me escribes hoy entra en la cola del sábado.",
+    "h1Lead": "Levantamos y mantenemos el servidor, la web o la herramienta de tu negocio.",
+    "h1Accent": "Una semana. Precio cerrado. Nadie se entera de la mudanza.",
+    "sub": "Nos cuentas qué te frena. Te devolvemos una página con lo que haríamos, el orden, la cifra de cada paso y lo que puedes hacer tú sin pagarnos. Con eso decides.",
     "trust": [
-      "El diagnóstico te llega por escrito",
-      "El dominio y el código van a tu nombre",
-      "Te contesto el mismo día"
+      "Un plan por escrito antes de gastar un euro",
+      "El código y el servidor a tu nombre",
+      "Cuando algo falla, hay alguien al otro lado"
     ],
     "ctaPrimary": "Pedir el diagnóstico por WhatsApp",
     "ctaSecondary": "Ver los precios",
-    "waMessage": "Hola Kamil, tengo un negocio y quiero el diagnóstico de 30 minutos."
+    "waMessage": "Hola, tengo un negocio y quiero el diagnóstico de 30 minutos."
   },
   "diagnostic": {
     "label": "Diagnóstico",
@@ -108,13 +107,14 @@
         ]
       },
       "audit": {
-        "name": "Revisión de seguridad",
-        "pitch": "Te digo qué puertas tienes abiertas y cierro las que se cierran esa misma tarde.",
+        "name": "Revisión de servidor",
+        "pitch": "Antes de que un cliente descubra que tu servidor está mal, lo descubres tú.",
         "includes": [
-          "Qué ve de tu servidor alguien que pasa por ahí",
-          "Lo grave primero, no una lista de 300 avisos",
-          "Un script que arregla lo que se arregla solo",
-          "Escrito para que lo entiendas sin llamarme"
+          "Qué se ve de tu servidor desde fuera y por dónde entrarían",
+          "Qué está al día, qué está caducado y qué lleva meses sin tocarse",
+          "Backups: si existen, cuándo se probaron y si volverías del fuego",
+          "Servicios y cuotas mensuales que ya no usa nadie",
+          "Lo grave primero, escrito en tu idioma, no en jerga técnica"
         ]
       }
     },
@@ -128,12 +128,12 @@
     "title": "Encargos entregados",
     "items": {
       "vpn": {
-        "client": "Consultora de ciberseguridad",
+        "client": "Sección 9 Consultoría S.C.P., Barcelona",
         "line": "Concentrador VPN híbrido y WAF."
       },
       "amazon": {
         "client": "Línea de producción de Amazon",
-        "line": "200 puestos Linux en planta."
+        "line": "200 puestos Linux en planta, administrados y monitorizados."
       }
     }
   },
@@ -183,12 +183,12 @@
   },
   "about": {
     "eyebrow": "Quiénes somos",
-    "title": "Somos dos",
-    "lead": "Yo monto lo técnico. Mi socio habla contigo y lleva los números.",
+    "title": "Somos dos, y siempre hay alguien al otro lado",
+    "lead": "Somos Kamil y Jonas. Los dos hablamos contigo, los dos entramos en tu encargo, los dos respondemos si algo se rompe.",
     "body": [
-      "Él coge el teléfono, entiende qué le hace falta a tu negocio y te da fecha y cifra. Lleva veinte años negociando con proveedores y clientes en tres continentes.",
-      "Yo mantengo unos 200 puestos Linux en una línea de producción de Amazon de lunes a viernes. Cuando uno cae, esa parte de la nave se para, así que arreglo rápido y lo dejo escrito. Los fines de semana monto tus encargos.",
-      "Esta página está hecha igual que lo que te entrego: sin plantillas, sin rastreadores y sin nada cargando desde fuera."
+      "Si uno no coge el teléfono, coge el otro. No hay una sola persona de la que dependa tu negocio, y esa es la parte que más nos importa.",
+      "Trabajamos con negocios de 1 a 100 personas, en España y fuera. En Madrid vamos en persona cuando el encargo lo pide: un servidor que no sale a internet, una oficina donde hace falta ver la instalación, un cambio que se hace mejor sentado enfrente.",
+      "Esta página está hecha igual que lo que te entregamos: sin plantillas, sin rastreadores, sin nada cargando desde fuera y con el código a la vista en GitHub."
     ],
     "linkedin": "LinkedIn",
     "github": "Código en GitHub"
@@ -223,7 +223,7 @@
       },
       {
         "q": "¿Dónde trabajáis?",
-        "a": "En remoto, con clientes de España y de fuera. En Madrid voy en persona cuando el encargo lo pide, por ejemplo para tocar un servidor que no sale a internet."
+        "a": "En remoto, con clientes de España y de fuera. En Madrid vamos en persona cuando el encargo lo pide: un servidor que no sale a internet, una oficina donde hay que ver la instalación."
       },
       {
         "q": "Ya tengo web y no quiero cambiarla",

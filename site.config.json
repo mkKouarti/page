@@ -33,6 +33,15 @@
   },
   "services": [
     {
+      "id": "audit",
+      "basePrice": 99,
+      "careIncluded": false
+    },
+    {
+      "id": "migration",
+      "basePrice": 199
+    },
+    {
       "id": "web",
       "basePrice": 299
     },
@@ -43,15 +52,6 @@
     {
       "id": "tool",
       "basePrice": 0
-    },
-    {
-      "id": "migration",
-      "basePrice": 199
-    },
-    {
-      "id": "audit",
-      "basePrice": 150,
-      "careIncluded": false
     }
   ],
   "work": [

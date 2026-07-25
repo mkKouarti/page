@@ -286,7 +286,6 @@ def sec_hero(cfg, c, ctx):
       <h1>{e(h["h1Lead"])} <span class="accent">{e(h["h1Accent"])}</span></h1>
       <p class="hero__sub">{e(h["sub"])}</p>
       <div class="hero__cta">{"".join(cta)}</div>
-      <p class="hero__queue">{e(h["queueNote"])}</p>
       <ul class="trustrow">{trust}</ul>
     </div>
 

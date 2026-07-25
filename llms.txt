@@ -13,11 +13,11 @@ Contact: kamil@mechidan.com, phone and WhatsApp +34 611 283 310
 
 ## Services and prices
 
+- **Server review** (€99, VAT included). Before a customer discovers your server is broken, you do.
+- **Server move** (€199, VAT included). Your site changes address on a Tuesday at three in the morning and your customers never notice.
 - **New website** (€299, VAT included). Someone searches for what you sell, finds you and calls.
 - **Website with bookings or orders** (€449, VAT included). Your customer books at eleven at night and you see it in the morning from your phone.
 - **A tool built for you** (fixed price quoted after the diagnostic). Tell me the task that eats your morning and I put it on one screen.
-- **Server move** (€199, VAT included). Your site changes address on a Tuesday at three in the morning and your customers never notice.
-- **Security review** (€150, VAT included). I tell you which doors sit open, and I close the ones that close the same afternoon.
 
 ## Terms
 
@@ -51,7 +51,7 @@ Sometimes. I check whether an equivalent exists that you can host yourself. If i
 The text you want to show, your logo if you have one, and access to the domain if you already bought it. If you have none of that, I write a first draft and you correct it.
 
 ### Where do you work?
-Remotely, with clients in Spain and abroad. In Madrid I come in person when the job needs it, for example to touch a server that never reaches the internet.
+Remotely, with clients in Spain and abroad. In Madrid we come in person when the job needs it: a server that doesn't reach the internet, an office where we need to see the setup.
 
 ### I already have a website and I don't want to change it
 Then look at the move or the review. I can shift what you have to a cheaper server, or tell you where it sits exposed, without touching the design.

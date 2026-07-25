@@ -31,18 +31,17 @@
   },
   "hero": {
     "eyebrow": "{minutes}-minute diagnostic, free and in writing",
-    "h1Lead": "Your business gets the website, server or tool it is missing, within a week.",
-    "h1Accent": "Fixed price before I start.",
-    "sub": "You tell me what is holding you back. I send you one page: what I would do, in what order, the price of each step, and what you can do yourself without paying me. Then you decide.",
-    "queueNote": "I build the jobs at the weekend. What you send me today joins Saturday's queue.",
+    "h1Lead": "We stand up and maintain the server, the website or the tool your business runs on.",
+    "h1Accent": "One week. Fixed price. Your customers don't notice we moved anything.",
+    "sub": "You tell us what is holding you back. We send you one page: what we would do, in what order, the price of each step, and what you can do yourself without paying us. Then you decide.",
     "trust": [
-      "The diagnostic reaches you in writing",
-      "The domain and the code sit in your name",
-      "I answer the same day"
+      "A written plan before you spend a euro",
+      "The code and the server in your name",
+      "When something breaks, there is someone on the other end"
     ],
     "ctaPrimary": "Ask for the diagnostic on WhatsApp",
     "ctaSecondary": "See the prices",
-    "waMessage": "Hi Kamil, I run a business and I want the 30-minute diagnostic."
+    "waMessage": "Hi, I run a business and I want the 30-minute diagnostic."
   },
   "diagnostic": {
     "label": "Diagnostic",
@@ -108,13 +107,14 @@
         ]
       },
       "audit": {
-        "name": "Security review",
-        "pitch": "I tell you which doors sit open, and I close the ones that close the same afternoon.",
+        "name": "Server review",
+        "pitch": "Before a customer discovers your server is broken, you do.",
         "includes": [
-          "What a passer-by sees of your server right now",
-          "The serious findings first, not a dump of 300 warnings",
-          "A script that fixes what fixes itself",
-          "Written so you understand it without calling me"
+          "What your server looks like from the outside, and where someone would come in",
+          "What is patched, what is out of date, and what hasn't been touched in months",
+          "Backups: whether they exist, when they were tested, and whether you'd come back from a fire",
+          "Services and monthly fees nobody uses anymore",
+          "Serious findings first, written in plain terms, not a wall of jargon"
         ]
       }
     },
@@ -128,12 +128,12 @@
     "title": "Jobs delivered",
     "items": {
       "vpn": {
-        "client": "Cybersecurity consultancy",
+        "client": "Sección 9 Consultoría S.C.P., Barcelona",
         "line": "Hybrid VPN concentrator and WAF."
       },
       "amazon": {
         "client": "Amazon production line",
-        "line": "200 Linux stations on the floor."
+        "line": "200 Linux stations on the floor, administered and monitored."
       }
     }
   },
@@ -183,12 +183,12 @@
   },
   "about": {
     "eyebrow": "Who we are",
-    "title": "There are two of us",
-    "lead": "I build the technical side. My partner talks to you and runs the numbers.",
+    "title": "Two of us, always someone on the other end",
+    "lead": "We're Kamil and Jonas. We both talk to you, we both work on your job, and we both answer when something breaks.",
     "body": [
-      "He picks up the phone, works out what your business needs and gives you a date and a number. Twenty years negotiating with suppliers and customers across three continents sit behind that call.",
-      "I keep around 200 Linux stations running on an Amazon production line Monday to Friday. When one dies, that part of the floor stops, so I fix fast and write it down. At the weekend I build your jobs.",
-      "This page is built the way I build yours: no templates, no trackers and nothing loading from outside."
+      "If one of us doesn't pick up, the other does. Your business doesn't ride on a single person, and that matters more to us than anything else.",
+      "We work with businesses of 1 to 100 people, in Spain and beyond. In Madrid we come in person when the job calls for it: a server that never reaches the internet, an office where we need to see the setup, a change that goes faster sitting across a table.",
+      "This page is built the way we build yours: no templates, no trackers, nothing loading from outside, and the code sitting in the open on GitHub."
     ],
     "linkedin": "LinkedIn",
     "github": "Code on GitHub"
@@ -223,7 +223,7 @@
       },
       {
         "q": "Where do you work?",
-        "a": "Remotely, with clients in Spain and abroad. In Madrid I come in person when the job needs it, for example to touch a server that never reaches the internet."
+        "a": "Remotely, with clients in Spain and abroad. In Madrid we come in person when the job needs it: a server that doesn't reach the internet, an office where we need to see the setup."
       },
       {
         "q": "I already have a website and I don't want to change it",
